@@ -1,13 +1,15 @@
 import React from "react";
 import {GrowButtonStyle} from "./GrowButton.style";
-import {RuleSet} from "styled-components";
+import {css, RuleSet, useTheme} from "styled-components";
 import {ButtonStyles, ButtonType} from "./ButtonType";
-import {IconStyles, IconType} from "../../foundation/iconography/IconType";
-import {Row} from "../../StyledFlex";
+import {Row} from "../../util/StyledFlex";
+import GrowIcon, {IconType} from "../../foundation/iconography/GrowIcon";
+import GrowLoader from "../loader/GrowLoader";
 
 interface GrowButtonProps {
     text: string;
     type: ButtonType;
+    onClick: () => void,
     leadingIcon?: IconType,
     leadingIconColor?: string,
     trailingIcon?: IconType,
@@ -17,10 +19,11 @@ interface GrowButtonProps {
     customStyle?: RuleSet;
 }
 
-export const GrowButton = (
+const GrowButton = (
     {
         text,
         type,
+        onClick,
         leadingIcon,
         leadingIconColor,
         trailingIcon,
@@ -31,13 +34,35 @@ export const GrowButton = (
         ...props
     }: GrowButtonProps
 ) => {
-    return <GrowButtonStyle
-        style={ButtonStyles[type]}
-        customStyle={customStyle}
-        {...props}>
-        <Row columnGap={ButtonStyles[type].horizontalPadding}>
-            {leadingIcon && IconStyles[leadingIcon]}
-            {text}
-        </Row>
-    </GrowButtonStyle>
+
+    const theme = useTheme();
+    const style = ButtonStyles[type];
+    const color = isEnabled ? theme.buttonText : theme.buttonTextDisabled;
+
+    return (
+        <GrowButtonStyle
+            onClick={() => {
+                if (isLoading || !isEnabled) return;
+                onClick();
+            }}
+            style={style}
+            customStyle={customStyle}
+            isLoading={isLoading}
+            disabled={!isEnabled}
+            {...props}>
+            <Row
+                columnGap={ButtonStyles[type].labelSpacing}
+                alignItems={'center'}
+                customStyle={css`
+                    opacity: ${isLoading ? 0 : 1};
+                `}>
+                {leadingIcon && <GrowIcon type={leadingIcon} width={'20px'} height={'20px'} tint={color}/>}
+                {text}
+                {trailingIcon && <GrowIcon type={trailingIcon} width={'20px'} height={'20px'} tint={color}/>}
+            </Row>
+            {isLoading && <GrowLoader color={color}/>}
+        </GrowButtonStyle>
+    );
 };
+
+export default GrowButton;
