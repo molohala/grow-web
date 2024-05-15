@@ -1,6 +1,7 @@
 import {Column} from "../util/StyledFlex";
 import {GrowPalette} from "../foundation/color/GrowPalette";
 import GrowIcon, {IconType} from "../foundation/iconography/GrowIcon";
+import {GrowLightScheme} from "../foundation/color/GrowColorSementic";
 
 const IconPreview = () => {
     return (
@@ -41,6 +42,8 @@ const IconPreview = () => {
             <GrowIcon type={IconType.Setting} tint={GrowPalette.Primary70} size={30}/>
             <GrowIcon type={IconType.Show} tint={GrowPalette.Primary70} size={30}/>
             <GrowIcon type={IconType.Write} tint={GrowPalette.Primary70} size={30}/>
+            <GrowIcon type={IconType.Github} tint={GrowLightScheme.github} size={30}/>
+            <GrowIcon type={IconType.Baekjoon} tint={GrowLightScheme.baekjoon} size={30}/>
         </Column>
     );
 };

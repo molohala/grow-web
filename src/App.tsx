@@ -4,6 +4,7 @@ import {GlobalStyle} from "./util/globalStyle";
 import {useDarkTheme} from "./hook/useDarkTheme";
 import Preview from "./designsystem/preview/Preview";
 import { ThemeContext } from "./context/ThemeContext";
+import IconPreview from "./designsystem/preview/IconPreview";
 
 const App = () => {
 

@@ -35,6 +35,8 @@ import Write from "./icons/Write";
 import Radio from "./icons/Radio";
 import RadioUnselected from "./icons/RadioUnselected";
 import Send from "./icons/Send";
+import Github from "./icons/Github";
+import Baekjoon from "./icons/Baekjoon";
 
 export enum IconType {
     AddFill,
@@ -72,7 +74,9 @@ export enum IconType {
     Send,
     Setting,
     Show,
-    Write
+    Write,
+    Github,
+    Baekjoon
 }
 
 interface GrowIconProps {
@@ -90,77 +94,81 @@ const GrowIcon = (
 ) => {
     switch (type) {
         case IconType.AddFill:
-            return <AddFill fill={tint} width={size} height={size} />;
+            return <AddFill fill={tint} width={size} height={size}/>;
         case IconType.AddLine:
-            return <AddLine fill={tint} width={size} height={size} />;
+            return <AddLine fill={tint} width={size} height={size}/>;
         case IconType.AddRing:
-            return <AddRing fill={tint} width={size} height={size} />;
+            return <AddRing fill={tint} width={size} height={size}/>;
         case IconType.ArrowDown:
-            return <ArrowDown fill={tint} width={size} height={size} />;
+            return <ArrowDown fill={tint} width={size} height={size}/>;
         case IconType.ArrowLeft:
-            return <ArrowLeft fill={tint} width={size} height={size} />;
+            return <ArrowLeft fill={tint} width={size} height={size}/>;
         case IconType.ArrowRight:
-            return <ArrowRight fill={tint} width={size} height={size} />;
+            return <ArrowRight fill={tint} width={size} height={size}/>;
         case IconType.ArrowUp:
-            return <ArrowUp fill={tint} width={size} height={size} />;
+            return <ArrowUp fill={tint} width={size} height={size}/>;
         case IconType.Chat:
-            return <Chat fill={tint} width={size} height={size} />;
+            return <Chat fill={tint} width={size} height={size}/>;
         case IconType.Check:
-            return <Check fill={tint} width={size} height={size} />;
+            return <Check fill={tint} width={size} height={size}/>;
         case IconType.CloseFill:
-            return <CloseFill fill={tint} width={size} height={size} />;
+            return <CloseFill fill={tint} width={size} height={size}/>;
         case IconType.CLoseLine:
-            return <CloseLine fill={tint} width={size} height={size} />;
+            return <CloseLine fill={tint} width={size} height={size}/>;
         case IconType.CloseRing:
-            return <CloseRing fill={tint} width={size} height={size} />;
+            return <CloseRing fill={tint} width={size} height={size}/>;
         case IconType.DetailHorizontal:
-            return <DetailHorizontal fill={tint} width={size} height={size} />;
+            return <DetailHorizontal fill={tint} width={size} height={size}/>;
         case IconType.DetailVertical:
-            return <DetailVertical fill={tint} width={size} height={size} />;
+            return <DetailVertical fill={tint} width={size} height={size}/>;
         case IconType.ExpandDown:
-            return <ExpandDown fill={tint} width={size} height={size} />;
+            return <ExpandDown fill={tint} width={size} height={size}/>;
         case IconType.ExpandLeft:
-            return <ExpandLeft fill={tint} width={size} height={size} />;
+            return <ExpandLeft fill={tint} width={size} height={size}/>;
         case IconType.ExpandRight:
-            return <ExpandRight fill={tint} width={size} height={size} />;
+            return <ExpandRight fill={tint} width={size} height={size}/>;
         case IconType.ExpandStopDown:
-            return <ExpandStopDown fill={tint} width={size} height={size} />;
+            return <ExpandStopDown fill={tint} width={size} height={size}/>;
         case IconType.ExpandStopLeft:
-            return <ExpandStopLeft fill={tint} width={size} height={size} />;
+            return <ExpandStopLeft fill={tint} width={size} height={size}/>;
         case IconType.ExpandStopRight:
-            return <ExpandStopRight fill={tint} width={size} height={size} />;
+            return <ExpandStopRight fill={tint} width={size} height={size}/>;
         case IconType.ExpandStopUp:
-            return <ExpandStopUp fill={tint} width={size} height={size} />;
+            return <ExpandStopUp fill={tint} width={size} height={size}/>;
         case IconType.ExpandUp:
-            return <ExpandUp fill={tint} width={size} height={size} />;
+            return <ExpandUp fill={tint} width={size} height={size}/>;
         case IconType.HeartFill:
-            return <HeartFill fill={tint} width={size} height={size} />;
+            return <HeartFill fill={tint} width={size} height={size}/>;
         case IconType.Hide:
-            return <Hide fill={tint} width={size} height={size} />;
+            return <Hide fill={tint} width={size} height={size}/>;
         case IconType.Home:
-            return <Home fill={tint} width={size} height={size} />;
+            return <Home fill={tint} width={size} height={size}/>;
         case IconType.Logout:
-            return <Logout fill={tint} width={size} height={size} />;
+            return <Logout fill={tint} width={size} height={size}/>;
         case IconType.Moon:
-            return <Moon fill={tint} width={size} height={size} />;
+            return <Moon fill={tint} width={size} height={size}/>;
         case IconType.Notification:
-            return <Notification fill={tint} width={size} height={size} />;
+            return <Notification fill={tint} width={size} height={size}/>;
         case IconType.Person:
-            return <Person fill={tint} width={size} height={size} />;
+            return <Person fill={tint} width={size} height={size}/>;
         case IconType.Ping:
-            return <Ping fill={tint} width={size} height={size} />;
+            return <Ping fill={tint} width={size} height={size}/>;
         case IconType.Radio:
-            return <Radio fill={tint} width={size} height={size} />
+            return <Radio fill={tint} width={size} height={size}/>
         case IconType.RadioUnselected:
-            return <RadioUnselected fill={tint} width={size} height={size} />
+            return <RadioUnselected fill={tint} width={size} height={size}/>
         case IconType.Send:
-            return <Send fill={tint} width={size} height={size} />;
+            return <Send fill={tint} width={size} height={size}/>;
         case IconType.Setting:
-            return <Setting fill={tint} width={size} height={size} />;
+            return <Setting fill={tint} width={size} height={size}/>;
         case IconType.Show:
-            return <Show fill={tint} width={size} height={size} />;
+            return <Show fill={tint} width={size} height={size}/>;
         case IconType.Write:
-            return <Write fill={tint} width={size} height={size} />;
+            return <Write fill={tint} width={size} height={size}/>;
+        case IconType.Github:
+            return <Github fill={tint} width={size} height={size}/>;
+        case IconType.Baekjoon:
+            return <Baekjoon fill={tint} width={size} height={size}/>;
     }
 };
 
