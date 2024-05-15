@@ -61,7 +61,7 @@ export const LoaderCircleAfter = styled.div<{
     height: ${({size}) => size || 24}px;
     width: ${({size}) => size || 24}px;
     clip: ${({size}) => `rect(0, ${size || 24}px, ${size || 24}px, ${size || 24 / 2.0}px)`};
-    border: 3px solid ${({color}) => color || 'black'};
+    border: 3px solid ${({color, theme}) => color || theme.textNormal};
     border-radius: 50%;
     animation: ${RotateAnimationCircle} 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
 `;

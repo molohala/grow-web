@@ -12,12 +12,12 @@ export interface BaseFlexProps {
     padding?: CSSProperties["padding"];
     wrap?: boolean;
     backgroundColor?: CSSProperties["backgroundColor"];
+    alignSelf?: CSSProperties['alignSelf'];
     customStyle?: RuleSet;
 }
 
 const BaseFlex = styled.div<BaseFlexProps>`
     display: flex;
-
     gap: ${({gap}) => gap || 0}px;
     row-gap: ${({rowGap}) => rowGap || 0}px;
     column-gap: ${({columnGap}) => columnGap || 0}px;
@@ -27,6 +27,7 @@ const BaseFlex = styled.div<BaseFlexProps>`
     width: ${({fill}) => fill || "auto"};
     background-color: ${({backgroundColor}) => backgroundColor || "transparent"};
     padding: ${({padding}) => padding};
+    align-self: ${({alignSelf}) => alignSelf};
     ${({customStyle}) => customStyle}
 `;
 
