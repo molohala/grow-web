@@ -13,6 +13,7 @@ import {useContext, useState} from "react";
 import {ThemeContext} from "../../context/ThemeContext";
 import GrowTextField from "../component/textfield/GrowTextField";
 import {IconType} from "../foundation/iconography/GrowIcon";
+import GrowAvatar, {AvatarType} from "../component/avatar/GrowAvatar";
 
 const Preview = () => {
 
@@ -73,6 +74,20 @@ const Preview = () => {
                 <GrowTextField hint={'아이디를 입력해주세요'} text={text} onChange={text => setText(text)}/>
                 <GrowTextField hint={'아이디를 입력해주세요'} text={text} isSecured={true} onChange={text => setText(text)}/>
                 <GrowTextField hint={'아이디를 입력해주세요'} text={text} isEnabled={false} isSecured={true} onChange={text => setText(text)}/>
+            </Column>
+            <Column rowGap={8}>
+                <GrowAvatar type={AvatarType.ExtraSmall}/>
+                <GrowAvatar type={AvatarType.Small}/>
+                <GrowAvatar type={AvatarType.Medium}/>
+                <GrowAvatar type={AvatarType.Large}/>
+                <GrowAvatar type={AvatarType.ExtraLarge}/>
+                <GrowAvatar type={AvatarType.XXL}/>
+                <GrowAvatar type={AvatarType.ExtraSmall} url={'https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg'}/>
+                <GrowAvatar type={AvatarType.Small} url={'https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg'}/>
+                <GrowAvatar type={AvatarType.Medium} url={'https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg'}/>
+                <GrowAvatar type={AvatarType.Large} url={'https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg'}/>
+                <GrowAvatar type={AvatarType.ExtraLarge} url={'https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg'}/>
+                <GrowAvatar type={AvatarType.XXL} url={'https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg'}/>
             </Column>
             <Column rowGap={8}>
                 <ShadowRectangle shadowType={ShadowType.EvBlack1}/>
