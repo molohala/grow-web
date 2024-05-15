@@ -10,14 +10,16 @@ import GrowTabButton from "../component/button/tabbutton/GrowTabButton";
 import GrowToggleButton from "../component/button/togglebutton/GrowToggleButton";
 import {ShadowRectangle} from "./ShadowRectangle";
 import {ShadowType} from "../foundation/shadow/GrowShadow";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {ThemeContext} from "../../context/ThemeContext";
+import GrowTextField from "../component/textfield/GrowTextField";
 
 const Preview = () => {
 
     const theme = useTheme();
     // @ts-ignore
     const { isDarkTheme, setIsDarkTheme } = useContext(ThemeContext);
+    const [text, setText] = useState("");
 
     return (
         <Row columnGap={8} padding={'8px'} customStyle={css`background-color: ${theme.background}`}>
@@ -67,6 +69,9 @@ const Preview = () => {
                 <GrowToggleButton checked={isDarkTheme} onClick={() => setIsDarkTheme(!isDarkTheme)} />
             </Column>
             <GrowLoader/>
+            <Column rowGap={8}>
+                <GrowTextField hint={'아이디를 입력해주세요'} text={text} onChange={text => setText(text)}/>
+            </Column>
             <Column rowGap={8}>
                 <ShadowRectangle shadowType={ShadowType.EvBlack1}/>
                 <ShadowRectangle shadowType={ShadowType.EvBlack2}/>
