@@ -14,6 +14,7 @@ import {ThemeContext} from "../../context/ThemeContext";
 import GrowTextField from "../component/textfield/GrowTextField";
 import {IconType} from "../foundation/iconography/GrowIcon";
 import GrowAvatar, {AvatarType} from "../component/avatar/GrowAvatar";
+import GrowLanguage from "../component/language/GrowLanguage";
 
 const Preview = () => {
 
@@ -93,6 +94,12 @@ const Preview = () => {
                 <ShadowRectangle shadowType={ShadowType.EvBlack1}/>
                 <ShadowRectangle shadowType={ShadowType.EvBlack2}/>
                 <ShadowRectangle shadowType={ShadowType.EvBlack3}/>
+            </Column>
+            <Column customStyle={css`background: ${theme.backgroundAlt}`} rowGap={8}>
+                <GrowLanguage text={'Swift'}/>
+                <GrowLanguage text={'Python'}/>
+                <GrowLanguage text={'C++'}/>
+                <GrowLanguage text={'Kotlin'}/>
             </Column>
             <Column rowGap={8} customStyle={css`flex: 1`}>
                 <GrowDivider type={DividerType.Thick}/>
