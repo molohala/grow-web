@@ -1,4 +1,4 @@
-import {TypographyType} from "../../foundation/text/GrowTypographies";
+import {TypographyType} from "../../../foundation/text/GrowTypographies";
 
 export enum ButtonType {
     CTA,

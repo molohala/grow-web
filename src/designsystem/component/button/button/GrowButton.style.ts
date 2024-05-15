@@ -1,8 +1,8 @@
 import styled, {css, RuleSet} from "styled-components";
-import {FlexLayout} from "../../util/FlexLayout";
-import {bounceAnimation} from "../../animation/bounceAnimation";
-import {GrowTypographies} from "../../foundation/text/GrowTypographies";
-import {ButtonStyle} from "./ButtonType";
+import {FlexLayout} from "../../../util/FlexLayout";
+import {bounceAnimation} from "../../../animation/bounceAnimation";
+import {GrowTypographies} from "../../../foundation/text/GrowTypographies";
+import {ButtonStyle} from "../type/ButtonType";
 
 export const GrowButtonStyle = styled.button<{
     style: ButtonStyle,
@@ -32,5 +32,4 @@ export const GrowButtonStyle = styled.button<{
         ${!disabled && !isLoading && bounceAnimation};
         cursor: ${!disabled && !isLoading && 'pointer'};
     `};
-    user-select: none;
 `;

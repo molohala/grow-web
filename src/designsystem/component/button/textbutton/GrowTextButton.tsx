@@ -1,12 +1,12 @@
 import React from "react";
-import {GrowButtonStyle} from "./GrowButton.style";
+import * as S from "./GrowTextButton.style";
 import {css, RuleSet, useTheme} from "styled-components";
-import {ButtonStyles, ButtonType} from "./ButtonType";
-import {Row} from "../../util/StyledFlex";
-import GrowIcon, {IconType} from "../../foundation/iconography/GrowIcon";
-import GrowLoader from "../loader/GrowLoader";
+import {ButtonStyles, ButtonType} from "../type/ButtonType";
+import {Row} from "../../../util/StyledFlex";
+import GrowIcon, {IconType} from "../../../foundation/iconography/GrowIcon";
+import GrowLoader from "../../loader/GrowLoader";
 
-interface GrowButtonProps {
+interface GrowTextButtonProps {
     text: string;
     type: ButtonType;
     onClick: () => void,
@@ -19,7 +19,7 @@ interface GrowButtonProps {
     customStyle?: RuleSet;
 }
 
-const GrowButton = (
+const GrowTextButton = (
     {
         text,
         type,
@@ -32,15 +32,15 @@ const GrowButton = (
         isLoading = false,
         customStyle,
         ...props
-    }: GrowButtonProps
+    }: GrowTextButtonProps
 ) => {
 
     const theme = useTheme();
     const style = ButtonStyles[type];
-    const color = isEnabled ? theme.buttonText : theme.buttonTextDisabled;
+    const color = isEnabled ? theme.buttonPrimary : theme.buttonPrimaryDisabled;
 
     return (
-        <GrowButtonStyle
+        <S.GrowTextButtonStyle
             onClick={() => {
                 if (isLoading || !isEnabled) return;
                 onClick();
@@ -60,9 +60,9 @@ const GrowButton = (
                 {text}
                 {trailingIcon && <GrowIcon type={trailingIcon} width={'20px'} height={'20px'} tint={color}/>}
             </Row>
-            {isLoading && <GrowLoader color={color}/>}
-        </GrowButtonStyle>
+            {isLoading && <GrowLoader customStyle={css`position: absolute !important;`} color={color}/>}
+        </S.GrowTextButtonStyle>
     );
 };
 
-export default GrowButton;
+export default GrowTextButton;

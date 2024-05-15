@@ -1,4 +1,4 @@
-import {ButtonType} from "./designsystem/component/button/ButtonType";
+import {ButtonType} from "./designsystem/component/button/type/ButtonType";
 import {GrowColorProvider} from "./designsystem/foundation/color/GrowColorProvider";
 import {GrowDarkScheme, GrowLightScheme} from "./designsystem/foundation/color/GrowColorSementic";
 import {GlobalStyle} from "./util/globalStyle";
