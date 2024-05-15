@@ -47,9 +47,7 @@ const GrowTabButton = (
                 <Row
                     columnGap={3}
                     alignItems={'center'}
-                    customStyle={css`
-                        opacity: ${isLoading ? 0 : 1};
-                    `}>
+                    customStyle={css`opacity: ${isLoading ? 0 : 1}`}>
                     {leadingIcon && <GrowIcon type={leadingIcon} size={20} tint={color}/>}
                     {text}
                     {trailingIcon && <GrowIcon type={trailingIcon} size={20} tint={color}/>}

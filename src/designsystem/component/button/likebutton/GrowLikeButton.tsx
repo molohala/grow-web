@@ -1,10 +1,8 @@
 import React from "react";
 import * as S from "./GrowLikeButton.style";
-import {css, RuleSet, useTheme} from "styled-components";
-import {Column, Row} from "../../../util/StyledFlex";
+import {RuleSet, useTheme} from "styled-components";
+import {Row} from "../../../util/StyledFlex";
 import GrowIcon, {IconType} from "../../../foundation/iconography/GrowIcon";
-import GrowLoader from "../../loader/GrowLoader";
-import GrowDivider, {DividerType} from "../../divider/GrowDivider";
 
 interface GrowLikeButtonProps {
     like: number;

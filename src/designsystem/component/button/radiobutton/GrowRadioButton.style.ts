@@ -3,31 +3,28 @@ import {FlexLayout} from "../../../util/FlexLayout";
 import {bounceAnimation} from "../../../animation/bounceAnimation";
 import {GrowTypographies, TypographyType} from "../../../foundation/text/GrowTypographies";
 
-export const GrowTabButtonStyle = styled.button<{
-    disabled: boolean,
-    isLoading: boolean,
+export const GrowRadioButtonStyle = styled.button<{
+    isSelected: boolean,
     customStyle?: RuleSet;
 }>`
     // Layout
     position: relative;
-    height: 37px;
     ${FlexLayout({justifyContent: 'center', alignItems: 'center'})};
-    padding: 0 12px;
+    padding: 8px 14px;
+    flex-shrink: 0;
     
     // Style
-    ${({theme, disabled}) => css`
-        color: ${disabled ? theme.buttonTextDisabled : theme.tabButtonPrimary};
+    ${({theme, isSelected}) => css`
+        color: ${isSelected ? theme.radioButtonSecondary : theme.radioButtonSecondaryDisabled};
+        border: 1.5px solid ${isSelected ? theme.radioButtonPrimary : theme.radioButtonPrimaryDisabled};
     `};
     background-color: transparent;
-    ${GrowTypographies[TypographyType.BodyB]};
+    border-radius: 12px;
+    ${GrowTypographies[TypographyType.BodyM]};
     ${({customStyle}) => customStyle};
     outline: none;
-    border: none;
     
     // Interaction
-    ${({disabled, isLoading}) => css`
-        ${!disabled && !isLoading && bounceAnimation};
-        cursor: ${!disabled && !isLoading && 'pointer'};
-    `};
-    ${({customStyle}) => customStyle};
+    ${bounceAnimation};
+    cursor: pointer;
 `;

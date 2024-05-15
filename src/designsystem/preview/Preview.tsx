@@ -16,6 +16,7 @@ import {IconType} from "../foundation/iconography/GrowIcon";
 import GrowAvatar, {AvatarType} from "../component/avatar/GrowAvatar";
 import GrowLanguage from "../component/language/GrowLanguage";
 import GrowLikeButton from "../component/button/likebutton/GrowLikeButton";
+import GrowRadioButton from "../component/button/radiobutton/GrowRadioButton";
 
 const Preview = () => {
 
@@ -69,11 +70,15 @@ const Preview = () => {
                 <GrowTabButton onClick={() => {}} text={'시작하기'} isLoading={true} leadingIcon={IconType.Send} isEnabled={false}/>
             </Column>
             <Column rowGap={8}>
+                <GrowLikeButton like={313} isLiked={true} onClick={() => {}}/>
+                <GrowLikeButton like={312} isLiked={false} onClick={() => {}}/>
+            </Column>
+            <Column rowGap={8}>
                 <GrowToggleButton checked={isDarkTheme} onClick={() => setIsDarkTheme(!isDarkTheme)} />
             </Column>
             <Column rowGap={8}>
-                <GrowLikeButton like={313} isLiked={true} onClick={() => {}}/>
-                <GrowLikeButton like={312} isLiked={false} onClick={() => {}}/>
+                <GrowRadioButton text={'시작하기'} onClick={() => {}} isSelected={true}/>
+                <GrowRadioButton text={'시작하기'} onClick={() => {}} isSelected={false}/>
             </Column>
             <GrowLoader/>
             <Column rowGap={8}>
