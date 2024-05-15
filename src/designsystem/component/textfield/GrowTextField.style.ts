@@ -1,10 +1,11 @@
-import styled from "styled-components";
+import styled, {RuleSet} from "styled-components";
 import {FlexLayout} from "../../util/FlexLayout";
 import {bounceAnimation} from "../../animation/bounceAnimation";
 import {GrowTypographies, TypographyType} from "../../foundation/text/GrowTypographies";
 
 export const GrowTextFieldStyle = styled.div<{
     strokeColor: string,
+    customStyle?: RuleSet
 }>`
     // Layout
     height: 48px;
@@ -16,6 +17,7 @@ export const GrowTextFieldStyle = styled.div<{
     border-radius: 12px;
     border: 1px solid ${({strokeColor}) => strokeColor};
     transition: 0.1s border;
+    ${({customStyle}) => customStyle}
 `
 
 export const Input = styled.input<{

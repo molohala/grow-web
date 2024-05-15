@@ -15,6 +15,7 @@ import GrowTextField from "../component/textfield/GrowTextField";
 import {IconType} from "../foundation/iconography/GrowIcon";
 import GrowAvatar, {AvatarType} from "../component/avatar/GrowAvatar";
 import GrowLanguage from "../component/language/GrowLanguage";
+import GrowLikeButton from "../component/button/likebutton/GrowLikeButton";
 
 const Preview = () => {
 
@@ -69,6 +70,10 @@ const Preview = () => {
             </Column>
             <Column rowGap={8}>
                 <GrowToggleButton checked={isDarkTheme} onClick={() => setIsDarkTheme(!isDarkTheme)} />
+            </Column>
+            <Column rowGap={8}>
+                <GrowLikeButton like={313} isLiked={true} onClick={() => {}}/>
+                <GrowLikeButton like={312} isLiked={false} onClick={() => {}}/>
             </Column>
             <GrowLoader/>
             <Column rowGap={8}>
