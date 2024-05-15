@@ -13,7 +13,7 @@ export enum Direction {
 interface GrowDividerProps {
     direction?: Direction;
     type: DividerType;
-    color?: string
+    color?: string;
 }
 
 const GrowDivider = (

@@ -1,6 +1,6 @@
 import {GrowColorProvider} from "./designsystem/foundation/color/GrowColorProvider";
 import {GrowDarkScheme, GrowLightScheme} from "./designsystem/foundation/color/GrowColorSementic";
-import {GlobalStyle} from "./util/globalStyle";
+import {GlobalStyle} from "./style/globalStyle";
 import {useDarkTheme} from "./hook/useDarkTheme";
 import Preview from "./designsystem/preview/Preview";
 import { ThemeContext } from "./context/ThemeContext";
