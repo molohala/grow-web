@@ -30,10 +30,14 @@ const GrowTextField = (
     const strokeColor = !isEnabled ? theme.textFieldSecondaryDisabled : isFocused ? theme.textFieldPrimary : theme.textFieldSecondary;
     const placeHolderColor = isEnabled ? theme.textAlt : theme.textFieldTextDisabled;
 
+    const iconType = !isSecured ? IconType.CloseFill : showText ? IconType.Show : IconType.Hide;
+
     return (
         <S.GrowTextFieldStyle strokeColor={strokeColor}>
             <S.Input
-                type={isSecured ? 'password' : 'text'}
+                value={text}
+                disabled={!isEnabled}
+                type={showText ? 'password' : 'text'}
                 onChange={event => {
                     onChange(event.target.value);
                 }}
@@ -47,8 +51,14 @@ const GrowTextField = (
                 }}
                 textColor={textColor}
             />
-            <S.TrailingIconButton show={text !== ''}>
-                <GrowIcon type={IconType.Send} tint={iconColor} width={'24px'} height={'24px'}/>
+            <S.TrailingIconButton isEnabled={isEnabled} onClick={() => {
+                if (isSecured) {
+                    setShowText(i => !i);
+                } else {
+                    onChange('');
+                }
+            }} show={text !== ''}>
+                <GrowIcon type={iconType} tint={iconColor} size={24}/>
             </S.TrailingIconButton>
         </S.GrowTextFieldStyle>
     );

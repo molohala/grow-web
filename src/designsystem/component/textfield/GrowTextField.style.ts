@@ -39,7 +39,8 @@ export const Input = styled.input<{
 `;
 
 export const TrailingIconButton = styled.button<{
-    show: boolean
+    show: boolean,
+    isEnabled: boolean
 }>`
     // Layout
     width: 32px;
@@ -51,6 +52,7 @@ export const TrailingIconButton = styled.button<{
     background-color: transparent;
     opacity: ${({show}) => (show ? 1 : 0)};
     transition: 0.25s opacity;
+    opacity: ${({isEnabled}) => (isEnabled ? 1 : 0)};
     
     // Interaction
     ${bounceAnimation};

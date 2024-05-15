@@ -1,7 +1,6 @@
 import {Column, Row} from "../util/StyledFlex";
 import {css, useTheme} from "styled-components";
 import GrowButton from "../component/button/button/GrowButton";
-import {IconType} from "../foundation/iconography/GrowIcon";
 import {ButtonType} from "../component/button/type/ButtonType";
 import GrowLoader from "../component/loader/GrowLoader";
 import GrowDivider, {DividerType} from "../component/divider/GrowDivider";
@@ -13,6 +12,7 @@ import {ShadowType} from "../foundation/shadow/GrowShadow";
 import {useContext, useState} from "react";
 import {ThemeContext} from "../../context/ThemeContext";
 import GrowTextField from "../component/textfield/GrowTextField";
+import {IconType} from "../foundation/iconography/GrowIcon";
 
 const Preview = () => {
 
@@ -71,6 +71,8 @@ const Preview = () => {
             <GrowLoader/>
             <Column rowGap={8}>
                 <GrowTextField hint={'아이디를 입력해주세요'} text={text} onChange={text => setText(text)}/>
+                <GrowTextField hint={'아이디를 입력해주세요'} text={text} isSecured={true} onChange={text => setText(text)}/>
+                <GrowTextField hint={'아이디를 입력해주세요'} text={text} isEnabled={false} isSecured={true} onChange={text => setText(text)}/>
             </Column>
             <Column rowGap={8}>
                 <ShadowRectangle shadowType={ShadowType.EvBlack1}/>

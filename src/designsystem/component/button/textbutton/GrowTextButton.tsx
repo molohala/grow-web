@@ -3,17 +3,15 @@ import * as S from "./GrowTextButton.style";
 import {css, RuleSet, useTheme} from "styled-components";
 import {ButtonStyles, ButtonType} from "../type/ButtonType";
 import {Row} from "../../../util/StyledFlex";
-import GrowIcon, {IconType} from "../../../foundation/iconography/GrowIcon";
 import GrowLoader from "../../loader/GrowLoader";
+import GrowIcon, {IconType} from "../../../foundation/iconography/GrowIcon";
 
 interface GrowTextButtonProps {
     text: string;
     type: ButtonType;
     onClick: () => void,
     leadingIcon?: IconType,
-    leadingIconColor?: string,
     trailingIcon?: IconType,
-    trailingIconColor?: string,
     isEnabled?: boolean,
     isLoading?: boolean,
     customStyle?: RuleSet;
@@ -25,9 +23,7 @@ const GrowTextButton = (
         type,
         onClick,
         leadingIcon,
-        leadingIconColor,
         trailingIcon,
-        trailingIconColor,
         isEnabled = true,
         isLoading = false,
         customStyle,
@@ -56,9 +52,9 @@ const GrowTextButton = (
                 customStyle={css`
                     opacity: ${isLoading ? 0 : 1};
                 `}>
-                {leadingIcon && <GrowIcon type={leadingIcon} width={'20px'} height={'20px'} tint={color}/>}
+                {leadingIcon && <GrowIcon type={leadingIcon} size={20} tint={color}/>}
                 {text}
-                {trailingIcon && <GrowIcon type={trailingIcon} width={'20px'} height={'20px'} tint={color}/>}
+                {trailingIcon && <GrowIcon type={trailingIcon} size={20} tint={color}/>}
             </Row>
             {isLoading && <GrowLoader customStyle={css`position: absolute !important;`} color={color}/>}
         </S.GrowTextButtonStyle>

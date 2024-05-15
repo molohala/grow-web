@@ -11,9 +11,7 @@ interface GrowButtonProps {
     type: ButtonType;
     onClick: () => void,
     leadingIcon?: IconType,
-    leadingIconColor?: string,
     trailingIcon?: IconType,
-    trailingIconColor?: string,
     isEnabled?: boolean,
     isLoading?: boolean,
     customStyle?: RuleSet;
@@ -25,9 +23,7 @@ const GrowButton = (
         type,
         onClick,
         leadingIcon,
-        leadingIconColor,
         trailingIcon,
-        trailingIconColor,
         isEnabled = true,
         isLoading = false,
         customStyle,
@@ -56,9 +52,9 @@ const GrowButton = (
                 customStyle={css`
                     opacity: ${isLoading ? 0 : 1};
                 `}>
-                {leadingIcon && <GrowIcon type={leadingIcon} width={'20px'} height={'20px'} tint={color}/>}
+                {leadingIcon && <GrowIcon type={leadingIcon} size={20} tint={color}/>}
                 {text}
-                {trailingIcon && <GrowIcon type={trailingIcon} width={'20px'} height={'20px'} tint={color}/>}
+                {trailingIcon && <GrowIcon type={trailingIcon} size={20} tint={color}/>}
             </Row>
             {isLoading && <GrowLoader customStyle={css`position: absolute !important;`} color={color}/>}
         </S.GrowButtonStyle>

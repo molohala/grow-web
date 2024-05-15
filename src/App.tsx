@@ -14,6 +14,7 @@ const App = () => {
             <GrowColorProvider theme={isDarkTheme ? GrowDarkScheme : GrowLightScheme}>
                 <GlobalStyle/>
                 <Preview/>
+                {/*<IconPreview/>*/}
             </GrowColorProvider>
         </ThemeContext.Provider>
     );

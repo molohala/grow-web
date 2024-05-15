@@ -2,7 +2,6 @@ import styled, {css, RuleSet} from "styled-components";
 import {FlexLayout} from "../../../util/FlexLayout";
 import {bounceAnimation} from "../../../animation/bounceAnimation";
 import {GrowTypographies, TypographyType} from "../../../foundation/text/GrowTypographies";
-import {ButtonStyle} from "../type/ButtonType";
 
 export const GrowTabButtonStyle = styled.button<{
     disabled: boolean,

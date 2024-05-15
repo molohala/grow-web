@@ -1,36 +1,167 @@
+import AddFill from "./icons/AddFill";
+import AddLine from "./icons/AddLine";
 import React from "react";
+import AddRing from "./icons/AddRing";
+import ArrowDown from "./icons/ArrowDown";
+import ArrowLeft from "./icons/ArrowLeft";
+import ArrowRight from "./icons/ArrowRight";
+import ArrowUp from "./icons/ArrowUp";
+import Chat from "./icons/Chat";
+import Check from "./icons/Check";
+import CloseFill from "./icons/CloseFill";
+import CloseRing from "./icons/CloseRing";
+import DetailHorizontal from "./icons/DetailHorizontal";
+import CloseLine from "./icons/CloseLine";
+import DetailVertical from "./icons/DetailVertical";
+import ExpandDown from "./icons/ExpandDown";
+import ExpandLeft from "./icons/ExpandLeft";
+import ExpandRight from "./icons/ExpandRight";
+import ExpandStopDown from "./icons/ExpandStopDown";
+import Hide from "./icons/Hide";
+import ExpandStopLeft from "./icons/ExpandStopLeft";
+import ExpandStopRight from "./icons/ExpandStopRight";
+import ExpandStopUp from "./icons/ExpandStopUp";
+import ExpandUp from "./icons/ExpandUp";
+import HeartFill from "./icons/HeartFill";
+import Home from "./icons/Home";
+import Logout from "./icons/Logout";
+import Moon from "./icons/Moon";
+import Notification from "./icons/Notification";
+import Person from "./icons/Person";
+import Ping from "./icons/Ping";
+import Setting from "./icons/Setting";
+import Show from "./icons/Show";
+import Write from "./icons/Write";
+import Radio from "./icons/Radio";
+import RadioUnselected from "./icons/RadioUnselected";
+import Send from "./icons/Send";
 
 export enum IconType {
-    Send = "M3.42921 20.1759C3.33788 20.5869 3.76434 20.9198 4.14091 20.7316L20.3069 12.6486C20.6754 12.4643 20.6754 11.9384 20.3069 11.7541L4.14091 3.67113C3.76434 3.48285 3.33788 3.81582 3.42921 4.22681L4.82569 10.011C4.91764 10.4247 5.26041 10.7356 5.68115 10.7867L12.8774 12.1007C12.8825 12.1016 12.8882 12.1021 12.8934 12.1023C13.4979 12.1179 13.0018 12.2864 12.8851 12.3006L5.68115 13.616C5.26041 13.6671 4.91764 13.978 4.82569 14.3917L3.42921 20.1759Z"
+    AddFill,
+    AddLine,
+    AddRing,
+    ArrowDown,
+    ArrowLeft,
+    ArrowRight,
+    ArrowUp,
+    Chat,
+    Check,
+    CloseFill,
+    CLoseLine,
+    CloseRing,
+    DetailHorizontal,
+    DetailVertical,
+    ExpandDown,
+    ExpandLeft,
+    ExpandRight,
+    ExpandStopDown,
+    ExpandStopLeft,
+    ExpandStopRight,
+    ExpandStopUp,
+    ExpandUp,
+    HeartFill,
+    Hide,
+    Home,
+    Logout,
+    Moon,
+    Notification,
+    Person,
+    Ping,
+    Radio,
+    RadioUnselected,
+    Send,
+    Setting,
+    Show,
+    Write
 }
 
 interface GrowIconProps {
     type: IconType,
-    width: string,
-    height: string,
-    tint: string
+    tint?: string,
+    size?: number
 }
 
 const GrowIcon = (
     {
         type,
-        width,
-        height,
-        tint,
-        ...props
+        tint = 'black',
+        size = 24
     }: GrowIconProps
 ) => {
-    return (
-        <svg
-            width={width}
-            height={height}
-            fill={tint}
-            viewBox={"0 0 24 24"}
-            {...props}
-        >
-            <path d={type}/>
-        </svg>
-    );
+    switch (type) {
+        case IconType.AddFill:
+            return <AddFill fill={tint} width={size} height={size} />;
+        case IconType.AddLine:
+            return <AddLine fill={tint} width={size} height={size} />;
+        case IconType.AddRing:
+            return <AddRing fill={tint} width={size} height={size} />;
+        case IconType.ArrowDown:
+            return <ArrowDown fill={tint} width={size} height={size} />;
+        case IconType.ArrowLeft:
+            return <ArrowLeft fill={tint} width={size} height={size} />;
+        case IconType.ArrowRight:
+            return <ArrowRight fill={tint} width={size} height={size} />;
+        case IconType.ArrowUp:
+            return <ArrowUp fill={tint} width={size} height={size} />;
+        case IconType.Chat:
+            return <Chat fill={tint} width={size} height={size} />;
+        case IconType.Check:
+            return <Check fill={tint} width={size} height={size} />;
+        case IconType.CloseFill:
+            return <CloseFill fill={tint} width={size} height={size} />;
+        case IconType.CLoseLine:
+            return <CloseLine fill={tint} width={size} height={size} />;
+        case IconType.CloseRing:
+            return <CloseRing fill={tint} width={size} height={size} />;
+        case IconType.DetailHorizontal:
+            return <DetailHorizontal fill={tint} width={size} height={size} />;
+        case IconType.DetailVertical:
+            return <DetailVertical fill={tint} width={size} height={size} />;
+        case IconType.ExpandDown:
+            return <ExpandDown fill={tint} width={size} height={size} />;
+        case IconType.ExpandLeft:
+            return <ExpandLeft fill={tint} width={size} height={size} />;
+        case IconType.ExpandRight:
+            return <ExpandRight fill={tint} width={size} height={size} />;
+        case IconType.ExpandStopDown:
+            return <ExpandStopDown fill={tint} width={size} height={size} />;
+        case IconType.ExpandStopLeft:
+            return <ExpandStopLeft fill={tint} width={size} height={size} />;
+        case IconType.ExpandStopRight:
+            return <ExpandStopRight fill={tint} width={size} height={size} />;
+        case IconType.ExpandStopUp:
+            return <ExpandStopUp fill={tint} width={size} height={size} />;
+        case IconType.ExpandUp:
+            return <ExpandUp fill={tint} width={size} height={size} />;
+        case IconType.HeartFill:
+            return <HeartFill fill={tint} width={size} height={size} />;
+        case IconType.Hide:
+            return <Hide fill={tint} width={size} height={size} />;
+        case IconType.Home:
+            return <Home fill={tint} width={size} height={size} />;
+        case IconType.Logout:
+            return <Logout fill={tint} width={size} height={size} />;
+        case IconType.Moon:
+            return <Moon fill={tint} width={size} height={size} />;
+        case IconType.Notification:
+            return <Notification fill={tint} width={size} height={size} />;
+        case IconType.Person:
+            return <Person fill={tint} width={size} height={size} />;
+        case IconType.Ping:
+            return <Ping fill={tint} width={size} height={size} />;
+        case IconType.Radio:
+            return <Radio fill={tint} width={size} height={size} />
+        case IconType.RadioUnselected:
+            return <RadioUnselected fill={tint} width={size} height={size} />
+        case IconType.Send:
+            return <Send fill={tint} width={size} height={size} />;
+        case IconType.Setting:
+            return <Setting fill={tint} width={size} height={size} />;
+        case IconType.Show:
+            return <Show fill={tint} width={size} height={size} />;
+        case IconType.Write:
+            return <Write fill={tint} width={size} height={size} />;
+    }
 };
 
 export default GrowIcon;
