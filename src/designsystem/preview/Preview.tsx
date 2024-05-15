@@ -6,10 +6,18 @@ import {ButtonType} from "../component/button/type/ButtonType";
 import GrowLoader from "../component/loader/GrowLoader";
 import GrowDivider, {DividerType} from "../component/divider/GrowDivider";
 import GrowTextButton from "../component/button/textbutton/GrowTextButton";
+import GrowTabButton from "../component/button/tabbutton/GrowTabButton";
+import GrowToggleButton from "../component/button/togglebutton/GrowToggleButton";
+import {ShadowRectangle} from "./ShadowRectangle";
+import {ShadowType} from "../foundation/shadow/GrowShadow";
+import {useContext} from "react";
+import {ThemeContext} from "../../context/ThemeContext";
 
 const Preview = () => {
 
     const theme = useTheme();
+    // @ts-ignore
+    const { isDarkTheme, setIsDarkTheme } = useContext(ThemeContext);
 
     return (
         <Row columnGap={8} padding={'8px'} customStyle={css`background-color: ${theme.background}`}>
@@ -49,7 +57,21 @@ const Preview = () => {
                 <GrowTextButton onClick={() => {}} text={'시작하기'} isLoading={true} leadingIcon={IconType.Send} type={ButtonType.Medium} isEnabled={false}/>
                 <GrowTextButton onClick={() => {}} text={'시작하기'} isLoading={true} leadingIcon={IconType.Send} type={ButtonType.Small} isEnabled={false}/>
             </Column>
+            <Column rowGap={8}>
+                <GrowTabButton onClick={() => {}} text={'시작하기'} leadingIcon={IconType.Send}/>
+                <GrowTabButton onClick={() => {}} text={'시작하기'} leadingIcon={IconType.Send} isEnabled={false}/>
+                <GrowTabButton onClick={() => {}} text={'시작하기'} isLoading={true} leadingIcon={IconType.Send}/>
+                <GrowTabButton onClick={() => {}} text={'시작하기'} isLoading={true} leadingIcon={IconType.Send} isEnabled={false}/>
+            </Column>
+            <Column rowGap={8}>
+                <GrowToggleButton checked={isDarkTheme} onClick={() => setIsDarkTheme(!isDarkTheme)} />
+            </Column>
             <GrowLoader/>
+            <Column rowGap={8}>
+                <ShadowRectangle shadowType={ShadowType.EvBlack1}/>
+                <ShadowRectangle shadowType={ShadowType.EvBlack2}/>
+                <ShadowRectangle shadowType={ShadowType.EvBlack3}/>
+            </Column>
             <Column rowGap={8} customStyle={css`flex: 1`}>
                 <GrowDivider type={DividerType.Thick}/>
                 <GrowDivider type={DividerType.Thin}/>

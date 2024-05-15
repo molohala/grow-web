@@ -1,19 +1,21 @@
-import {ButtonType} from "./designsystem/component/button/type/ButtonType";
 import {GrowColorProvider} from "./designsystem/foundation/color/GrowColorProvider";
 import {GrowDarkScheme, GrowLightScheme} from "./designsystem/foundation/color/GrowColorSementic";
 import {GlobalStyle} from "./util/globalStyle";
 import {useDarkTheme} from "./hook/useDarkTheme";
 import Preview from "./designsystem/preview/Preview";
+import { ThemeContext } from "./context/ThemeContext";
 
 const App = () => {
 
-    const [isDarkTheme] = useDarkTheme();
+    const [isDarkTheme, setIsDarkTheme] = useDarkTheme();
 
     return (
-        <GrowColorProvider theme={isDarkTheme ? GrowDarkScheme : GrowLightScheme}>
-            <GlobalStyle/>
-            <Preview/>
-        </GrowColorProvider>
+        <ThemeContext.Provider value={{ isDarkTheme, setIsDarkTheme }}>
+            <GrowColorProvider theme={isDarkTheme ? GrowDarkScheme : GrowLightScheme}>
+                <GlobalStyle/>
+                <Preview/>
+            </GrowColorProvider>
+        </ThemeContext.Provider>
     );
 };
 

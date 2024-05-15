@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Cookie from "../cookie/cookie";
 
-export const useDarkTheme = () => {
+export const useDarkTheme: () => [boolean, (isDarkTheme: boolean) => void] = () => {
     const [isDarkTheme, setIsDarkTheme] = useState(false);
 
     useEffect(() => {
