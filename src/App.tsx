@@ -5,6 +5,8 @@ import {useDarkTheme} from "./hook/useDarkTheme";
 import Preview from "./designsystem/preview/Preview";
 import { ThemeContext } from "./context/ThemeContext";
 import IconPreview from "./designsystem/preview/IconPreview";
+import Router from "./routes";
+import {BrowserRouter} from "react-router-dom";
 
 const App = () => {
 
@@ -14,8 +16,11 @@ const App = () => {
         <ThemeContext.Provider value={{ isDarkTheme, setIsDarkTheme }}>
             <GrowColorProvider theme={isDarkTheme ? GrowDarkScheme : GrowLightScheme}>
                 <GlobalStyle/>
-                <Preview/>
+                {/*<Preview/>*/}
                 {/*<IconPreview/>*/}
+                <BrowserRouter>
+                    <Router/>
+                </BrowserRouter>
             </GrowColorProvider>
         </ThemeContext.Provider>
     );

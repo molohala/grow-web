@@ -58,4 +58,5 @@ export const TrailingIconButton = styled.button<{
     
     // Interaction
     ${bounceAnimation};
+    cursor: pointer;
 `
