@@ -5,7 +5,7 @@ import {bounceAnimation} from "../../designsystem/animation/bounceAnimation";
 import BlackBackground from "../../designsystem/foundation/effect/BlackEffect";
 import {Guideline} from "../util/Guideline";
 
-export const Container = styled.div`
+export const Container = styled.nav`
     ${FlexLayout({flexDirection: 'column', justifyContent: 'spacer-between'})};
     align-self: stretch;
     background-color: ${({theme}) => theme.background};
