@@ -1,8 +1,17 @@
 import * as S from './Spacer.style';
+import {RuleSet} from "styled-components";
 
-const Spacer = () => {
+interface SpacerProps {
+    customStyle?: RuleSet
+}
+
+const Spacer = (
+    {
+        customStyle
+    }: SpacerProps
+) => {
     return (
-        <S.Container/>
+        <S.Container customStyle={customStyle}/>
     );
 };
 

@@ -1,6 +1,8 @@
 import * as S from './SideBar.style';
 import GrowIcon, {IconType} from "../../designsystem/foundation/iconography/GrowIcon";
-import {useTheme} from "styled-components";
+import {css, useTheme} from "styled-components";
+import Spacer from "../../designsystem/component/spacer/Spacer";
+import {Guideline} from "../util/Guideline";
 
 export type SideBarItem = {
     icon: IconType,
@@ -26,24 +28,27 @@ const SideBar = (
                 {items.map(i => {
                     const selected = window.location.href === i.link
                     return (
-                        <S.ItemContainer selected={selected} onClick={() => {
+                        <S.ItemContainer onClick={() => {
                             if (!selected) {
                                 window.location.href = i.link;
                             }
                         }}>
                             <GrowIcon type={i.icon} tint={selected ? theme.bottomTabPrimary : theme.textDisabled}
                                       size={26}/>
-                            {i.label}
+                            <S.ItemLabel selected={selected}>{i.label}</S.ItemLabel>
                         </S.ItemContainer>
                     );
                 })}
-            </S.ItemsContainer>
-            <S.ItemsContainer>
-                <S.ItemContainer selected={false} onClick={() => {
+                <Spacer customStyle={css`
+                    @media screen and (max-width: ${Guideline.Mobile}px) {
+                        display: none;
+                    }
+                `}/>
+                <S.ItemContainer onClick={() => {
                 }}>
                     <GrowIcon type={IconType.Setting} tint={theme.textDisabled}
                               size={26}/>
-                    설정
+                    <S.ItemLabel selected={false}>설정</S.ItemLabel>
                 </S.ItemContainer>
             </S.ItemsContainer>
         </S.Container>
