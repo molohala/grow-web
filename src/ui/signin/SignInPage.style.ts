@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const FormContent = styled.div`
     // Layout
     ${FlexLayout({flexDirection: 'column', alignItems: 'center', rowGap: '32px'})};
-    max-width: 360px;
+    max-width: 400px;
     padding: 32px 16px;
     margin: 32px;
     flex: 1;
