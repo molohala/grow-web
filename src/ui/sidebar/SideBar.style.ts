@@ -5,7 +5,7 @@ import {bounceAnimation} from "../../designsystem/animation/bounceAnimation";
 import BlackBackground from "../../designsystem/foundation/effect/BlackEffect";
 
 export const Container = styled.div`
-    ${FlexLayout({flexDirection: 'column', justifyContent: 'space-between'})};
+    ${FlexLayout({flexDirection: 'column', justifyContent: 'spacer-between'})};
     align-self: stretch;
     background-color: ${({theme}) => theme.background};
     padding: 16px 8px;

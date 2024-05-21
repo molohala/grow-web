@@ -12,14 +12,14 @@ export enum Direction {
 
 interface GrowDividerProps {
     direction?: Direction;
-    type: DividerType;
+    type?: DividerType;
     color?: string;
 }
 
 const GrowDivider = (
     {
         direction,
-        type,
+        type = DividerType.Thin,
         color
     }: GrowDividerProps
 ) => {

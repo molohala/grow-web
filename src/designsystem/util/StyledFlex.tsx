@@ -6,7 +6,7 @@ export interface BaseFlexProps {
     gap?: number;
     columnGap?: number;
     rowGap?: number;
-    justifyContent?: Align | "space-between";
+    justifyContent?: Align | "spacer-between";
     fill?: string;
     alignItems?: Align;
     padding?: CSSProperties["padding"];
