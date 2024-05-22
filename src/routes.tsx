@@ -11,6 +11,7 @@ const Routes = () => {
             <Route path={"/forum"} element={<ForumPage/>}/>
             <Route path={"/profile"} element={<ProfilePage/>}/>
             <Route path={"/sign-in"} element={<SignInPage/>}/>
+            <Route path={'*'} element={<div>404</div>}/>
         </Switch>
     );
 };

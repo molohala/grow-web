@@ -37,9 +37,12 @@ export const ProfileCreatedAt = styled.div`
     ${GrowTypographies[TypographyType.LabelM]};
 `
 
-export const Content = styled.div`
+export const Content = styled.p`
     color: ${({theme}) => theme.textNormal};
     ${GrowTypographies[TypographyType.BodyR]};
+    display: flex;
+    text-align: start;
+    width: 100%;
 `;
 
 export const RecentCommentContainer = styled.div`

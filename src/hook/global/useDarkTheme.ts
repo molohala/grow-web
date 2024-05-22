@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Cookie from "../cookie/cookie";
+import Cookie from "../../lib/cookie/cookie";
 
 export const useDarkTheme: () => [boolean, (isDarkTheme: boolean) => void] = () => {
     const [isDarkTheme, setIsDarkTheme] = useState(false);

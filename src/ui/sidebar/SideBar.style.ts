@@ -14,7 +14,11 @@ export const Container = styled.nav`
     @media screen and (max-width: ${Guideline.Mobile}px) {
         ${FlexLayout({flexDirection: 'row'})};
         padding: 4px 8px;
+        height: auto;
+        width: 100vw;
     }
+    height: 100vh;
+    position: fixed;
 `;
 
 export const ItemsContainer = styled.div`

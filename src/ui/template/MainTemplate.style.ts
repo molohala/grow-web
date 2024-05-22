@@ -7,7 +7,10 @@ export const Container = styled.div`
     height: 100vh;
     width: 100%;
     background-color: ${({theme}) => theme.backgroundAlt};
-
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+    
     @media screen and (max-width: ${Guideline.Mobile}px) {
         ${FlexLayout({flexDirection: 'column-reverse'})};
     }

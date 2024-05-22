@@ -38,7 +38,7 @@ const GrowTextField = (
             <S.Input
                 value={text}
                 disabled={!isEnabled}
-                type={showText ? 'password' : 'text'}
+                type={!isSecured ? 'text' : showText ? 'text' : 'password'}
                 onChange={event => {
                     onChange(event.target.value);
                 }}

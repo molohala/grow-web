@@ -4,7 +4,7 @@ import {BaseResponse, BaseVoidResponse} from "../../global/Base.response";
 import {CreateForumRequest} from "../request/CreateForum.request";
 import {PatchForumRequest} from "../request/PatchForum.request";
 
-class ForumRepository {
+class ForumAPI {
     async getForums(page: number, size: number): Promise<BaseResponse<[ForumResponse]>> {
         const {data} = await growAxios.get(`community?page=${page}&size=${size}`);
         return data;
@@ -36,4 +36,4 @@ class ForumRepository {
     }
 }
 
-export default new ForumRepository();
+export default new ForumAPI();
