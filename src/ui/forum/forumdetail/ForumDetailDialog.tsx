@@ -11,6 +11,7 @@ import CustomDate from "../../../util/CustomDate";
 import useComment from "../../../hook/comment/useComment";
 import GrowLikeButton from "../../../designsystem/component/button/likebutton/GrowLikeButton";
 import GrowLoader from "../../../designsystem/component/loader/GrowLoader";
+import CommentCell from "../../component/CommentCell";
 
 interface ForumDetailDialogProps {
     forum: ForumResponse;
@@ -54,11 +55,11 @@ const ForumDetailDialog = (
                     <GrowLikeButton like={forum.community.like} onClick={() => {
                     }} isLiked={forum.community.liked}/>
                 </S.Content>
-                <GrowDivider/>
+                {!comments.length && <GrowDivider/>}
+                {isFetchComments && <GrowLoader/>}
                 <S.Comments>
-                    {isFetchComments && <GrowLoader/>}
                     {comments.map((comment, index) => (
-                        <div>{comment.content}</div>
+                        <CommentCell comment={comment}/>
                     ))}
                 </S.Comments>
             </S.Container>

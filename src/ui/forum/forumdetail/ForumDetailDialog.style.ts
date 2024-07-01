@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {FlexLayout} from "../../../designsystem/util/FlexLayout";
 import {GrowTypographies, TypographyType} from "../../../designsystem/foundation/text/GrowTypographies";
+import {Guideline} from "../../util/Guideline";
 
 const style = {
     DialogContainer: styled.dialog`
@@ -10,6 +11,7 @@ const style = {
         width: 100vw;
         max-height: 100vh;
         height: 100vh;
+        padding: 0 8px;
 
         // style
         border: none;
@@ -20,14 +22,19 @@ const style = {
         // layout
         ${FlexLayout({flexDirection: 'column', rowGap: '8px', alignItems: 'center'})};
         background: ${({theme}) => theme.backgroundAlt};
-        margin: 32px 0;
+        margin: 32px;
         z-index: 2;
-        width: 440px;
+        max-width: 440px;
+        width: 100%;
+        padding: 16px;
 
         // style
-        padding: 16px;
         border-radius: 16px;
         color: white;
+        
+        @media screen and (max-width: ${Guideline.Mobile}px) {
+            padding: 8px;
+        }
     `,
     Content: styled.div`
         ${FlexLayout({flexDirection: 'column', rowGap: '12px', alignItems: 'flex-start'})};
@@ -36,6 +43,7 @@ const style = {
     `,
     InfoContainer: styled.div`
         ${FlexLayout({alignItems: 'center', columnGap: '8px'})};
+        align-self: stretch;
     `,
     UserInfoContainer: styled.div`
         ${FlexLayout({flexDirection: 'column'})};
@@ -57,6 +65,7 @@ const style = {
     Comments: styled.li`
         ${FlexLayout({flexDirection: 'column', rowGap: '4px'})};
         list-style: none;
+        align-self: stretch;
     `,
     Backdrop: styled.div`
         top: 0;

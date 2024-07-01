@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {FlexLayout} from "../../designsystem/util/FlexLayout";
 import {GrowTypographies, TypographyType} from "../../designsystem/foundation/text/GrowTypographies";
 import {bounceAnimation} from "../../designsystem/animation/bounceAnimation";
+import {Guideline} from "../util/Guideline";
 
 export const Container = styled.div`
     ${FlexLayout({justifyContent: 'center'})};
@@ -9,7 +10,7 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
-    margin: 32px;
+    margin: 32px 12px;
     ${FlexLayout({flexDirection: 'column', rowGap: '16px', alignItems: 'center'})};
     max-width: 640px;
     width: 100%;
