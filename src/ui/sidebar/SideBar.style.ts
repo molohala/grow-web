@@ -2,8 +2,8 @@ import styled from "styled-components";
 import {FlexLayout} from "../../designsystem/util/FlexLayout";
 import {GrowTypographies, TypographyType} from "../../designsystem/foundation/text/GrowTypographies";
 import {bounceAnimation} from "../../designsystem/animation/bounceAnimation";
-import BlackBackground from "../../designsystem/foundation/effect/BlackEffect";
 import {Guideline} from "../util/Guideline";
+import BlackEffect from "../../designsystem/foundation/effect/BlackEffect";
 
 export const Container = styled.nav`
     ${FlexLayout({flexDirection: 'column', justifyContent: 'spacer-between'})};
@@ -19,6 +19,7 @@ export const Container = styled.nav`
     }
     height: 100vh;
     position: fixed;
+    z-index: 1;
 `;
 
 export const ItemsContainer = styled.div`
@@ -41,7 +42,7 @@ export const ItemContainer = styled.button`
     // Interaction
     ${bounceAnimation};
     &:hover {
-        ${BlackBackground({alpha: 0.05})};
+        ${BlackEffect({alpha: 0.05})};
     }
     
     cursor: pointer;
