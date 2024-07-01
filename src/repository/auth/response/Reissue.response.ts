@@ -1,3 +1,3 @@
-export interface ReissueResponse {
+export default interface ReissueResponse {
     accessToken: string;
 }

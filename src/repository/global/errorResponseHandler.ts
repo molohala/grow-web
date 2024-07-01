@@ -3,19 +3,20 @@ import token, {ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY, REQUEST_TOKEN_KEY} from "../
 import authApi from "../auth/api/auth.api";
 import {growAxios} from "./growAxios";
 import Config from "../../config/Config";
-
-// 리프레쉬 작업중인지 아닌지를 구분하는 변수
-let isRefreshing = false;
+import ReissueRequest from "../auth/request/Reissue.request";
 
 let refreshSubscribers: ((accessToken: string) => void)[] = [];
 
 const onTokenRefreshed = (accessToken: string) => {
-    refreshSubscribers.map((callback) => callback(accessToken));
+    refreshSubscribers.forEach((callback) => callback(accessToken));
 };
 
 const addRefreshSubscriber = (callback: (accessToken: string) => void) => {
     refreshSubscribers.push(callback);
 };
+
+// 리프레쉬 작업중인지 아닌지를 구분하는 변수
+let isRefreshing = false;
 
 const errorResponseHandler = async (error: AxiosError) => {
     if (error.response) {
@@ -38,15 +39,15 @@ const errorResponseHandler = async (error: AxiosError) => {
                 isRefreshing = true;
 
                 //리프레쉬 api 요청
+                console.log('start refresh');
                 try {
                     const {data} = await authApi.reissue({
-                        refreshToken: usingRefreshToken,
+                        refreshToken: usingRefreshToken
                     });
 
                     const newAccessToken = data?.accessToken ?? ""
 
                     growAxios.defaults.headers.common[REQUEST_TOKEN_KEY] = `Bearer ${newAccessToken}`;
-
                     token.setToken(ACCESS_TOKEN_KEY, newAccessToken);
 
                     //리프레쉬 작업을 마침
@@ -56,8 +57,10 @@ const errorResponseHandler = async (error: AxiosError) => {
                     onTokenRefreshed(newAccessToken);
                 } catch (error) {
                     //리프레쉬 하다가 오류난거면 리프레쉬도 만료된 것이므로 다시 로그인
-                    token.clearToken();
-                    window.location.href = `${Config.BASE_URL}/sign-in`;
+                    // token.clearToken();
+                    // window.location.href = `${Config.BASE_URL}/sign-in`;
+                    console.error(error);
+                    console.log('refresh error');
                 }
             }
 

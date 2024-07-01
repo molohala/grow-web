@@ -1,3 +1,3 @@
-export interface ReissueRequest {
+export default interface ReissueRequest {
     refreshToken: string
 }

@@ -1,8 +1,7 @@
-import {DAuthSignInRequest} from "../request/DAuthSignIn.request";
 import axios from "axios";
 import {BaseResponse} from "../../global/Base.response";
-import {ReissueRequest} from "../request/Reissue.request";
-import {ReissueResponse} from "../response/Reissue.response";
+import ReissueRequest from "../request/Reissue.request";
+import ReissueResponse from "../response/Reissue.response";
 import {growAxios} from "../../global/growAxios";
 import {TokenResponse} from "../response/Token.response";
 
