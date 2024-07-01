@@ -2,6 +2,9 @@ import {AxiosError} from "axios";
 import token, {ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY, REQUEST_TOKEN_KEY} from "../../lib/token/token";
 import authApi from "../auth/api/auth.api";
 import {growAxios} from "./growAxios";
+import Config from "../../config/Config";
+import ReissueRequest from "../auth/request/Reissue.request";
+import ReissueResponse from "../auth/response/Reissue.response";
 
 let refreshSubscribers: ((accessToken: string) => void)[] = [];
 
@@ -38,28 +41,29 @@ const errorResponseHandler = async (error: AxiosError) => {
 
                 //리프레쉬 api 요청
                 console.log('start refresh');
+                let response: ReissueResponse | undefined;
                 try {
                     const {data} = await authApi.reissue({
                         refreshToken: usingRefreshToken
                     });
-
-                    const newAccessToken = data?.accessToken ?? ""
-
-                    growAxios.defaults.headers.common[REQUEST_TOKEN_KEY] = `Bearer ${newAccessToken}`;
-                    token.setToken(ACCESS_TOKEN_KEY, newAccessToken);
-
-                    //리프레쉬 작업을 마침
-                    isRefreshing = false;
-
-                    //새로 받은 accessToken 을 기반으로 이때까지 밀려있던 요청을 모두 처리
-                    onTokenRefreshed(newAccessToken);
+                    response = data
                 } catch (error) {
                     //리프레쉬 하다가 오류난거면 리프레쉬도 만료된 것이므로 다시 로그인
-                    // token.clearToken();
-                    // window.location.href = `${Config.BASE_URL}/sign-in`;
+                    token.clearToken();
+                    window.location.href = `${Config.BASE_URL}/sign-in`;
                     console.error(error);
                     console.log('refresh error');
                 }
+                const newAccessToken = response?.accessToken ?? ""
+
+                growAxios.defaults.headers.common[REQUEST_TOKEN_KEY] = `Bearer ${newAccessToken}`;
+                token.setToken(ACCESS_TOKEN_KEY, newAccessToken);
+
+                //리프레쉬 작업을 마침
+                isRefreshing = false;
+
+                //새로 받은 accessToken 을 기반으로 이때까지 밀려있던 요청을 모두 처리
+                onTokenRefreshed(newAccessToken);
             }
 
             //어떤 요청이 리프레쉬 작업중이라면 여기로 와서 그 후에 요청된 다른 API Promise를 refreshSubscribers에 넣어줌
