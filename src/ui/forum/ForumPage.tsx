@@ -9,6 +9,7 @@ import {useEffect} from "react";
 import {ForumResponse} from "../../repository/forum/response/Forum.response";
 import {pagingInterval} from "../../util/pagingConstant";
 import Spacer from "../../designsystem/component/spacer/Spacer";
+import GrowLoader from "../../designsystem/component/loader/GrowLoader";
 
 const ForumPage = () => {
     useTokenCheck();
@@ -38,6 +39,7 @@ const ForumPage = () => {
                         <GrowIcon type={IconType.Write} tint={theme.textNormal}/>
                         글쓰기
                     </S.WriteContainer>
+                    {!forums.length && <GrowLoader/>}
                     <S.ForumContent>
                         {forums.map(forum => (
                             <ForumCell forum={forum} onAppear={() => handleForumCellOnAppear(forum)}/>

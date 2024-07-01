@@ -41,7 +41,7 @@ export const ItemContainer = styled.button`
     // Interaction
     ${bounceAnimation};
     &:hover {
-        ${BlackBackground({alpha: 0.3})};
+        ${BlackBackground({alpha: 0.05})};
     }
     
     cursor: pointer;

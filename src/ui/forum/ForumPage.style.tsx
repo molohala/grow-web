@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     margin: 32px;
-    ${FlexLayout({flexDirection: 'column', rowGap: '16px'})};
+    ${FlexLayout({flexDirection: 'column', rowGap: '16px', alignItems: 'center'})};
     max-width: 640px;
     flex: 1;
 `;

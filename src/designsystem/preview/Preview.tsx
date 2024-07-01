@@ -10,7 +10,7 @@ import GrowToggleButton from "../component/button/togglebutton/GrowToggleButton"
 import {ShadowRectangle} from "./ShadowRectangle";
 import {ShadowType} from "../foundation/shadow/GrowShadow";
 import {useContext, useState} from "react";
-import {ThemeContext} from "../../context/ThemeContext";
+import {ThemeContext, ThemeContextType} from "../../context/ThemeContext";
 import GrowTextField from "../component/textfield/GrowTextField";
 import {IconType} from "../foundation/iconography/GrowIcon";
 import GrowAvatar, {AvatarType} from "../component/avatar/GrowAvatar";
@@ -21,8 +21,7 @@ import GrowRadioButton from "../component/button/radiobutton/GrowRadioButton";
 const Preview = () => {
 
     const theme = useTheme();
-    // @ts-ignore
-    const { isDarkTheme, setIsDarkTheme } = useContext(ThemeContext);
+    const { isDarkTheme, setIsDarkTheme } = useContext<ThemeContextType>(ThemeContext);
     const [text, setText] = useState("");
 
     return (

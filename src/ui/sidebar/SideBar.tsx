@@ -3,6 +3,8 @@ import GrowIcon, {IconType} from "../../designsystem/foundation/iconography/Grow
 import {css, useTheme} from "styled-components";
 import Spacer from "../../designsystem/component/spacer/Spacer";
 import {Guideline} from "../util/Guideline";
+import {useContext} from "react";
+import {ThemeContext, ThemeContextType} from "../../context/ThemeContext";
 
 export type SideBarItem = {
     icon: IconType,
@@ -21,6 +23,7 @@ const SideBar = (
 ) => {
 
     const theme = useTheme();
+    const {isDarkTheme, setIsDarkTheme} = useContext<ThemeContextType>(ThemeContext);
 
     return (
         <S.Container>
@@ -44,6 +47,12 @@ const SideBar = (
                         display: none;
                     }
                 `}/>
+                <S.ItemContainer onClick={() => {
+                    setIsDarkTheme(!isDarkTheme);
+                }}>
+                    <GrowIcon type={IconType.Moon} tint={theme.textDisabled} size={26}/>
+                    <S.ItemLabel selected={false}>다크모드</S.ItemLabel>
+                </S.ItemContainer>
                 <S.ItemContainer onClick={() => {
                 }}>
                     <GrowIcon type={IconType.Setting} tint={theme.textDisabled}
