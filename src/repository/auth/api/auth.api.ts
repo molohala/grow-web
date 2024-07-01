@@ -12,12 +12,12 @@ class AuthAPI {
     }
 
     async reissue(request: ReissueRequest): Promise<BaseResponse<ReissueResponse>> {
-        const {data} = await axios.post(`auth/reissue`, request);
+        const {data} = await growAxios.post(`auth/reissue`, request);
         return data;
     }
 
     async delete(): Promise<void> {
-        const {data} = await axios.delete(`auth`);
+        const {data} = await growAxios.delete(`auth`);
         return data;
     }
 }
