@@ -32,7 +32,12 @@ const ForumDetailDialog = (
     const {patchLike} = useLike();
     const theme = useTheme();
     const modalRef = useRef<HTMLDialogElement>(null);
-    const {comments, fetchComments, isFetchComments} = useComment();
+    const {
+        comments,
+        fetchComments,
+        isFetchComments,
+        createComment
+    } = useComment();
     const [comment, setComment] = useState('');
 
     useEffect(() => {
@@ -48,6 +53,17 @@ const ForumDetailDialog = (
         const result = await patchLike(forum.community.communityId);
         if (result) {
             updateForumLiked();
+        }
+    }
+
+    const handleSubmit = async () => {
+        const result = await createComment({
+            content: comment,
+            communityId: forum.community.communityId
+        });
+        if (result) {
+            setComment('');
+            await fetchComments(forum.community.communityId);
         }
     }
 
@@ -71,13 +87,18 @@ const ForumDetailDialog = (
                         isLiked={forum.community.liked}
                     />
                 </S.Content>
-                {comments.length > 0 && <GrowDivider/>}
                 {isFetchComments && <GrowLoader/>}
-                <S.Comments>
-                    {comments.map((comment, index) => (
-                        <CommentCell key={index} comment={comment}/>
-                    ))}
-                </S.Comments>
+                {comments.length > 0 && (
+                    <>
+                        <GrowDivider/>
+                        <S.Comments>
+                            {comments.map((comment, index) => (
+                                <CommentCell key={index} comment={comment}/>
+                            ))}
+                        </S.Comments>
+                    </>
+                )}
+
                 <S.InputContainer>
                     <GrowTextField
                         customStyle={css`
@@ -88,7 +109,7 @@ const ForumDetailDialog = (
                         onChange={text => setComment(text)}
                         hint={'댓글을 남겨보세요'}
                     />
-                    <S.SendButton>
+                    <S.SendButton onClick={handleSubmit}>
                         <GrowIcon
                             type={IconType.Send}
                             size={28}
