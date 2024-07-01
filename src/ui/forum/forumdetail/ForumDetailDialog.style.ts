@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {FlexLayout} from "../../../designsystem/util/FlexLayout";
 import {GrowTypographies, TypographyType} from "../../../designsystem/foundation/text/GrowTypographies";
 import {Guideline} from "../../util/Guideline";
+import {bounceAnimation} from "../../../designsystem/animation/bounceAnimation";
 
 const style = {
     DialogContainer: styled.dialog`
@@ -76,6 +77,19 @@ const style = {
         background: black;
         opacity: 0.5;
         z-index: 1;
+    `,
+    InputContainer: styled.div`
+        ${FlexLayout({columnGap: '4px', alignItems: 'center'})};
+        align-self: stretch;
+    `,
+    SendButton: styled.button`
+        ${FlexLayout({alignItems: 'center', justifyContent: 'center'})}
+        margin: 4px;
+        background: none;
+        border: none;
+        &:hover {
+            ${bounceAnimation}
+        }
     `
 };
 export default style;

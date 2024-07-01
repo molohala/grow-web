@@ -1,10 +1,10 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {ForumResponse} from "../../../repository/forum/response/Forum.response";
 import S from "./ForumDetailDialog.style";
 import GrowDivider from "../../../designsystem/component/divider/GrowDivider";
 import Spacer from "../../../designsystem/component/spacer/Spacer";
 import GrowIcon, {IconType} from "../../../designsystem/foundation/iconography/GrowIcon";
-import {useTheme} from "styled-components";
+import {css, useTheme} from "styled-components";
 import GrowAvatar, {AvatarType} from "../../../designsystem/component/avatar/GrowAvatar";
 import '../../../util/CustomDate';
 import CustomDate from "../../../util/CustomDate";
@@ -13,6 +13,7 @@ import GrowLikeButton from "../../../designsystem/component/button/likebutton/Gr
 import GrowLoader from "../../../designsystem/component/loader/GrowLoader";
 import CommentCell from "../../component/CommentCell";
 import useLike from "../../../hook/like/useLike";
+import GrowTextField from "../../../designsystem/component/textfield/GrowTextField";
 
 interface ForumDetailDialogProps {
     forum: ForumResponse;
@@ -32,6 +33,7 @@ const ForumDetailDialog = (
     const theme = useTheme();
     const modalRef = useRef<HTMLDialogElement>(null);
     const {comments, fetchComments, isFetchComments} = useComment();
+    const [comment, setComment] = useState('');
 
     useEffect(() => {
         modalRef.current?.showModal();
@@ -76,6 +78,24 @@ const ForumDetailDialog = (
                         <CommentCell key={index} comment={comment}/>
                     ))}
                 </S.Comments>
+                <S.InputContainer>
+                    <GrowTextField
+                        customStyle={css`
+                            flex: 1;
+                            border-radius: 100px;
+                        `}
+                        text={comment}
+                        onChange={text => setComment(text)}
+                        hint={'댓글을 남겨보세요'}
+                    />
+                    <S.SendButton>
+                        <GrowIcon
+                            type={IconType.Send}
+                            size={28}
+                            tint={comment.length > 0 ? theme.textFieldIcon : theme.textFieldIconDisabled}
+                        />
+                    </S.SendButton>
+                </S.InputContainer>
             </S.Container>
             <S.Backdrop onClick={handleBackgroundClicked}/>
         </S.DialogContainer>
