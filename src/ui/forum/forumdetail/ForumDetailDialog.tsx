@@ -32,7 +32,7 @@ const ForumDetailDialog = (
     useEffect(() => {
         modalRef.current?.showModal();
         fetchComments(forum.community.communityId).then();
-    }, []);
+    }, [fetchComments, forum.community.communityId]);
 
     const handleBackgroundClicked = () => {
         dismiss();

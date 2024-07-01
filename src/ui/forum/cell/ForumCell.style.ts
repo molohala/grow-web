@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import {FlexLayout} from "../../../designsystem/util/FlexLayout";
 import {GrowTypographies, TypographyType} from "../../../designsystem/foundation/text/GrowTypographies";
-import {bounceAnimation} from "../../../designsystem/animation/bounceAnimation";
-import exp from "node:constants";
 
 export const Container = styled.button`
     // Layout
@@ -20,12 +18,12 @@ export const Container = styled.button`
 `
 
 export const InfoContainer = styled.div`
-    ${FlexLayout({columnGap: '8px'})};
+    ${FlexLayout({$columnGap: '8px'})};
     align-items: center;
 `
 
 export const ProfileContainer = styled.div`
-    ${FlexLayout({flexDirection: 'column', alignItems: 'flex-start'})};
+    ${FlexLayout({flexDirection: 'column', $alignItems: 'flex-start'})};
 `
 
 export const ProfileName = styled.div`
@@ -48,7 +46,7 @@ export const Content = styled.p`
 `;
 
 export const RecentCommentContainer = styled.div`
-    ${FlexLayout({columnGap: '4px', alignItems: 'center'})};
+    ${FlexLayout({$columnGap: '4px', $alignItems: 'center'})};
     align-self: stretch;
 `
 

@@ -10,4 +10,6 @@ class DauthAPI {
     }
 }
 
-export default new DauthAPI();
+const dauthApi = new DauthAPI();
+
+export default dauthApi;

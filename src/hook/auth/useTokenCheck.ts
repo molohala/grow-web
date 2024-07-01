@@ -14,7 +14,7 @@ const useTokenCheck = () => {
         } else if (window.location.toString().includes('sign-in')) {
             navigate('/');
         }
-    }, []);
+    }, [navigate]);
 };
 
 export default useTokenCheck;

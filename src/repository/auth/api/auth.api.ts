@@ -1,4 +1,3 @@
-import axios from "axios";
 import {BaseResponse} from "../../global/Base.response";
 import ReissueRequest from "../request/Reissue.request";
 import ReissueResponse from "../response/Reissue.response";
@@ -22,4 +21,6 @@ class AuthAPI {
     }
 }
 
-export default new AuthAPI();
+const authApi = new AuthAPI();
+
+export default authApi;

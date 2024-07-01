@@ -47,8 +47,8 @@ const GrowTextButton = (
             disabled={!isEnabled}
             {...props}>
             <Row
-                columnGap={ButtonStyles[type].labelSpacing}
-                alignItems={'center'}
+                $columnGap={ButtonStyles[type].labelSpacing}
+                $alignItems={'center'}
                 customStyle={css`
                     opacity: ${isLoading ? 0 : 1};
                 `}>

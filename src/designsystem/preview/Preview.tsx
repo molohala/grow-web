@@ -25,7 +25,7 @@ const Preview = () => {
     const [text, setText] = useState("");
 
     return (
-        <Row columnGap={8} padding={'8px'} customStyle={css`background-color: ${theme.background}`}>
+        <Row $columnGap={8} padding={'8px'} customStyle={css`background-color: ${theme.background}`}>
             <Column rowGap={8}>
                 <GrowButton onClick={() => {}} text={'시작하기'} leadingIcon={IconType.Send} type={ButtonType.CTA} customStyle={css`width: 200px;`}/>
                 <GrowButton onClick={() => {}} text={'시작하기'} leadingIcon={IconType.Send} type={ButtonType.Large}/>

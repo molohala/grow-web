@@ -1,6 +1,5 @@
 import { AxiosRequestConfig } from "axios";
 import token, {ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY, REQUEST_TOKEN_KEY} from "../../lib/token/token";
-import Config from "../../config/Config";
 
 const requestHandler = (config: AxiosRequestConfig) => {
     if (
@@ -13,8 +12,6 @@ const requestHandler = (config: AxiosRequestConfig) => {
             `auth/reissue`,
             `auth/sign-in`
         ]) {
-            console.log(config.url);
-            console.log(url);
             if (config.url?.includes(url)) {
                 console.log('return');
                 return config;

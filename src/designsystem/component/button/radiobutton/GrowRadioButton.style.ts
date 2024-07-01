@@ -9,7 +9,7 @@ export const GrowRadioButtonStyle = styled.button<{
 }>`
     // Layout
     position: relative;
-    ${FlexLayout({justifyContent: 'center', alignItems: 'center'})};
+    ${FlexLayout({justifyContent: 'center', $alignItems: 'center'})};
     padding: 8px 14px;
     flex-shrink: 0;
     

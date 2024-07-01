@@ -1,5 +1,4 @@
 import {css, RuleSet} from "styled-components";
-import {FontWeight} from "./FontWeight";
 
 export enum TypographyType {
     Title1B,

@@ -4,7 +4,7 @@ import {GrowTypographies, TypographyType} from "../../foundation/text/GrowTypogr
 
 export const GrowLanguageStyle = styled.div`
     // Layout
-    ${FlexLayout({justifyContent: 'center', alignItems: 'center'})};
+    ${FlexLayout({justifyContent: 'center', $alignItems: 'center'})};
     padding: 0 12px;
     height: 34px;
 

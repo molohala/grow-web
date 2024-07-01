@@ -10,14 +10,14 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     margin: 32px 12px;
-    ${FlexLayout({flexDirection: 'column', rowGap: '16px', alignItems: 'center'})};
+    ${FlexLayout({flexDirection: 'column', rowGap: '16px', $alignItems: 'center'})};
     max-width: 640px;
     width: 100%;
 `;
 
 export const WriteContainer = styled.button`
     // Layout
-    ${FlexLayout({alignItems: 'center', columnGap: '8px'})};
+    ${FlexLayout({$alignItems: 'center', $columnGap: '8px'})};
     align-self: stretch;
 
     // Style

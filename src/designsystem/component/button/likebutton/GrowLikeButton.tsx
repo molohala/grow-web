@@ -27,12 +27,12 @@ const GrowLikeButton = (
     return (
         <S.GrowLikeButtonStyle
             onClick={onClick}
-            isLiked={isLiked}
+            $isLiked={isLiked}
             customStyle={customStyle}
             {...props}>
             <Row
-                columnGap={3}
-                alignItems={'center'}>
+                $columnGap={3}
+                $alignItems={'center'}>
                 <GrowIcon type={IconType.HeartFill} tint={color} size={20}/>
                 {like}
             </Row>

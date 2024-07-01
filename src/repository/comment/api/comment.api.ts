@@ -29,4 +29,6 @@ class CommentApi {
     }
 }
 
-export default new CommentApi();
+const commentApi = new CommentApi();
+
+export default commentApi;

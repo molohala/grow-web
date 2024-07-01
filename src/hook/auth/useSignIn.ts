@@ -20,14 +20,14 @@ const useSignIn = () => {
         (id: string): void => {
             setSignIn(prev => ({...prev, id}));
         },
-        [signIn]
+        []
     );
 
     const handlePw = useCallback(
         (pw: string): void => {
             setSignIn(prev => ({...prev, pw}));
         },
-        [signIn]
+        []
     );
 
     const submitSignIn = useCallback(
@@ -49,7 +49,7 @@ const useSignIn = () => {
                 alert('로그인 실패');
             }
         },
-        [signIn]
+        [navigate, signIn.id, signIn.pw]
     )
 
     return {

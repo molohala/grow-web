@@ -9,7 +9,7 @@ export const GrowTextFieldStyle = styled.div<{
 }>`
     // Layout
     height: 48px;
-    ${FlexLayout({justifyContent: "spacer-between", alignItems: "center"})};
+    ${FlexLayout({justifyContent: "spacer-between", $alignItems: "center"})};
     padding-left: 12px;
     padding-right: 8px;
     

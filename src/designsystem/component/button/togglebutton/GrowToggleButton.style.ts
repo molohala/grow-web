@@ -7,7 +7,7 @@ export const GrowToggleButtonStyle = styled.button<{
     // Layout
     height: 31px;
     width: 51px;
-    ${FlexLayout({alignItems: 'center'})};
+    ${FlexLayout({$alignItems: 'center'})};
     justify-content: ${({checked}) => checked ? 'flex-end' : 'flex-start'};
     outline: none;
     border: none;

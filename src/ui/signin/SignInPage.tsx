@@ -1,6 +1,5 @@
 import * as S from './SignInPage.style';
 import GrowTextField from "../../designsystem/component/textfield/GrowTextField";
-import {useState} from "react";
 import {css} from "styled-components";
 import GrowButton from "../../designsystem/component/button/button/GrowButton";
 import {ButtonType} from "../../designsystem/component/button/type/ButtonType";

@@ -21,7 +21,7 @@ const useFetchForum = (): {
                 setPage(1);
             }
         },
-        [forums, page]
+        [page]
     );
 
     const fetchNextForums = useCallback(
@@ -35,7 +35,7 @@ const useFetchForum = (): {
                 setPage(1);
             }
         },
-        [forums, page]
+        [forums]
     );
 
     return {

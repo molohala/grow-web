@@ -34,7 +34,7 @@ export const ItemsContainer = styled.div`
 export const ItemContainer = styled.button`
     // Layout
     padding: 12px 32px 12px 16px;
-    ${FlexLayout({columnGap: '16px', alignItems: 'center'})};
+    ${FlexLayout({$columnGap: '16px', $alignItems: 'center'})};
 
     // Style
     background-color: transparent;

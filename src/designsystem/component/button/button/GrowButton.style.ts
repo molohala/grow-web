@@ -13,7 +13,7 @@ export const GrowButtonStyle = styled.button<{
     // Layout
     position: relative;
     height: ${({style}) => style?.height}px;
-    ${FlexLayout({justifyContent: 'center', alignItems: 'center'})};
+    ${FlexLayout({justifyContent: 'center', $alignItems: 'center'})};
     padding: ${({style}) => `0 ${style.horizontalPadding}`}px;
     
     // Style

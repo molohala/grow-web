@@ -39,4 +39,6 @@ class ForumAPI {
     }
 }
 
-export default new ForumAPI();
+const forumApi = new ForumAPI();
+
+export default forumApi;

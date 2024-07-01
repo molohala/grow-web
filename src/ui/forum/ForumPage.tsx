@@ -19,7 +19,7 @@ const ForumPage = () => {
 
     useEffect(() => {
         fetchForums().then();
-    }, []);
+    }, [fetchForums]);
 
     const handleForumCellClicked = (forum: ForumResponse) => {
         setSelectedForum(forum);
@@ -49,6 +49,7 @@ const ForumPage = () => {
                         <S.ForumContent>
                             {forums.map(forum => (
                                 <ForumCell
+                                    key={forum.community.communityId}
                                     forum={forum}
                                     onClick={() => handleForumCellClicked(forum)}
                                     onAppear={() => handleForumCellOnAppear(forum)}

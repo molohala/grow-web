@@ -38,8 +38,8 @@ const GrowRadioButton = (
             customStyle={customStyle}
             {...props}>
             <Row
-                columnGap={6}
-                alignItems={'center'}>
+                $columnGap={6}
+                $alignItems={'center'}>
                 <GrowIcon type={icon} tint={primary} size={20}/>
                 {text}
             </Row>
