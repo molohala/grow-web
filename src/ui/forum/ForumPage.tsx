@@ -11,6 +11,7 @@ import {pagingInterval} from "../../util/pagingConstant";
 import GrowLoader from "../../designsystem/component/loader/GrowLoader";
 import ForumDetailDialog from "./forumdetail/ForumDetailDialog";
 import useLike from "../../hook/like/useLike";
+import DialogTemplate from "../template/DialogTemplate";
 
 const ForumPage = () => {
     useTokenCheck();

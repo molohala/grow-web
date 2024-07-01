@@ -5,26 +5,12 @@ import {Guideline} from "../../util/Guideline";
 import {bounceAnimation} from "../../../designsystem/animation/bounceAnimation";
 
 const style = {
-    DialogContainer: styled.dialog`
-        // style
-        ${FlexLayout({flexDirection: 'column', alignItems: 'center'})};
-        max-width: 100vw;
-        width: 100vw;
-        max-height: 100vh;
-        height: 100vh;
-        padding: 0 8px;
-
-        // style
-        border: none;
-        outline: none;
-        background: none;
-    `,
     Container: styled.div`
         // layout
         ${FlexLayout({flexDirection: 'column', rowGap: '8px', alignItems: 'center'})};
         background: ${({theme}) => theme.backgroundAlt};
         margin: 32px;
-        z-index: 2;
+        z-index: 3;
         max-width: 440px;
         width: 100%;
         padding: 16px;

@@ -14,6 +14,7 @@ import GrowLoader from "../../../designsystem/component/loader/GrowLoader";
 import CommentCell from "../../component/CommentCell";
 import useLike from "../../../hook/like/useLike";
 import GrowTextField from "../../../designsystem/component/textfield/GrowTextField";
+import DialogTemplate from "../../template/DialogTemplate";
 
 interface ForumDetailDialogProps {
     forum: ForumResponse;
@@ -31,7 +32,7 @@ const ForumDetailDialog = (
 
     const {patchLike} = useLike();
     const theme = useTheme();
-    const modalRef = useRef<HTMLDialogElement>(null);
+
     const {
         comments,
         fetchComments,
@@ -41,13 +42,8 @@ const ForumDetailDialog = (
     const [comment, setComment] = useState('');
 
     useEffect(() => {
-        modalRef.current?.showModal();
         fetchComments(forum.community.communityId).then();
     }, [fetchComments, forum.community.communityId]);
-
-    const handleBackgroundClicked = () => {
-        dismiss();
-    }
 
     const handleLikeClicked = async () => {
         const result = await patchLike(forum.community.communityId);
@@ -65,10 +61,10 @@ const ForumDetailDialog = (
             setComment('');
             await fetchComments(forum.community.communityId);
         }
-    }
+    };
 
     return (
-        <S.DialogContainer ref={modalRef}>
+        <DialogTemplate dismiss={dismiss}>
             <S.Container>
                 <S.Content>
                     <S.InfoContainer>
@@ -118,8 +114,7 @@ const ForumDetailDialog = (
                     </S.SendButton>
                 </S.InputContainer>
             </S.Container>
-            <S.Backdrop onClick={handleBackgroundClicked}/>
-        </S.DialogContainer>
+        </DialogTemplate>
     );
 };
 
