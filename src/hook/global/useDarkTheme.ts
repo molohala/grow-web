@@ -1,8 +1,16 @@
 import { useEffect, useState } from "react";
 import Cookie from "../../lib/cookie/cookie";
 
-export const useDarkTheme: () => [boolean, (isDarkTheme: boolean) => void] = () => {
+const useDarkTheme = (): [
+    isDarkTheme: boolean,
+    handleDarkTheme: (isDarkTheme: boolean) => void
+] => {
     const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+    const handleDarkTheme = (isDarkTheme: boolean) => {
+        Cookie.setCookie('darkTheme', isDarkTheme ? 'dark' : 'light');
+        setIsDarkTheme(isDarkTheme);
+    };
 
     useEffect(() => {
         const darkTheme = Cookie.getCookie('darkTheme');
@@ -14,10 +22,9 @@ export const useDarkTheme: () => [boolean, (isDarkTheme: boolean) => void] = () 
         setIsDarkTheme(isDarkTheme);
     }, []);
 
-    const handleDarkTheme = (isDarkTheme: boolean) => {
-        Cookie.setCookie('darkTheme', isDarkTheme ? 'dark' : 'light');
-        setIsDarkTheme(isDarkTheme);
-    };
-
-    return [isDarkTheme, handleDarkTheme];
+    return [
+        isDarkTheme,
+        handleDarkTheme
+    ];
 };
+export default useDarkTheme;

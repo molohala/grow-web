@@ -2,13 +2,11 @@ import {useCallback, useState} from "react";
 import commentApi from "../../repository/comment/api/comment.api";
 import {CommentResponse} from "../../repository/comment/response/Comment.response";
 
-interface useCommentProps {
+const useComment = (): {
     comments: CommentResponse[];
     fetchComments: (forumId: number) => Promise<void>;
     isFetchComments: boolean;
-}
-
-const useComment = (): useCommentProps => {
+} => {
 
     const [comments, setComments] = useState<CommentResponse[]>([]);
     const [isFetchComments, setIsFetchComments] = useState(true);

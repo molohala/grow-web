@@ -2,7 +2,11 @@ import {useCallback, useState} from "react";
 import {ForumResponse} from "../../repository/forum/response/Forum.response";
 import forumApi from "../../repository/forum/api/forum.api";
 
-const useFetchForum = () => {
+const useFetchForum = (): {
+    forums: ForumResponse[];
+    fetchForums: () => Promise<void>;
+    fetchNextForums: () => Promise<void>;
+} => {
 
     const [forums, setForums] = useState<ForumResponse[]>([]);
     const [page, setPage] = useState(1);

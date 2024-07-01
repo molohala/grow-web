@@ -1,7 +1,7 @@
 import {GrowColorProvider} from "./designsystem/foundation/color/GrowColorProvider";
 import {GrowDarkScheme, GrowLightScheme} from "./designsystem/foundation/color/GrowColorSementic";
 import {GlobalStyle} from "./style/globalStyle";
-import {useDarkTheme} from "./hook/global/useDarkTheme";
+import useDarkTheme from "./hook/global/useDarkTheme";
 import Preview from "./designsystem/preview/Preview";
 import { ThemeContext } from "./context/ThemeContext";
 import IconPreview from "./designsystem/preview/IconPreview";

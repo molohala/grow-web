@@ -59,7 +59,7 @@ const ForumDetailDialog = (
                 {isFetchComments && <GrowLoader/>}
                 <S.Comments>
                     {comments.map((comment, index) => (
-                        <CommentCell comment={comment}/>
+                        <CommentCell key={index} comment={comment}/>
                     ))}
                 </S.Comments>
             </S.Container>
