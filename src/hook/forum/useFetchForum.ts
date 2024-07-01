@@ -13,6 +13,7 @@ const useFetchForum = () => {
                 const {data: forums} = await forumApi.getForums(page, 15);
                 setForums(forums ?? []);
             } catch (e) {
+                console.error(e);
                 setPage(1);
             }
         },
@@ -24,8 +25,9 @@ const useFetchForum = () => {
             const nextPage = forums.length / 15 + 1;
             try {
                 const {data: forums} = await forumApi.getForums(nextPage, 15);
-                setForums(forums ?? []);
+                setForums(forum => [...forum, ...forums ?? []]);
             } catch (e) {
+                console.error(e);
                 setPage(1);
             }
         },

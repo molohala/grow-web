@@ -6,6 +6,8 @@ import ForumCell from "./cell/ForumCell";
 import useTokenCheck from "../../hook/auth/useTokenCheck";
 import useForum from "../../hook/forum/useFetchForum";
 import {useEffect} from "react";
+import {ForumResponse} from "../../repository/forum/response/Forum.response";
+import {pagingInterval} from "../../util/pagingConstant";
 
 const ForumPage = () => {
     useTokenCheck();
@@ -15,6 +17,17 @@ const ForumPage = () => {
     useEffect(() => {
         fetchForums().then();
     }, []);
+
+    const handleForumCellOnAppear = (forum: ForumResponse) => {
+        const index = forums.findIndex(item => item.community.communityId === forum.community.communityId);
+
+        if (index === -1) {
+            return;
+        }
+        if (index % pagingInterval === (pagingInterval - 1) && Math.floor(index / pagingInterval) === Math.floor((forums.length - 1) / pagingInterval)) {
+            fetchNextForums().then();
+        }
+    };
 
     return (
         <MainTemplate>
@@ -26,7 +39,7 @@ const ForumPage = () => {
                     </S.WriteContainer>
                     <S.ForumContent>
                         {forums.map(forum => (
-                            <ForumCell forum={forum}/>
+                            <ForumCell forum={forum} onAppear={() => handleForumCellOnAppear(forum)}/>
                         ))}
                     </S.ForumContent>
                 </S.Content>

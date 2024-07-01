@@ -5,37 +5,48 @@ import GrowLikeButton from "../../../designsystem/component/button/likebutton/Gr
 import GrowDivider, {DividerType} from "../../../designsystem/component/divider/GrowDivider";
 import {ForumResponse} from "../../../repository/forum/response/Forum.response";
 import '../../../util/dateUtil';
+import {useEffect} from "react";
+import {InView, useInView} from "react-intersection-observer";
 
 interface ForumCellProps {
-    forum: ForumResponse
+    forum: ForumResponse,
+    onAppear: () => void
 }
 
 const ForumCell = (
     {
-        forum
+        forum,
+        onAppear
     }: ForumCellProps
 ) => {
     return (
         <S.Container>
-            <S.InfoContainer>
-                <GrowAvatar type={AvatarType.Medium}/>
-                <S.ProfileContainer>
-                    <S.ProfileName>{forum.community.writerName}</S.ProfileName>
-                    <S.ProfileCreatedAt>{new Date(forum.community.createdAt).timeAgo()}</S.ProfileCreatedAt>
-                </S.ProfileContainer>
-                <Spacer/>
-            </S.InfoContainer>
-            <S.Content>{forum.community.content}</S.Content>
-            <GrowLikeButton isLiked={forum.community.liked} like={forum.community.like} onClick={() => {
-            }}/>
-            {forum.recentComment && <>
-                <GrowDivider type={DividerType.Thin}/>
-                <S.RecentCommentContainer>
-                    <S.RecentCommentName>이강현</S.RecentCommentName>
-                    <S.RecentCommentContent>정말 ㅎㅇ</S.RecentCommentContent>
-                    <S.RecentCommentCreatedAt>3시간 전</S.RecentCommentCreatedAt>
-                </S.RecentCommentContainer>
-            </>}
+
+            <InView onChange={(inView, entry) => {
+                if (inView) {
+                    onAppear();
+                }
+            }}>
+                <S.InfoContainer>
+                    <GrowAvatar type={AvatarType.Medium}/>
+                    <S.ProfileContainer>
+                        <S.ProfileName>{forum.community.writerName}</S.ProfileName>
+                        <S.ProfileCreatedAt>{new Date(forum.community.createdAt).timeAgo()}</S.ProfileCreatedAt>
+                    </S.ProfileContainer>
+                    <Spacer/>
+                </S.InfoContainer>
+                <S.Content>{forum.community.content}</S.Content>
+                <GrowLikeButton isLiked={forum.community.liked} like={forum.community.like} onClick={() => {
+                }}/>
+                {forum.recentComment && <>
+                    <GrowDivider type={DividerType.Thin}/>
+                    <S.RecentCommentContainer>
+                        <S.RecentCommentName>이강현</S.RecentCommentName>
+                        <S.RecentCommentContent>정말 ㅎㅇ</S.RecentCommentContent>
+                        <S.RecentCommentCreatedAt>3시간 전</S.RecentCommentCreatedAt>
+                    </S.RecentCommentContainer>
+                </>}
+            </InView>
         </S.Container>
     )
 };
