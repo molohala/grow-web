@@ -41,7 +41,7 @@ export const ProfileCreatedAt = styled.div`
 export const Content = styled.p`
     color: ${({theme}) => theme.textNormal};
     ${GrowTypographies[TypographyType.BodyR]};
-    display: flex;
+    ${FlexLayout({})};
     text-align: start;
     width: 100%;
     word-break: break-all;
@@ -49,19 +49,30 @@ export const Content = styled.p`
 
 export const RecentCommentContainer = styled.div`
     ${FlexLayout({columnGap: '4px', alignItems: 'center'})};
+    align-self: stretch;
 `
 
 export const RecentCommentName = styled.div`
     color: ${({theme}) => theme.textNormal};
     ${GrowTypographies[TypographyType.LabelB]};
-`
+    white-space: nowrap;
+`;
 
-export const RecentCommentContent = styled.div`
+export const RecentCommentContent = styled.p`
     color: ${({theme}) => theme.textNormal};
     ${GrowTypographies[TypographyType.LabelR]};
-`
+    ${FlexLayout({})};
+    text-align: start;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    word-break: break-all;
+    overflow: hidden;
+`;
 
 export const RecentCommentCreatedAt = styled.div`
     color: ${({theme}) => theme.textAlt};
     ${GrowTypographies[TypographyType.LabelM]};
-`
+    white-space: nowrap;
+`;

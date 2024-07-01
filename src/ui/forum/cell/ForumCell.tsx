@@ -4,9 +4,9 @@ import GrowAvatar, {AvatarType} from "../../../designsystem/component/avatar/Gro
 import GrowLikeButton from "../../../designsystem/component/button/likebutton/GrowLikeButton";
 import GrowDivider, {DividerType} from "../../../designsystem/component/divider/GrowDivider";
 import {ForumResponse} from "../../../repository/forum/response/Forum.response";
-import '../../../util/dateUtil';
-import {useEffect} from "react";
-import {InView, useInView} from "react-intersection-observer";
+import '../../../util/CustomDate';
+import {InView} from "react-intersection-observer";
+import CustomDate from "../../../util/CustomDate";
 
 interface ForumCellProps {
     forum: ForumResponse,
@@ -32,7 +32,7 @@ const ForumCell = (
                     <GrowAvatar type={AvatarType.Medium}/>
                     <S.ProfileContainer>
                         <S.ProfileName>{forum.community.writerName}</S.ProfileName>
-                        <S.ProfileCreatedAt>{new Date(forum.community.createdAt).timeAgo()}</S.ProfileCreatedAt>
+                        <S.ProfileCreatedAt>{new CustomDate(forum.community.createdAt).getTimeAgo()}</S.ProfileCreatedAt>
                     </S.ProfileContainer>
                     <Spacer/>
                 </S.InfoContainer>
@@ -42,9 +42,9 @@ const ForumCell = (
                 {forum.recentComment && <>
                     <GrowDivider type={DividerType.Thin}/>
                     <S.RecentCommentContainer>
-                        <S.RecentCommentName>이강현</S.RecentCommentName>
-                        <S.RecentCommentContent>정말 ㅎㅇ</S.RecentCommentContent>
-                        <S.RecentCommentCreatedAt>3시간 전</S.RecentCommentCreatedAt>
+                        <S.RecentCommentName>{forum.recentComment.name}</S.RecentCommentName>
+                        <S.RecentCommentContent>{forum.recentComment.content}</S.RecentCommentContent>
+                        <S.RecentCommentCreatedAt>{new CustomDate(forum.recentComment.createdAt).getTimeAgo()}</S.RecentCommentCreatedAt>
                     </S.RecentCommentContainer>
                 </>}
             </S.Container>

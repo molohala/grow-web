@@ -16,6 +16,7 @@ export const Container = styled.nav`
         padding: 4px 8px;
         height: auto;
         width: 100vw;
+        bottom: 0;
     }
     height: 100vh;
     position: fixed;

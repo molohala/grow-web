@@ -1,14 +1,13 @@
 import * as S from "./ForumPage.style";
 import MainTemplate from "../template/MainTemplate";
 import GrowIcon, {IconType} from "../../designsystem/foundation/iconography/GrowIcon";
-import {css, useTheme} from "styled-components";
+import {useTheme} from "styled-components";
 import ForumCell from "./cell/ForumCell";
 import useTokenCheck from "../../hook/auth/useTokenCheck";
 import useForum from "../../hook/forum/useFetchForum";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import {ForumResponse} from "../../repository/forum/response/Forum.response";
 import {pagingInterval} from "../../util/pagingConstant";
-import Spacer from "../../designsystem/component/spacer/Spacer";
 import GrowLoader from "../../designsystem/component/loader/GrowLoader";
 import ForumDetailDialog from "./forumdetail/ForumDetailDialog";
 
@@ -55,7 +54,7 @@ const ForumPage = () => {
                                     onAppear={() => handleForumCellOnAppear(forum)}
                                 />
                             ))}
-                            <div style={{height: '16px'}}></div>
+                            <div style={{height: '32px'}}></div>
                         </S.ForumContent>
                     </S.Content>
                 </S.Container>
@@ -64,7 +63,7 @@ const ForumPage = () => {
                 dismiss={() => {
                     setSelectedForum(null);
                 }}
-                forum={selectedForum}
+                forum={selectedForum!}
             />}
         </>
     );

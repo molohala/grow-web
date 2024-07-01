@@ -32,7 +32,7 @@ const useFetchForum = () => {
             }
         },
         [forums, page]
-    )
+    );
 
     return {
         forums,

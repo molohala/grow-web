@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {FlexLayout} from "../../designsystem/util/FlexLayout";
 import {GrowTypographies, TypographyType} from "../../designsystem/foundation/text/GrowTypographies";
-import BlackEffect from "../../designsystem/foundation/effect/BlackEffect";
 import {bounceAnimation} from "../../designsystem/animation/bounceAnimation";
 
 export const Container = styled.div`
@@ -13,7 +12,7 @@ export const Content = styled.div`
     margin: 32px;
     ${FlexLayout({flexDirection: 'column', rowGap: '16px', alignItems: 'center'})};
     max-width: 640px;
-    flex: 1;
+    width: 100%;
 `;
 
 export const WriteContainer = styled.button`
@@ -34,4 +33,5 @@ export const WriteContainer = styled.button`
 
 export const ForumContent = styled.div`
     ${FlexLayout({flexDirection: 'column', rowGap: '8px'})};
-`
+    flex: 1;
+`;
