@@ -13,5 +13,4 @@ export const GrowDividerContainer = styled.div<{
     flex-shrink: 0;
     flex-grow: 1;
     ${({type, direction}) => (direction ?? Direction.Horizontal) === Direction.Horizontal ? css`height: ${type === DividerType.Thin ? 1 : 8}px;` : css`width: ${type === DividerType.Thin ? 1 : 8}px`}
-}
-`;
+}`;

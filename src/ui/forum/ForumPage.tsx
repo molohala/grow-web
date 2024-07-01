@@ -23,14 +23,16 @@ const ForumPage = () => {
     } = useForum();
     const theme = useTheme();
     const {patchLike} = useLike();
-    const [selectedForum, setSelectedForum] = useState<ForumResponse | null>(null);
+    const [selectedForumIdx, setSelectedForumIdx] = useState<number | null>(null);
+    const selectedForum = selectedForumIdx === null ? null : forums[selectedForumIdx];
 
     useEffect(() => {
         fetchForums().then();
     }, [fetchForums]);
 
-    const handleForumCellClicked = (forum: ForumResponse) => {
-        setSelectedForum(forum);
+    const handleForumCellClicked = (forumId: number) => {
+        const index = findForumIndexById(forumId);
+        setSelectedForumIdx(index);
     }
 
     const handleForumCellOnAppear = (forum: ForumResponse) => {
@@ -66,7 +68,7 @@ const ForumPage = () => {
                                 <ForumCell
                                     key={forum.community.communityId}
                                     forum={forum}
-                                    onClick={() => handleForumCellClicked(forum)}
+                                    onClick={() => handleForumCellClicked(forum.community.communityId)}
                                     onAppear={() => handleForumCellOnAppear(forum)}
                                     onLikeClicked={() => handleLikeClicked(forum)}
                                 />
@@ -78,9 +80,12 @@ const ForumPage = () => {
             </MainTemplate>
             {selectedForum && <ForumDetailDialog
                 dismiss={() => {
-                    setSelectedForum(null);
+                    setSelectedForumIdx(null);
                 }}
-                forum={selectedForum!}
+                forum={selectedForum}
+                updateForumLiked={() => {
+                    handleLikeClicked(selectedForum).then();
+                }}
             />}
         </>
     );

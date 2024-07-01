@@ -12,19 +12,23 @@ import useComment from "../../../hook/comment/useComment";
 import GrowLikeButton from "../../../designsystem/component/button/likebutton/GrowLikeButton";
 import GrowLoader from "../../../designsystem/component/loader/GrowLoader";
 import CommentCell from "../../component/CommentCell";
+import useLike from "../../../hook/like/useLike";
 
 interface ForumDetailDialogProps {
     forum: ForumResponse;
     dismiss: () => void;
+    updateForumLiked: () => void;
 }
 
 const ForumDetailDialog = (
     {
         forum,
-        dismiss
+        dismiss,
+        updateForumLiked
     }: ForumDetailDialogProps
 ) => {
 
+    const {patchLike} = useLike();
     const theme = useTheme();
     const modalRef = useRef<HTMLDialogElement>(null);
     const {comments, fetchComments, isFetchComments} = useComment();
@@ -36,6 +40,13 @@ const ForumDetailDialog = (
 
     const handleBackgroundClicked = () => {
         dismiss();
+    }
+
+    const handleLikeClicked = async () => {
+        const result = await patchLike(forum.community.communityId);
+        if (result) {
+            updateForumLiked();
+        }
     }
 
     return (
@@ -52,10 +63,13 @@ const ForumDetailDialog = (
                         <GrowIcon type={IconType.DetailVertical} tint={theme.textAlt}/>
                     </S.InfoContainer>
                     <S.ForumContent>{forum.community.content}</S.ForumContent>
-                    <GrowLikeButton like={forum.community.like} onClick={() => {
-                    }} isLiked={forum.community.liked}/>
+                    <GrowLikeButton
+                        like={forum.community.like}
+                        onClick={handleLikeClicked}
+                        isLiked={forum.community.liked}
+                    />
                 </S.Content>
-                {comments.length && <GrowDivider/>}
+                {comments.length > 0 && <GrowDivider/>}
                 {isFetchComments && <GrowLoader/>}
                 <S.Comments>
                     {comments.map((comment, index) => (
