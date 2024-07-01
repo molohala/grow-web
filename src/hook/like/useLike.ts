@@ -1,13 +1,11 @@
 import {useCallback} from "react";
 
-interface useLikeProps {
+const useLike = (): {
+    usePatchLike: (forumId: string) => void;
+} => {
 
-}
-
-const useLike = () => {
-
-    const usePatchLike = useCallback(() => {
-
+    const usePatchLike = useCallback((forumId: string) => {
+        
     }, []);
 
     return {
