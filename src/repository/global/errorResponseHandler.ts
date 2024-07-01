@@ -3,7 +3,6 @@ import token, {ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY, REQUEST_TOKEN_KEY} from "../
 import authApi from "../auth/api/auth.api";
 import {growAxios} from "./growAxios";
 import Config from "../../config/Config";
-import ReissueRequest from "../auth/request/Reissue.request";
 import ReissueResponse from "../auth/response/Reissue.response";
 
 let refreshSubscribers: ((accessToken: string) => void)[] = [];

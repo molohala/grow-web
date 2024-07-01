@@ -10,11 +10,19 @@ import {ForumResponse} from "../../repository/forum/response/Forum.response";
 import {pagingInterval} from "../../util/pagingConstant";
 import GrowLoader from "../../designsystem/component/loader/GrowLoader";
 import ForumDetailDialog from "./forumdetail/ForumDetailDialog";
+import useLike from "../../hook/like/useLike";
 
 const ForumPage = () => {
     useTokenCheck();
-    const {forums, fetchForums, fetchNextForums} = useForum();
+    const {
+        forums,
+        fetchForums,
+        fetchNextForums,
+        updateForumLiked,
+        findForumIndexById
+    } = useForum();
     const theme = useTheme();
+    const {patchLike} = useLike();
     const [selectedForum, setSelectedForum] = useState<ForumResponse | null>(null);
 
     useEffect(() => {
@@ -26,7 +34,7 @@ const ForumPage = () => {
     }
 
     const handleForumCellOnAppear = (forum: ForumResponse) => {
-        const index = forums.findIndex(item => item.community.communityId === forum.community.communityId);
+        const index = findForumIndexById(forum.community.communityId);
 
         if (index === -1) {
             return;
@@ -35,6 +43,13 @@ const ForumPage = () => {
             fetchNextForums().then();
         }
     };
+
+    const handleLikeClicked = async (forum: ForumResponse) => {
+        const result = await patchLike(forum.community.communityId);
+        if (result) {
+            updateForumLiked(forum.community.communityId);
+        }
+    }
 
     return (
         <>
@@ -53,6 +68,7 @@ const ForumPage = () => {
                                     forum={forum}
                                     onClick={() => handleForumCellClicked(forum)}
                                     onAppear={() => handleForumCellOnAppear(forum)}
+                                    onLikeClicked={() => handleLikeClicked(forum)}
                                 />
                             ))}
                             <div style={{height: '32px'}}></div>

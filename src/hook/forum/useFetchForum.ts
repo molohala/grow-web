@@ -6,6 +6,8 @@ const useFetchForum = (): {
     forums: ForumResponse[];
     fetchForums: () => Promise<void>;
     fetchNextForums: () => Promise<void>;
+    updateForumLiked: (forumId: number) => void;
+    findForumIndexById: (forumId: number) => number;
 } => {
 
     const [forums, setForums] = useState<ForumResponse[]>([]);
@@ -38,10 +40,32 @@ const useFetchForum = (): {
         [forums]
     );
 
+    const findForumIndexById = useCallback((forumId: number): number => {
+        return forums.findIndex(item => item.community.communityId === forumId);
+    }, [forums]);
+
+
+    const updateForumLiked = useCallback((forumId: number) => {
+        setForums(prevForums =>
+            prevForums.map(forum =>
+                forum.community.communityId === forumId ? {
+                    community: {
+                        ...forum.community,
+                        liked: !forum.community.liked,
+                        like: forum.community.like ? forum.community.like - 1 : forum.community.like + 1
+                    },
+                    recentComment: forum.recentComment
+                } : forum
+            )
+        )
+    }, []);
+
     return {
         forums,
         fetchForums,
-        fetchNextForums
+        fetchNextForums,
+        updateForumLiked,
+        findForumIndexById
     };
 };
 

@@ -9,16 +9,18 @@ import {InView} from "react-intersection-observer";
 import CustomDate from "../../../util/CustomDate";
 
 interface ForumCellProps {
-    forum: ForumResponse,
+    forum: ForumResponse
     onClick: () => void
     onAppear: () => void
+    onLikeClicked: () => void
 }
 
 const ForumCell = (
     {
         forum,
         onClick,
-        onAppear
+        onAppear,
+        onLikeClicked
     }: ForumCellProps
 ) => {
     return (
@@ -39,6 +41,7 @@ const ForumCell = (
                 <S.Content>{forum.community.content}</S.Content>
                 <GrowLikeButton isLiked={forum.community.liked} like={forum.community.like} onClick={(e) => {
                     e.stopPropagation();
+                    onLikeClicked();
                 }}/>
                 {forum.recentComment && <>
                     <GrowDivider type={DividerType.Thin}/>
