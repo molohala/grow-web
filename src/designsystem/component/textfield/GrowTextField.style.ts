@@ -17,7 +17,7 @@ export const GrowTextFieldStyle = styled.div<{
     border-radius: 12px;
     border: 1px solid ${({strokeColor}) => strokeColor};
     transition: 0.1s border;
-    ${({customStyle}) => customStyle}
+    ${({customStyle}) => customStyle};
 `
 
 export const Input = styled.input<{

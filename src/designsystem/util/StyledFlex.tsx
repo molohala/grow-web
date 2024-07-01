@@ -28,7 +28,7 @@ const BaseFlex = styled.div<BaseFlexProps>`
     background-color: ${({backgroundColor}) => backgroundColor || "transparent"};
     padding: ${({padding}) => padding};
     align-self: ${({alignSelf}) => alignSelf};
-    ${({customStyle}) => customStyle}
+    ${({customStyle}) => customStyle};
 `;
 
 export const Column = styled(BaseFlex)`

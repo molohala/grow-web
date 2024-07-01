@@ -28,10 +28,10 @@ const SideBar = (
     return (
         <S.Container>
             <S.ItemsContainer>
-                {items.map(i => {
+                {items.map((i, idx) => {
                     const selected = window.location.href === i.link
                     return (
-                        <S.ItemContainer onClick={() => {
+                        <S.ItemContainer key={idx} onClick={() => {
                             if (!selected) {
                                 window.location.href = i.link;
                             }
@@ -42,7 +42,7 @@ const SideBar = (
                         </S.ItemContainer>
                     );
                 })}
-                <Spacer customStyle={css`
+                <Spacer $customStyle={css`
                     @media screen and (max-width: ${Guideline.Mobile}px) {
                         display: none;
                     }
