@@ -4,7 +4,7 @@ import {GrowTypographies, TypographyType} from "../../designsystem/foundation/te
 
 export const Container = styled.div`
     // Layout
-    ${FlexLayout({justifyContent: 'center', $alignItems: 'center'})};
+    ${FlexLayout({justifyContent: 'center', alignItems: 'center'})};
     height: 100vh;
     width: 100%;
     
@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const FormContent = styled.div`
     // Layout
-    ${FlexLayout({flexDirection: 'column', $alignItems: 'center', rowGap: '32px'})};
+    ${FlexLayout({flexDirection: 'column', alignItems: 'center', rowGap: '32px'})};
     max-width: 400px;
     padding: 32px 16px;
     margin: 32px;

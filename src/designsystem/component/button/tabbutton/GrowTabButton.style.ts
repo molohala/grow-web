@@ -11,7 +11,7 @@ export const GrowTabButtonStyle = styled.button<{
     // Layout
     position: relative;
     height: 37px;
-    ${FlexLayout({justifyContent: 'center', $alignItems: 'center'})};
+    ${FlexLayout({justifyContent: 'center', alignItems: 'center'})};
     padding: 0 12px;
     
     // Style

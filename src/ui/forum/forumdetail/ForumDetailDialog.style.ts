@@ -6,7 +6,7 @@ import {Guideline} from "../../util/Guideline";
 const style = {
     DialogContainer: styled.dialog`
         // style
-        ${FlexLayout({flexDirection: 'column', $alignItems: 'center'})};
+        ${FlexLayout({flexDirection: 'column', alignItems: 'center'})};
         max-width: 100vw;
         width: 100vw;
         max-height: 100vh;
@@ -20,7 +20,7 @@ const style = {
     `,
     Container: styled.div`
         // layout
-        ${FlexLayout({flexDirection: 'column', rowGap: '8px', $alignItems: 'center'})};
+        ${FlexLayout({flexDirection: 'column', rowGap: '8px', alignItems: 'center'})};
         background: ${({theme}) => theme.backgroundAlt};
         margin: 32px;
         z-index: 2;
@@ -37,12 +37,12 @@ const style = {
         }
     `,
     Content: styled.div`
-        ${FlexLayout({flexDirection: 'column', rowGap: '12px', $alignItems: 'flex-start'})};
+        ${FlexLayout({flexDirection: 'column', rowGap: '12px', alignItems: 'flex-start'})};
         align-self: stretch;
         padding: 12px;
     `,
     InfoContainer: styled.div`
-        ${FlexLayout({$alignItems: 'center', $columnGap: '8px'})};
+        ${FlexLayout({alignItems: 'center', columnGap: '8px'})};
         align-self: stretch;
     `,
     UserInfoContainer: styled.div`

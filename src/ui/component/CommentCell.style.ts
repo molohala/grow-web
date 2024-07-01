@@ -4,14 +4,14 @@ import {GrowTypographies, TypographyType} from "../../designsystem/foundation/te
 
 const style = {
     Container: styled.div`
-        ${FlexLayout({$columnGap: '8px'})};
+        ${FlexLayout({columnGap: '8px'})};
         padding: 12px;
     `,
     InfoContainer: styled.div`
         ${FlexLayout({flexDirection: 'column'})};
     `,
     UserInfoContainer: styled.div`
-        ${FlexLayout({$columnGap: '4px', $alignItems: 'center'})};
+        ${FlexLayout({columnGap: '4px', alignItems: 'center'})};
     `,
     WriterName: styled.div`
         color: ${({theme}) => theme.textNormal};

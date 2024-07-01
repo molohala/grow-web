@@ -11,7 +11,7 @@ export const GrowAvatarStyle = styled.div<{
     height: ${({size}) => size}px;
 
     border-radius: 50%;
-    ${FlexLayout({justifyContent: 'center', $alignItems: 'center'})}
+    ${FlexLayout({justifyContent: 'center', alignItems: 'center'})}
 
     // Style
     background-color: ${({theme}) => theme.avatarBackground};

@@ -10,7 +10,7 @@ export const GrowLikeButtonStyle = styled.button<{
     // Layout
     position: relative;
     height: 29px;
-    ${FlexLayout({justifyContent: 'center', $alignItems: 'center'})};
+    ${FlexLayout({justifyContent: 'center', alignItems: 'center'})};
     padding: 0 6px;
     
     // Style
