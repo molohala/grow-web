@@ -5,20 +5,26 @@ import {css, useTheme} from "styled-components";
 import ForumCell from "./cell/ForumCell";
 import useTokenCheck from "../../hook/auth/useTokenCheck";
 import useForum from "../../hook/forum/useFetchForum";
-import {useEffect} from "react";
+import {useEffect, useRef, useState} from "react";
 import {ForumResponse} from "../../repository/forum/response/Forum.response";
 import {pagingInterval} from "../../util/pagingConstant";
 import Spacer from "../../designsystem/component/spacer/Spacer";
 import GrowLoader from "../../designsystem/component/loader/GrowLoader";
+import ForumDetailDialog from "./forumdetail/ForumDetailDialog";
 
 const ForumPage = () => {
     useTokenCheck();
     const {forums, fetchForums, fetchNextForums} = useForum();
     const theme = useTheme();
+    const [selectedForum, setSelectedForum] = useState<ForumResponse | null>(null);
 
     useEffect(() => {
         fetchForums().then();
     }, []);
+
+    const handleForumCellClicked = (forum: ForumResponse) => {
+        setSelectedForum(forum);
+    }
 
     const handleForumCellOnAppear = (forum: ForumResponse) => {
         const index = forums.findIndex(item => item.community.communityId === forum.community.communityId);
@@ -32,23 +38,35 @@ const ForumPage = () => {
     };
 
     return (
-        <MainTemplate>
-            <S.Container>
-                <S.Content>
-                    <S.WriteContainer>
-                        <GrowIcon type={IconType.Write} tint={theme.textNormal}/>
-                        글쓰기
-                    </S.WriteContainer>
-                    {!forums.length && <GrowLoader/>}
-                    <S.ForumContent>
-                        {forums.map(forum => (
-                            <ForumCell forum={forum} onAppear={() => handleForumCellOnAppear(forum)}/>
-                        ))}
-                        <div style={{height: '16px'}}></div>
-                    </S.ForumContent>
-                </S.Content>
-            </S.Container>
-        </MainTemplate>
+        <>
+            <MainTemplate>
+                <S.Container>
+                    <S.Content>
+                        <S.WriteContainer>
+                            <GrowIcon type={IconType.Write} tint={theme.textNormal}/>
+                            글쓰기
+                        </S.WriteContainer>
+                        {!forums.length && <GrowLoader/>}
+                        <S.ForumContent>
+                            {forums.map(forum => (
+                                <ForumCell
+                                    forum={forum}
+                                    onClick={() => handleForumCellClicked(forum)}
+                                    onAppear={() => handleForumCellOnAppear(forum)}
+                                />
+                            ))}
+                            <div style={{height: '16px'}}></div>
+                        </S.ForumContent>
+                    </S.Content>
+                </S.Container>
+            </MainTemplate>
+            {selectedForum && <ForumDetailDialog
+                dismiss={() => {
+                    setSelectedForum(null);
+                }}
+                forum={selectedForum}
+            />}
+        </>
     );
 };
 

@@ -10,12 +10,14 @@ import {InView, useInView} from "react-intersection-observer";
 
 interface ForumCellProps {
     forum: ForumResponse,
+    onClick: () => void
     onAppear: () => void
 }
 
 const ForumCell = (
     {
         forum,
+        onClick,
         onAppear
     }: ForumCellProps
 ) => {
@@ -25,7 +27,7 @@ const ForumCell = (
                 onAppear();
             }
         }}>
-            <S.Container>
+            <S.Container onClick={onClick}>
                 <S.InfoContainer>
                     <GrowAvatar type={AvatarType.Medium}/>
                     <S.ProfileContainer>
