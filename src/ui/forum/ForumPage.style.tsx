@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {FlexLayout} from "../../designsystem/util/FlexLayout";
 import {GrowTypographies, TypographyType} from "../../designsystem/foundation/text/GrowTypographies";
 import {bounceAnimation} from "../../designsystem/animation/bounceAnimation";
-import {Guideline} from "../util/Guideline";
 
 export const Container = styled.div`
     ${FlexLayout({justifyContent: 'center'})};

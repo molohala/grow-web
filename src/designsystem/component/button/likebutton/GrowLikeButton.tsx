@@ -6,7 +6,7 @@ import GrowIcon, {IconType} from "../../../foundation/iconography/GrowIcon";
 
 interface GrowLikeButtonProps {
     like: number;
-    onClick: () => void,
+    onClick: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void,
     isLiked: boolean,
     customStyle?: RuleSet;
 }

@@ -63,7 +63,6 @@ export const RecentCommentContent = styled.p`
     ${GrowTypographies[TypographyType.LabelR]};
     ${FlexLayout({})};
     text-align: start;
-    width: 100%;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;

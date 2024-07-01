@@ -55,7 +55,7 @@ const ForumDetailDialog = (
                     <GrowLikeButton like={forum.community.like} onClick={() => {
                     }} isLiked={forum.community.liked}/>
                 </S.Content>
-                {!comments.length && <GrowDivider/>}
+                {comments.length && <GrowDivider/>}
                 {isFetchComments && <GrowLoader/>}
                 <S.Comments>
                     {comments.map((comment, index) => (

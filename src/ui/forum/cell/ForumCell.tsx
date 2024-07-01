@@ -37,7 +37,8 @@ const ForumCell = (
                     <Spacer/>
                 </S.InfoContainer>
                 <S.Content>{forum.community.content}</S.Content>
-                <GrowLikeButton isLiked={forum.community.liked} like={forum.community.like} onClick={() => {
+                <GrowLikeButton isLiked={forum.community.liked} like={forum.community.like} onClick={(e) => {
+                    e.stopPropagation();
                 }}/>
                 {forum.recentComment && <>
                     <GrowDivider type={DividerType.Thin}/>

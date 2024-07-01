@@ -17,7 +17,10 @@ const useComment = (): useCommentProps => {
         setIsFetchComments(true);
         try {
             const response = await commentApi.getComments(forumId);
-            setComments(response.data ?? []);
+            const comments = response.data?.sort(
+                (a, b) => a.createdAt < b.createdAt ? 1 : -1
+            ) ?? []
+            setComments(comments);
         } catch (e) {
             console.error(e);
         } finally {
