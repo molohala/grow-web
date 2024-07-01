@@ -8,21 +8,29 @@ import {useTheme} from "styled-components";
 import GrowAvatar, {AvatarType} from "../../../designsystem/component/avatar/GrowAvatar";
 import '../../../util/CustomDate';
 import CustomDate from "../../../util/CustomDate";
+import useComment from "../../../hook/comment/useComment";
+import GrowLikeButton from "../../../designsystem/component/button/likebutton/GrowLikeButton";
+import GrowLoader from "../../../designsystem/component/loader/GrowLoader";
 
 interface ForumDetailDialogProps {
     forum: ForumResponse;
     dismiss: () => void;
 }
 
-const ForumDetailDialog = ({
-                               forum,
-                               dismiss
-                           }: ForumDetailDialogProps) => {
+const ForumDetailDialog = (
+    {
+        forum,
+        dismiss
+    }: ForumDetailDialogProps
+) => {
 
     const theme = useTheme();
     const modalRef = useRef<HTMLDialogElement>(null);
+    const {comments, fetchComments, isFetchComments} = useComment();
+
     useEffect(() => {
         modalRef.current?.showModal();
+        fetchComments(forum.community.communityId).then();
     }, []);
 
     const handleBackgroundClicked = () => {
@@ -43,10 +51,15 @@ const ForumDetailDialog = ({
                         <GrowIcon type={IconType.DetailVertical} tint={theme.textAlt}/>
                     </S.InfoContainer>
                     <S.ForumContent>{forum.community.content}</S.ForumContent>
+                    <GrowLikeButton like={forum.community.like} onClick={() => {
+                    }} isLiked={forum.community.liked}/>
                 </S.Content>
                 <GrowDivider/>
                 <S.Comments>
-                    asd
+                    {isFetchComments && <GrowLoader/>}
+                    {comments.map((comment, index) => (
+                        <div>{comment.content}</div>
+                    ))}
                 </S.Comments>
             </S.Container>
             <S.Backdrop onClick={handleBackgroundClicked}/>

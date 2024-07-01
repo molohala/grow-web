@@ -18,7 +18,7 @@ const style = {
     `,
     Container: styled.div`
         // layout
-        ${FlexLayout({flexDirection: 'column', rowGap: '8px'})};
+        ${FlexLayout({flexDirection: 'column', rowGap: '8px', alignItems: 'center'})};
         background: ${({theme}) => theme.backgroundAlt};
         margin: 32px 0;
         z-index: 2;
@@ -30,7 +30,8 @@ const style = {
         color: white;
     `,
     Content: styled.div`
-        ${FlexLayout({flexDirection: 'column', rowGap: '12px'})};
+        ${FlexLayout({flexDirection: 'column', rowGap: '12px', alignItems: 'flex-start'})};
+        align-self: stretch;
         padding: 12px;
     `,
     InfoContainer: styled.div`
@@ -50,8 +51,11 @@ const style = {
     ForumContent: styled.p`
         ${GrowTypographies[TypographyType.BodyR]};
         color: ${({theme}) => theme.textNormal};
+        width: 100%;
+        word-break: break-word;
     `,
     Comments: styled.li`
+        ${FlexLayout({flexDirection: 'column', rowGap: '4px'})};
         list-style: none;
     `,
     Backdrop: styled.div`
