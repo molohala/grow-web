@@ -1,13 +1,14 @@
 import * as S from "./ForumPage.style";
 import MainTemplate from "../template/MainTemplate";
 import GrowIcon, {IconType} from "../../designsystem/foundation/iconography/GrowIcon";
-import {useTheme} from "styled-components";
+import {css, useTheme} from "styled-components";
 import ForumCell from "./cell/ForumCell";
 import useTokenCheck from "../../hook/auth/useTokenCheck";
 import useForum from "../../hook/forum/useFetchForum";
 import {useEffect} from "react";
 import {ForumResponse} from "../../repository/forum/response/Forum.response";
 import {pagingInterval} from "../../util/pagingConstant";
+import Spacer from "../../designsystem/component/spacer/Spacer";
 
 const ForumPage = () => {
     useTokenCheck();
@@ -41,6 +42,7 @@ const ForumPage = () => {
                         {forums.map(forum => (
                             <ForumCell forum={forum} onAppear={() => handleForumCellOnAppear(forum)}/>
                         ))}
+                        <div style={{height: '16px'}}></div>
                     </S.ForumContent>
                 </S.Content>
             </S.Container>

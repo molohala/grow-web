@@ -6,9 +6,10 @@ import exp from "node:constants";
 
 export const Container = styled.button`
     // Layout
-    ${FlexLayout({flexDirection: 'column', rowGap: '12px'})};
+    ${FlexLayout({flexDirection: 'column', rowGap: '12px', })};
     padding: 12px;
-
+    flex: 1;
+    
     // Style
     border-radius: 12px;
     background: ${({theme}) => theme.background};
@@ -43,6 +44,7 @@ export const Content = styled.p`
     display: flex;
     text-align: start;
     width: 100%;
+    word-break: break-all;
 `;
 
 export const RecentCommentContainer = styled.div`

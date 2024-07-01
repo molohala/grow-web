@@ -20,13 +20,12 @@ const ForumCell = (
     }: ForumCellProps
 ) => {
     return (
-        <S.Container>
-
-            <InView onChange={(inView, entry) => {
-                if (inView) {
-                    onAppear();
-                }
-            }}>
+        <InView style={{display: 'flex'}} onChange={(inView, entry) => {
+            if (inView) {
+                onAppear();
+            }
+        }}>
+            <S.Container>
                 <S.InfoContainer>
                     <GrowAvatar type={AvatarType.Medium}/>
                     <S.ProfileContainer>
@@ -46,8 +45,8 @@ const ForumCell = (
                         <S.RecentCommentCreatedAt>3시간 전</S.RecentCommentCreatedAt>
                     </S.RecentCommentContainer>
                 </>}
-            </InView>
-        </S.Container>
+            </S.Container>
+        </InView>
     )
 };
 
