@@ -55,7 +55,10 @@ const ProfilePage = () => {
                     </Column>
                 </S.FirstContainer>
                 <S.SecondContainer>
-
+                    <S.Subtitle>통계</S.Subtitle>
+                    <Row>
+                        <S.Subtitle>출시 준비중...</S.Subtitle>
+                    </Row>
                 </S.SecondContainer>
             </S.Container>
         </MainTemplate>

@@ -50,7 +50,7 @@ const style = {
         flex-wrap: wrap;
     `,
     SecondContainer: styled.div`
-        ${FlexLayout({rowGap: '12px', alignItems: 'flex-start'})};
+        ${FlexLayout({flexDirection: 'column', rowGap: '12px', alignItems: 'flex-start'})};
         width: 50%;
 
         @media screen and (max-width: ${Guideline.Mobile}px) {
