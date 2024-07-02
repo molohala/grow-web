@@ -93,6 +93,7 @@ const ForumPage = () => {
             />}
             {showCreateForumDialog && <CreateForumDialog dismiss={() => {
                 setShowCreateForumDialog(false);
+                fetchForums().then();
             }}/>}
         </>
     );

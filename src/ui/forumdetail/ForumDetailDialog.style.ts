@@ -13,7 +13,7 @@ const style = {
         z-index: 3;
         max-width: 440px;
         width: 100%;
-        padding: 16px;
+        padding: 32px;
 
         // style
         border-radius: 16px;

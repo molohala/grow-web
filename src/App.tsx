@@ -2,7 +2,7 @@ import {GrowColorProvider} from "./designsystem/foundation/color/GrowColorProvid
 import {GrowDarkScheme, GrowLightScheme} from "./designsystem/foundation/color/GrowColorSementic";
 import {GlobalStyle} from "./style/globalStyle";
 import useDarkTheme from "./hook/global/useDarkTheme";
-import Preview from "./designsystem/preview/Preview";
+// import Preview from "./designsystem/preview/Preview";
 import { ThemeContext } from "./context/ThemeContext";
 // import IconPreview from "./designsystem/preview/IconPreview";
 import Router from "./routes";
@@ -16,11 +16,11 @@ const App = () => {
         <ThemeContext.Provider value={{ isDarkTheme, setIsDarkTheme }}>
             <GrowColorProvider theme={isDarkTheme ? GrowDarkScheme : GrowLightScheme}>
                 <GlobalStyle/>
-                <Preview/>
+                {/*<Preview/>*/}
                 {/*<IconPreview/>*/}
-                {/*<BrowserRouter>*/}
-                {/*    <Router/>*/}
-                {/*</BrowserRouter>*/}
+                <BrowserRouter>
+                    <Router/>
+                </BrowserRouter>
             </GrowColorProvider>
         </ThemeContext.Provider>
     );

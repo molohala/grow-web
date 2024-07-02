@@ -1,5 +1,4 @@
 import * as S from "./GrowTextArea.style";
-import GrowIcon, {IconType} from "../../foundation/iconography/GrowIcon";
 import {RuleSet, useTheme} from "styled-components";
 import {useState} from "react";
 
