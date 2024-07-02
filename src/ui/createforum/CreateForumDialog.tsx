@@ -4,10 +4,8 @@ import S from './CreateForumDialog.style';
 import Spacer from "../../designsystem/component/spacer/Spacer";
 import GrowTextButton from "../../designsystem/component/button/textbutton/GrowTextButton";
 import {ButtonType} from "../../designsystem/component/button/type/ButtonType";
-import GrowTextField from "../../designsystem/component/textfield/GrowTextField";
 import GrowTextArea from "../../designsystem/component/textarea/GrowTextArea";
 import {css} from "styled-components";
-import {growAxios} from "../../repository/global/growAxios";
 import forumApi from "../../repository/forum/api/forum.api";
 
 interface CreateForumProps {
