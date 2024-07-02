@@ -9,9 +9,9 @@ import {useEffect, useState} from "react";
 import {ForumResponse} from "../../repository/forum/response/Forum.response";
 import {pagingInterval} from "../../util/pagingConstant";
 import GrowLoader from "../../designsystem/component/loader/GrowLoader";
-import ForumDetailDialog from "./forumdetail/ForumDetailDialog";
+import ForumDetailDialog from "../forumdetail/ForumDetailDialog";
 import useLike from "../../hook/like/useLike";
-import DialogTemplate from "../template/DialogTemplate";
+import CreateForumDialog from "../createforum/CreateForumDialog";
 
 const ForumPage = () => {
     useTokenCheck();
@@ -26,6 +26,7 @@ const ForumPage = () => {
     const {patchLike} = useLike();
     const [selectedForumIdx, setSelectedForumIdx] = useState<number | null>(null);
     const selectedForum = selectedForumIdx === null ? null : forums[selectedForumIdx];
+    const [showCreateForumDialog, setShowCreateForumDialog] = useState(false);
 
     useEffect(() => {
         fetchForums().then();
@@ -59,7 +60,9 @@ const ForumPage = () => {
             <MainTemplate>
                 <S.Container>
                     <S.Content>
-                        <S.WriteContainer>
+                        <S.WriteContainer onClick={() => {
+                            setShowCreateForumDialog(true);
+                        }}>
                             <GrowIcon type={IconType.Write} tint={theme.textNormal}/>
                             글쓰기
                         </S.WriteContainer>
@@ -88,6 +91,9 @@ const ForumPage = () => {
                     handleLikeClicked(selectedForum).then();
                 }}
             />}
+            {showCreateForumDialog && <CreateForumDialog dismiss={() => {
+                setShowCreateForumDialog(false);
+            }}/>}
         </>
     );
 };

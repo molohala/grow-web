@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {FlexLayout} from "../../../designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "../../../designsystem/foundation/text/GrowTypographies";
-import {Guideline} from "../../util/Guideline";
-import {bounceAnimation} from "../../../designsystem/animation/bounceAnimation";
+import {FlexLayout} from "../../designsystem/util/FlexLayout";
+import {GrowTypographies, TypographyType} from "../../designsystem/foundation/text/GrowTypographies";
+import {Guideline} from "../util/Guideline";
+import {bounceAnimation} from "../../designsystem/animation/bounceAnimation";
 
 const style = {
     Container: styled.div`
@@ -17,7 +17,6 @@ const style = {
 
         // style
         border-radius: 16px;
-        color: white;
         
         @media screen and (max-width: ${Guideline.Mobile}px) {
             padding: 8px;
