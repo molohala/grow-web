@@ -29,8 +29,13 @@ class InfoApi {
         return data;
     }
 
-    async getProfile(memberId: number): Promise<BaseResponse<ProfileResponse>> {
-        const {data} = await growAxios.get(`/${InfoApi.path}/user/${memberId}`);
+    async getProfile(): Promise<BaseResponse<ProfileResponse>> {
+        const {data} = await growAxios.get(`/${InfoApi.path}/me`);
+        return data;
+    }
+
+    async getProfileById(id: number): Promise<BaseResponse<ProfileResponse>> {
+        const {data} = await growAxios.get(`/${InfoApi.path}/user/${id}`);
         return data;
     }
 
@@ -45,4 +50,6 @@ class InfoApi {
     }
 }
 
-export default InfoApi;
+const infoApi = new InfoApi();
+
+export default infoApi;

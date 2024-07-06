@@ -9,7 +9,7 @@ interface SolvedacResponse {
     maxStreak: number;
     totalRank: number;
     totalSolves: number
-    weekSolves: [SolveResponse]
+    weekSolves: SolveResponse[]
     todaySolves: SolveResponse
 }
 

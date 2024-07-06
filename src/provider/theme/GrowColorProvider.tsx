@@ -1,8 +1,8 @@
 import {ThemeProvider} from "styled-components";
 import {ReactNode} from "react";
-import useDarkTheme from "../hook/global/useDarkTheme";
-import {GrowDarkScheme, GrowLightScheme} from "../designsystem/foundation/color/GrowColorSementic";
-import {ThemeContext} from "../context/ThemeContext";
+import useDarkTheme from "../../hook/global/useDarkTheme";
+import {GrowDarkScheme, GrowLightScheme} from "../../designsystem/foundation/color/GrowColorSementic";
+import {DarkThemeContext} from "./DarkThemeContext";
 
 interface GrowColorProviderProps {
     children: ReactNode;
@@ -16,9 +16,9 @@ const GrowColorProvider = (
     const [isDarkTheme, setIsDarkTheme] = useDarkTheme();
 
     return (
-        <ThemeContext.Provider value={{isDarkTheme, setIsDarkTheme}}>
+        <DarkThemeContext.Provider value={{isDarkTheme, setIsDarkTheme}}>
             <ThemeProvider theme={isDarkTheme ? GrowDarkScheme : GrowLightScheme}>{children}</ThemeProvider>
-        </ThemeContext.Provider>
+        </DarkThemeContext.Provider>
     );
 };
 

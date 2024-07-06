@@ -4,7 +4,7 @@ import {css, useTheme} from "styled-components";
 import Spacer from "../../designsystem/component/spacer/Spacer";
 import {Guideline} from "../util/Guideline";
 import {useContext} from "react";
-import {ThemeContext, ThemeContextType} from "../../context/ThemeContext";
+import {DarkThemeContext, DarkThemeContextType} from "../../provider/theme/DarkThemeContext";
 
 export type SideBarItem = {
     icon: IconType,
@@ -23,7 +23,7 @@ const SideBar = (
 ) => {
 
     const theme = useTheme();
-    const {isDarkTheme, setIsDarkTheme} = useContext<ThemeContextType>(ThemeContext);
+    const {isDarkTheme, setIsDarkTheme} = useContext<DarkThemeContextType>(DarkThemeContext);
 
     return (
         <S.Container>

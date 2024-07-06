@@ -1,7 +1,7 @@
 export interface BaseResponse<T> {
     status: number;
     message: string;
-    data?: T;
+    data: T;
 }
 
 export interface BaseVoidResponse {

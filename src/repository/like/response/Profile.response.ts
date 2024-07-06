@@ -7,7 +7,7 @@ interface ProfileResponse {
     bio: string
     job: string
     createdAt: string
-    socialAccounts: [SocialResponse]
+    socialAccounts: SocialResponse[]
 }
 
 export default ProfileResponse;

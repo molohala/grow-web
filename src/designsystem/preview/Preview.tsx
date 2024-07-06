@@ -10,7 +10,7 @@ import GrowToggleButton from "../component/button/togglebutton/GrowToggleButton"
 import {ShadowRectangle} from "./ShadowRectangle";
 import {ShadowType} from "../foundation/shadow/GrowShadow";
 import {useContext, useState} from "react";
-import {ThemeContext, ThemeContextType} from "../../context/ThemeContext";
+import {DarkThemeContext, DarkThemeContextType} from "../../provider/theme/DarkThemeContext";
 import GrowTextField from "../component/textfield/GrowTextField";
 import {IconType} from "../foundation/iconography/GrowIcon";
 import GrowAvatar, {AvatarType} from "../component/avatar/GrowAvatar";
@@ -22,7 +22,7 @@ import GrowTextArea from "../component/textarea/GrowTextArea";
 const Preview = () => {
 
     const theme = useTheme();
-    const {isDarkTheme, setIsDarkTheme} = useContext<ThemeContextType>(ThemeContext);
+    const {isDarkTheme, setIsDarkTheme} = useContext<DarkThemeContextType>(DarkThemeContext);
     const [text, setText] = useState("");
 
     return (

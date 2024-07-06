@@ -1,11 +1,11 @@
 import { createContext } from "react";
 
-export type ThemeContextType = {
+export type DarkThemeContextType = {
     isDarkTheme: boolean;
     setIsDarkTheme: (isDarkTheme: boolean) => void;
-}
+};
 
-export const ThemeContext = createContext<ThemeContextType>({
+export const DarkThemeContext = createContext<DarkThemeContextType>({
     isDarkTheme: false,
     setIsDarkTheme: (isDarkTheme: boolean) => {}
 });
