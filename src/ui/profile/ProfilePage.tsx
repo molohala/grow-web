@@ -6,11 +6,15 @@ import GrowAvatar, {AvatarType} from "../../designsystem/component/avatar/GrowAv
 import GrowIcon, {IconType} from "../../designsystem/foundation/iconography/GrowIcon";
 import {useTheme} from "styled-components";
 import GrowLanguage from "../../designsystem/component/language/GrowLanguage";
+import useAppState from "../../hook/global/useAppState";
+import {useContext} from "react";
+import {AppStateContext} from "../../provider/appstate/AppStateContext";
 
 const ProfilePage = () => {
     useTokenCheck();
 
     const theme = useTheme();
+    const {profile} = useContext(AppStateContext);
     const tempLangs = [
         'Swift',
         'Python',
@@ -23,8 +27,8 @@ const ProfilePage = () => {
         'JavaScript',
         'TypeScript',
         'Mojo',
-        // 'Kotlin',
-        // 'Java'
+        'Kotlin',
+        'Java'
     ]
 
     return (
@@ -34,8 +38,8 @@ const ProfilePage = () => {
                     <Row $columnGap={12} $alignItems={'center'}>
                         <GrowAvatar type={AvatarType.ExtraLarge}/>
                         <Column rowGap={2}>
-                            <S.Developer>iOS 개발자</S.Developer>
-                            <S.ProfileName>이강현</S.ProfileName>
+                            <S.Developer>{profile?.job} 개발자</S.Developer>
+                            <S.ProfileName>{profile?.name}</S.ProfileName>
                         </Column>
                     </Row>
                     <Column rowGap={12}>
@@ -43,7 +47,7 @@ const ProfilePage = () => {
                             <S.Subtitle>소개글</S.Subtitle>
                             <GrowIcon tint={theme.textAlt} type={IconType.Write}/>
                         </Row>
-                        <S.Content>weqeqeqweqe</S.Content>
+                        <S.Content>{profile?.bio}</S.Content>
                     </Column>
                     <Column rowGap={12}>
                         <S.Subtitle>사용 언어</S.Subtitle>
