@@ -1,4 +1,4 @@
-import {GrowColorProvider} from "./designsystem/foundation/color/GrowColorProvider";
+import GrowColorProvider from "./provider/GrowColorProvider";
 import {GlobalStyle} from "./style/globalStyle";
 // import Preview from "./designsystem/preview/Preview";
 // import IconPreview from "./designsystem/preview/IconPreview";
