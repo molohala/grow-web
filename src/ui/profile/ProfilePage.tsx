@@ -26,19 +26,19 @@ const ProfilePage = () => {
                 <S.FirstContainer>
                     <Row $columnGap={12} $alignItems={'center'}>
                         <GrowAvatar type={AvatarType.ExtraLarge}/>
-                        <Column rowGap={2}>
+                        <Column $rowGap={2}>
                             <S.Developer>{profile?.job} 개발자</S.Developer>
                             <S.ProfileName>{profile?.name}</S.ProfileName>
                         </Column>
                     </Row>
-                    <Column rowGap={12}>
+                    <Column $rowGap={12}>
                         <Row $columnGap={4} $alignItems={'center'}>
                             <S.Subtitle>소개글</S.Subtitle>
                             <GrowIcon tint={theme.textAlt} type={IconType.Write}/>
                         </Row>
                         <S.Content>{profile?.bio}</S.Content>
                     </Column>
-                    <Column rowGap={12}>
+                    <Column $rowGap={12}>
                         <S.Subtitle>사용 언어</S.Subtitle>
                         <S.LanguageContainer>
                             {languages?.map(lang => (

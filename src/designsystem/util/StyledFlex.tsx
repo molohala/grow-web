@@ -3,9 +3,9 @@ import styled, {CSSProperties, RuleSet} from "styled-components";
 export type Align = "center" | "flex-start" | "flex-end";
 
 export interface BaseFlexProps {
-    gap?: number;
+    $gap?: number;
     $columnGap?: number;
-    rowGap?: number;
+    $rowGap?: number;
     justifyContent?: Align | "spacer-between";
     fill?: string;
     $alignItems?: Align;
@@ -18,8 +18,8 @@ export interface BaseFlexProps {
 
 const BaseFlex = styled.div<BaseFlexProps>`
     display: flex;
-    gap: ${({gap}) => gap || 0}px;
-    row-gap: ${({rowGap}) => rowGap || 0}px;
+    gap: ${({$gap}) => $gap || 0}px;
+    row-gap: ${({$rowGap}) => $rowGap || 0}px;
     column-gap: ${({$columnGap}) => $columnGap || 0}px;
     justify-content: ${({justifyContent}) => justifyContent || "flex-start"};
     align-items: ${({$alignItems}) => $alignItems || "flex-start"};
