@@ -1,24 +1,12 @@
 import styled from "styled-components";
 import {FlexLayout} from "../../designsystem/util/FlexLayout";
-import {Guideline} from "../util/Guideline";
 import {GrowTypographies, TypographyType} from "../../designsystem/foundation/text/GrowTypographies";
+import DialogContentStyle from '../util/DialogContentStyle';
 
 const style = {
     Container: styled.div`
         ${FlexLayout({flexDirection: 'column', rowGap: '8px'})};
-        background: ${({theme}) => theme.backgroundAlt};
-        margin: 32px;
-        z-index: 3;
-        max-width: 440px;
-        width: 100%;
-        padding: 32px;
-
-        // style
-        border-radius: 16px;
-
-        @media screen and (max-width: ${Guideline.Mobile}px) {
-            padding: 12px 16px;
-        }
+        ${DialogContentStyle};
     `,
     Title: styled.h1`
         ${GrowTypographies[TypographyType.Headline2M]};
