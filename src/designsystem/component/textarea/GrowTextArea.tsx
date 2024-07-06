@@ -27,14 +27,14 @@ const GrowTextArea = (
     const placeHolderColor = isEnabled ? theme.textAlt : theme.textFieldTextDisabled;
 
     return (
-        <S.GrowTextAreaStyle customStyle={customStyle} strokeColor={strokeColor}>
+        <S.GrowTextAreaStyle $customStyle={customStyle} $strokeColor={strokeColor}>
             <S.Input
                 value={text}
                 disabled={!isEnabled}
                 onChange={event => {
                     onChange(event.target.value);
                 }}
-                placeholderColor={placeHolderColor}
+                $placeholderColor={placeHolderColor}
                 placeholder={hint}
                 onFocus={() => {
                     setIsFocused(true);
@@ -42,7 +42,7 @@ const GrowTextArea = (
                 onBlur={() => {
                     setIsFocused(false);
                 }}
-                textColor={textColor}
+                $textColor={textColor}
             />
         </S.GrowTextAreaStyle>
     );

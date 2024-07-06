@@ -4,8 +4,8 @@ import {bounceAnimation} from "../../animation/bounceAnimation";
 import {GrowTypographies, TypographyType} from "../../foundation/text/GrowTypographies";
 
 export const GrowTextAreaStyle = styled.div<{
-    strokeColor: string,
-    customStyle?: RuleSet
+    $strokeColor: string,
+    $customStyle?: RuleSet
 }>`
     // Layout
     ${FlexLayout({justifyContent: "spacer-between", alignItems: "center"})};
@@ -14,14 +14,14 @@ export const GrowTextAreaStyle = styled.div<{
     
     // Style
     border-radius: 12px;
-    border: 1px solid ${({strokeColor}) => strokeColor};
+    border: 1px solid ${({$strokeColor}) => $strokeColor};
     transition: 0.1s border;
-    ${({customStyle}) => customStyle};
+    ${({$customStyle}) => $customStyle};
 `
 
 export const Input = styled.textarea<{
-    textColor: string,
-    placeholderColor: string,
+    $textColor: string,
+    $placeholderColor: string,
 }>`
     // Layout
     flex: 1;
@@ -31,7 +31,7 @@ export const Input = styled.textarea<{
     outline: none;
     border: none;
     background-color: transparent;
-    color: ${({textColor}) => textColor};
+    color: ${({$textColor}) => $textColor};
     ${GrowTypographies[TypographyType.BodyM]};
     margin: 12px 0;
 
@@ -45,7 +45,7 @@ export const Input = styled.textarea<{
     }
 
     &::placeholder {
-        color: ${({placeholderColor}) => placeholderColor};
+        color: ${({$placeholderColor}) => $placeholderColor};
     }
 `;
 
