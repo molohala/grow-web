@@ -19,7 +19,7 @@ const style = {
         border-radius: 16px;
         
         @media screen and (max-width: ${Guideline.Mobile}px) {
-            padding: 8px;
+            padding: 12px 16px;
         }
     `,
     Content: styled.div`
