@@ -7,29 +7,18 @@ import GrowIcon, {IconType} from "../../designsystem/foundation/iconography/Grow
 import {useTheme} from "styled-components";
 import GrowLanguage from "../../designsystem/component/language/GrowLanguage";
 import useAppState from "../../hook/global/useAppState";
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
 import {AppStateContext} from "../../provider/appstate/AppStateContext";
 
 const ProfilePage = () => {
     useTokenCheck();
 
     const theme = useTheme();
-    const {profile} = useContext(AppStateContext);
-    const tempLangs = [
-        'Swift',
-        'Python',
-        'Rust',
-        'C++',
-        'C',
-        'C++',
-        'Go',
-        'Roby',
-        'JavaScript',
-        'TypeScript',
-        'Mojo',
-        'Kotlin',
-        'Java'
-    ]
+    const {profile, languages, fetchLanguages} = useContext(AppStateContext);
+
+    useEffect(() => {
+        fetchLanguages().catch();
+    }, []);
 
     return (
         <MainTemplate>
@@ -52,8 +41,8 @@ const ProfilePage = () => {
                     <Column rowGap={12}>
                         <S.Subtitle>사용 언어</S.Subtitle>
                         <S.LanguageContainer>
-                            {tempLangs.map(lang => (
-                                <GrowLanguage text={lang}/>
+                            {languages?.map(lang => (
+                                <GrowLanguage key={lang.id} text={lang.name}/>
                             ))}
                         </S.LanguageContainer>
                     </Column>
