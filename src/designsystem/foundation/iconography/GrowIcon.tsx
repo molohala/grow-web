@@ -89,7 +89,7 @@ const GrowIcon = (
     {
         type,
         tint = 'black',
-        size = 24
+        size = 24,
     }: GrowIconProps
 ) => {
     switch (type) {

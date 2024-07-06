@@ -38,3 +38,7 @@ export const Column = styled(BaseFlex)`
 export const Row = styled(BaseFlex)`
     flex-direction: row;
 `;
+
+export const FlexWrapper = styled.div`
+    display: flex;
+`;

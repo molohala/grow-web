@@ -1,27 +1,39 @@
 import S from "./ProfilePage.style";
 import MainTemplate from "../template/MainTemplate";
 import useTokenCheck from "../../hook/auth/useTokenCheck";
-import {Column, Row} from "../../designsystem/util/StyledFlex";
+import {Column, FlexWrapper, Row} from "../../designsystem/util/StyledFlex";
 import GrowAvatar, {AvatarType} from "../../designsystem/component/avatar/GrowAvatar";
 import GrowIcon, {IconType} from "../../designsystem/foundation/iconography/GrowIcon";
 import {useTheme} from "styled-components";
 import GrowLanguage from "../../designsystem/component/language/GrowLanguage";
-import useAppState from "../../hook/global/useAppState";
-import {useContext, useEffect} from "react";
 import {AppStateContext} from "../../provider/appstate/AppStateContext";
+import {useContext, useEffect, useState} from "react";
+import PatchMyBioDialog from "../patchmybio/PatchMyBioDialog";
 
 const ProfilePage = () => {
     useTokenCheck();
 
     const theme = useTheme();
     const {profile, languages, fetchLanguages} = useContext(AppStateContext);
+    const [showPatchMyProfileDialog, setShowPatchMyProfileDialog] = useState(false);
+    const [showPatchLanguagesDialog, setShowPatchLanguagesDialog] = useState(false);
 
     useEffect(() => {
         fetchLanguages().catch();
     }, []);
 
+    const handlePatchBioIconClicked = () => {
+        setShowPatchMyProfileDialog(true);
+    };
+
+    const handlePatchLanguagesClicked = () => {
+        setShowPatchLanguagesDialog(false);
+    }
+
     return (
         <MainTemplate>
+            {showPatchMyProfileDialog && <PatchMyBioDialog dismiss={() => setShowPatchMyProfileDialog(false)}/>}
+
             <S.Container>
                 <S.FirstContainer>
                     <Row $columnGap={12} $alignItems={'center'}>
@@ -34,12 +46,19 @@ const ProfilePage = () => {
                     <Column $rowGap={12}>
                         <Row $columnGap={4} $alignItems={'center'}>
                             <S.Subtitle>소개글</S.Subtitle>
-                            <GrowIcon tint={theme.textAlt} type={IconType.Write}/>
+                            <FlexWrapper onClick={handlePatchBioIconClicked}>
+                                <GrowIcon tint={theme.textAlt} type={IconType.Write}/>
+                            </FlexWrapper>
                         </Row>
                         <S.Content>{profile?.bio}</S.Content>
                     </Column>
                     <Column $rowGap={12}>
-                        <S.Subtitle>사용 언어</S.Subtitle>
+                        <Row $columnGap={4} $alignItems={'center'}>
+                            <S.Subtitle>사용 언어</S.Subtitle>
+                            <FlexWrapper onClick={handlePatchLanguagesClicked}>
+                                <GrowIcon tint={theme.textAlt} type={IconType.Write}/>
+                            </FlexWrapper>
+                        </Row>
                         <S.LanguageContainer>
                             {languages?.map(lang => (
                                 <GrowLanguage key={lang.id} text={lang.name}/>
