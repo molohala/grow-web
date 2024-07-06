@@ -13,7 +13,7 @@ export interface BaseFlexProps {
     wrap?: boolean;
     backgroundColor?: CSSProperties["backgroundColor"];
     alignSelf?: CSSProperties['alignSelf'];
-    customStyle?: RuleSet;
+    $customStyle?: RuleSet;
 }
 
 const BaseFlex = styled.div<BaseFlexProps>`
@@ -28,7 +28,7 @@ const BaseFlex = styled.div<BaseFlexProps>`
     background-color: ${({backgroundColor}) => backgroundColor || "transparent"};
     padding: ${({padding}) => padding};
     align-self: ${({alignSelf}) => alignSelf};
-    ${({customStyle}) => customStyle};
+    ${({$customStyle}) => $customStyle};
 `;
 
 export const Column = styled(BaseFlex)`

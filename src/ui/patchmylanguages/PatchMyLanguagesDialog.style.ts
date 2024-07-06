@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {FlexLayout} from "../../designsystem/util/FlexLayout";
+import DialogContentStyle from "../util/DialogContentStyle";
 import {GrowTypographies, TypographyType} from "../../designsystem/foundation/text/GrowTypographies";
-import DialogContentStyle from '../util/DialogContentStyle';
 
 const style = {
     Container: styled.div`
@@ -15,6 +15,10 @@ const style = {
     TopBar: styled.div`
         ${FlexLayout({alignItems: 'center'})};
     `,
-};
+    LanguageContainer: styled.div`
+        ${FlexLayout({rowGap: '8px', columnGap: '8px'})};
+        flex-wrap: wrap;
+    `,
+}
 
 export default style;

@@ -2,6 +2,7 @@ import LanguageResponse from "../response/Language.response";
 import {growAxios} from "../../global/growAxios";
 import PatchMyProfileRequest from "../../like/request/PatchMyProfile.request";
 import {BaseResponse, BaseVoidResponse} from "../../global/Base.response";
+import PatchMyLanguageRequest from "../request/PatchMyLanguage.request";
 
 class LanguageApi {
     private static path = 'language'
@@ -11,7 +12,7 @@ class LanguageApi {
         return data;
     }
 
-    async patchLanguage(req: PatchMyProfileRequest): Promise<BaseVoidResponse> {
+    async patchLanguage(req: PatchMyLanguageRequest): Promise<BaseVoidResponse> {
         const {data} = await growAxios.patch(`${LanguageApi.path}/me`, req);
         return data;
     }

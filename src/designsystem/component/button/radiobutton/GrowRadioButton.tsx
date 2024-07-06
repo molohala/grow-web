@@ -34,7 +34,7 @@ const GrowRadioButton = (
     return (
         <S.GrowRadioButtonStyle
             onClick={onClick}
-            isSelected={isSelected}
+            $isSelected={isSelected}
             customStyle={customStyle}
             {...props}>
             <Row

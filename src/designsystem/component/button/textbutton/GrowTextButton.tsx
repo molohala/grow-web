@@ -14,7 +14,7 @@ interface GrowTextButtonProps {
     trailingIcon?: IconType,
     isEnabled?: boolean,
     isLoading?: boolean,
-    customStyle?: RuleSet;
+    $customStyle?: RuleSet;
 }
 
 const GrowTextButton = (
@@ -26,7 +26,7 @@ const GrowTextButton = (
         trailingIcon,
         isEnabled = true,
         isLoading = false,
-        customStyle,
+        $customStyle,
         ...props
     }: GrowTextButtonProps
 ) => {
@@ -42,14 +42,14 @@ const GrowTextButton = (
                 onClick();
             }}
             style={style}
-            customStyle={customStyle}
-            isLoading={isLoading}
+            $customStyle={$customStyle}
+            $isLoading={isLoading}
             disabled={!isEnabled}
             {...props}>
             <Row
                 $columnGap={ButtonStyles[type].labelSpacing}
                 $alignItems={'center'}
-                customStyle={css`
+                $customStyle={css`
                     opacity: ${isLoading ? 0 : 1};
                 `}>
                 {leadingIcon && <GrowIcon type={leadingIcon} size={20} tint={color}/>}

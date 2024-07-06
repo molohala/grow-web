@@ -9,6 +9,7 @@ import GrowLanguage from "../../designsystem/component/language/GrowLanguage";
 import {AppStateContext} from "../../provider/appstate/AppStateContext";
 import {useContext, useEffect, useState} from "react";
 import PatchMyBioDialog from "../patchmybio/PatchMyBioDialog";
+import PatchMyLanguagesDialog from "../patchmylanguages/PatchMyLanguagesDialog";
 
 const ProfilePage = () => {
     useTokenCheck();
@@ -27,13 +28,13 @@ const ProfilePage = () => {
     };
 
     const handlePatchLanguagesClicked = () => {
-        setShowPatchLanguagesDialog(false);
+        setShowPatchLanguagesDialog(true);
     }
 
     return (
         <MainTemplate>
             {showPatchMyProfileDialog && <PatchMyBioDialog dismiss={() => setShowPatchMyProfileDialog(false)}/>}
-
+            {showPatchLanguagesDialog && <PatchMyLanguagesDialog dismiss={() => setShowPatchLanguagesDialog(false)}/>}
             <S.Container>
                 <S.FirstContainer>
                     <Row $columnGap={12} $alignItems={'center'}>

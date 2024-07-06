@@ -4,7 +4,7 @@ import {bounceAnimation} from "../../../animation/bounceAnimation";
 import {GrowTypographies, TypographyType} from "../../../foundation/text/GrowTypographies";
 
 export const GrowRadioButtonStyle = styled.button<{
-    isSelected: boolean,
+    $isSelected: boolean,
     customStyle?: RuleSet;
 }>`
     // Layout
@@ -14,9 +14,9 @@ export const GrowRadioButtonStyle = styled.button<{
     flex-shrink: 0;
     
     // Style
-    ${({theme, isSelected}) => css`
-        color: ${isSelected ? theme.radioButtonSecondary : theme.radioButtonSecondaryDisabled};
-        border: 1.5px solid ${isSelected ? theme.radioButtonPrimary : theme.radioButtonPrimaryDisabled};
+    ${({theme, $isSelected}) => css`
+        color: ${$isSelected ? theme.radioButtonSecondary : theme.radioButtonSecondaryDisabled};
+        border: 1.5px solid ${$isSelected ? theme.radioButtonPrimary : theme.radioButtonPrimaryDisabled};
     `};
     background-color: transparent;
     border-radius: 12px;

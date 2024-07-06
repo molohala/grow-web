@@ -49,7 +49,7 @@ const GrowButton = (
             <Row
                 $columnGap={ButtonStyles[type].labelSpacing}
                 $alignItems={'center'}
-                customStyle={css`
+                $customStyle={css`
                     opacity: ${isLoading ? 0 : 1};
                 `}>
                 {leadingIcon && <GrowIcon type={leadingIcon} size={20} tint={color}/>}

@@ -26,7 +26,7 @@ const Preview = () => {
     const [text, setText] = useState("");
 
     return (
-        <Row $columnGap={8} padding={'8px'} customStyle={css`background-color: ${theme.background}`}>
+        <Row $columnGap={8} padding={'8px'} $customStyle={css`background-color: ${theme.background}`}>
             <Column $rowGap={8}>
                 <GrowButton onClick={() => {
                 }} text={'시작하기'} leadingIcon={IconType.Send} type={ButtonType.CTA} customStyle={css`width: 200px;`}/>
@@ -69,7 +69,7 @@ const Preview = () => {
             </Column>
             <Column $rowGap={8}>
                 <GrowTextButton onClick={() => {
-                }} text={'시작하기'} leadingIcon={IconType.Send} type={ButtonType.CTA} customStyle={css`width: 200px;`}/>
+                }} text={'시작하기'} leadingIcon={IconType.Send} type={ButtonType.CTA} $customStyle={css`width: 200px;`}/>
                 <GrowTextButton onClick={() => {
                 }} text={'시작하기'} leadingIcon={IconType.Send} type={ButtonType.Large}/>
                 <GrowTextButton onClick={() => {
@@ -77,7 +77,7 @@ const Preview = () => {
                 <GrowTextButton onClick={() => {
                 }} text={'시작하기'} leadingIcon={IconType.Send} type={ButtonType.Small}/>
                 <GrowTextButton onClick={() => {
-                }} text={'시작하기'} leadingIcon={IconType.Send} type={ButtonType.CTA} customStyle={css`width: 200px;`}
+                }} text={'시작하기'} leadingIcon={IconType.Send} type={ButtonType.CTA} $customStyle={css`width: 200px;`}
                                 isEnabled={false}/>
                 <GrowTextButton onClick={() => {
                 }} text={'시작하기'} leadingIcon={IconType.Send} type={ButtonType.Large} isEnabled={false}/>
@@ -87,7 +87,7 @@ const Preview = () => {
                 }} text={'시작하기'} leadingIcon={IconType.Send} type={ButtonType.Small} isEnabled={false}/>
                 <GrowTextButton onClick={() => {
                 }} text={'시작하기'} isLoading={true} leadingIcon={IconType.Send} type={ButtonType.CTA}
-                                customStyle={css`width: 200px;`}/>
+                                $customStyle={css`width: 200px;`}/>
                 <GrowTextButton onClick={() => {
                 }} text={'시작하기'} isLoading={true} leadingIcon={IconType.Send} type={ButtonType.Large}/>
                 <GrowTextButton onClick={() => {
@@ -96,7 +96,7 @@ const Preview = () => {
                 }} text={'시작하기'} isLoading={true} leadingIcon={IconType.Send} type={ButtonType.Small}/>
                 <GrowTextButton onClick={() => {
                 }} text={'시작하기'} isLoading={true} leadingIcon={IconType.Send} type={ButtonType.CTA}
-                                customStyle={css`width: 200px;`} isEnabled={false}/>
+                                $customStyle={css`width: 200px;`} isEnabled={false}/>
                 <GrowTextButton onClick={() => {
                 }} text={'시작하기'} isLoading={true} leadingIcon={IconType.Send} type={ButtonType.Large}
                                 isEnabled={false}/>
@@ -173,13 +173,13 @@ const Preview = () => {
                 <ShadowRectangle shadowType={ShadowType.EvBlack2}/>
                 <ShadowRectangle shadowType={ShadowType.EvBlack3}/>
             </Column>
-            <Column customStyle={css`background: ${theme.backgroundAlt}`} $rowGap={8}>
+            <Column $customStyle={css`background: ${theme.backgroundAlt}`} $rowGap={8}>
                 <GrowLanguage text={'Swift'}/>
                 <GrowLanguage text={'Python'}/>
                 <GrowLanguage text={'C++'}/>
                 <GrowLanguage text={'Kotlin'}/>
             </Column>
-            <Column $rowGap={8} customStyle={css`flex: 1`}>
+            <Column $rowGap={8} $customStyle={css`flex: 1`}>
                 <GrowDivider type={DividerType.Thick}/>
                 <GrowDivider type={DividerType.Thin}/>
             </Column>

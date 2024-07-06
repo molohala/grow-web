@@ -7,8 +7,8 @@ import {ButtonStyle} from "../type/ButtonType";
 export const GrowTextButtonStyle = styled.button<{
     style: ButtonStyle,
     disabled: boolean,
-    isLoading: boolean,
-    customStyle?: RuleSet;
+    $isLoading: boolean,
+    $customStyle?: RuleSet;
 }>`
     // Layout
     position: relative;
@@ -22,13 +22,13 @@ export const GrowTextButtonStyle = styled.button<{
     `};
     background-color: transparent;
     ${({style}) => GrowTypographies[style.font]};
-    ${({customStyle}) => customStyle};
+    ${({$customStyle}) => $customStyle};
     outline: none;
     border: none;
     
     // Interaction
-    ${({disabled, isLoading}) => css`
-        ${!disabled && !isLoading && bounceAnimation};
-        cursor: ${!disabled && !isLoading && 'pointer'};
+    ${({disabled, $isLoading}) => css`
+        ${!disabled && !$isLoading && bounceAnimation};
+        cursor: ${!disabled && !$isLoading && 'pointer'};
     `};
 `;
