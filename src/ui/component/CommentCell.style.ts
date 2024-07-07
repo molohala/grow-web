@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import FlexLayout from "@designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts, Font} from "@designsystem/foundation/text/Fonts";
 
 const style = {
     Container: styled.div`
@@ -16,16 +16,16 @@ const style = {
     `,
     WriterName: styled.div`
         color: ${({theme}) => theme.textNormal};
-        ${GrowTypographies[TypographyType.BodyB]};
+        ${Fonts[Font.BodyB]};
     `,
     CreatedAt: styled.div`
         color: ${({theme}) => theme.textAlt};
-        ${GrowTypographies[TypographyType.LabelM]};
+        ${Fonts[Font.LabelM]};
     `,
     CommentContent: styled.p`
         ${FlexLayout({})};
         color: ${({theme}) => theme.textNormal};
-        ${GrowTypographies[TypographyType.BodyR]};
+        ${Fonts[Font.BodyR]};
         //width: 100%;
         word-break: break-word;
     `

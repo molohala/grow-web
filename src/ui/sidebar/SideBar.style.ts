@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Guideline} from "@ui/util/Guideline";
 
 import FlexLayout from "@designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts, Font} from "@designsystem/foundation/text/Fonts";
 import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
 import BlackEffect from "@designsystem/foundation/effect/BlackEffect";
 
@@ -60,7 +60,7 @@ export const ItemContainer = styled.button`
 export const ItemLabel = styled.div<{
     selected: boolean
 }>`
-    ${GrowTypographies[TypographyType.BodyM]};
+    ${Fonts[Font.BodyM]};
     color: ${({theme, selected}) => selected ? theme.bottomTabPrimary : theme.textDisabled};
     
     @media screen and (max-width: ${Guideline.Tablet}px) {

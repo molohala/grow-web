@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import FlexLayout from "@designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts, Font} from "@designsystem/foundation/text/Fonts";
 import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
 
 import DialogContentStyle from "@ui/util/DialogContentStyle";
@@ -25,15 +25,15 @@ const style = {
         ${FlexLayout({flexDirection: 'column'})};
     `,
     WriterName: styled.div`
-        ${GrowTypographies[TypographyType.BodyB]};
+        ${Fonts[Font.BodyB]};
         color: ${({theme}) => theme.textNormal};
     `,
     CreatedAt: styled.div`
-        ${GrowTypographies[TypographyType.LabelM]};
+        ${Fonts[Font.LabelM]};
         color: ${({theme}) => theme.textAlt};
     `,
     ForumContent: styled.p`
-        ${GrowTypographies[TypographyType.BodyR]};
+        ${Fonts[Font.BodyR]};
         color: ${({theme}) => theme.textNormal};
         width: 100%;
         word-break: break-word;

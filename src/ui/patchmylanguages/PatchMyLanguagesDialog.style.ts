@@ -3,7 +3,7 @@ import styled from "styled-components";
 import DialogContentStyle from "@ui/util/DialogContentStyle";
 
 import FlexLayout from "@designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts, Font} from "@designsystem/foundation/text/Fonts";
 
 const style = {
     Container: styled.div`
@@ -11,7 +11,7 @@ const style = {
         ${DialogContentStyle};
     `,
     Title: styled.h1`
-        ${GrowTypographies[TypographyType.Headline2M]};
+        ${Fonts[Font.Headline2M]};
         color: ${({theme}) => theme.textNormal};
     `,
     TopBar: styled.div`

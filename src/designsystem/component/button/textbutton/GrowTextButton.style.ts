@@ -1,7 +1,7 @@
 import styled, {css, RuleSet} from "styled-components";
 import FlexLayout from "@designsystem/util/FlexLayout";
 import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
-import {GrowTypographies} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts} from "@designsystem/foundation/text/Fonts";
 import {ButtonStyle} from "@designsystem/component/button/type/ButtonType";
 
 export const GrowTextButtonStyle = styled.button<{
@@ -21,7 +21,7 @@ export const GrowTextButtonStyle = styled.button<{
         color: ${disabled ? theme.buttonPrimaryDisabled : theme.buttonPrimary};
     `};
     background-color: transparent;
-    ${({style}) => GrowTypographies[style.font]};
+    ${({style}) => Fonts[style.font]};
     ${({$customStyle}) => $customStyle};
     outline: none;
     border: none;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import FlexLayout from "@designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts, Font} from "@designsystem/foundation/text/Fonts";
 
 export const Container = styled.div`
     // Layout
@@ -29,17 +29,17 @@ export const ProfileContainer = styled.div`
 
 export const ProfileName = styled.div`
     color: ${({theme}) => theme.textNormal};
-    ${GrowTypographies[TypographyType.BodyB]};
+    ${Fonts[Font.BodyB]};
 `
 
 export const ProfileCreatedAt = styled.div`
     color: ${({theme}) => theme.textAlt};
-    ${GrowTypographies[TypographyType.LabelM]};
+    ${Fonts[Font.LabelM]};
 `
 
 export const Content = styled.p`
     color: ${({theme}) => theme.textNormal};
-    ${GrowTypographies[TypographyType.BodyR]};
+    ${Fonts[Font.BodyR]};
     ${FlexLayout({})};
     text-align: start;
     width: 100%;
@@ -53,13 +53,13 @@ export const RecentCommentContainer = styled.div`
 
 export const RecentCommentName = styled.div`
     color: ${({theme}) => theme.textNormal};
-    ${GrowTypographies[TypographyType.LabelB]};
+    ${Fonts[Font.LabelB]};
     white-space: nowrap;
 `;
 
 export const RecentCommentContent = styled.p`
     color: ${({theme}) => theme.textNormal};
-    ${GrowTypographies[TypographyType.LabelR]};
+    ${Fonts[Font.LabelR]};
     ${FlexLayout({})};
     text-align: start;
     display: -webkit-box;
@@ -71,6 +71,6 @@ export const RecentCommentContent = styled.p`
 
 export const RecentCommentCreatedAt = styled.div`
     color: ${({theme}) => theme.textAlt};
-    ${GrowTypographies[TypographyType.LabelM]};
+    ${Fonts[Font.LabelM]};
     white-space: nowrap;
 `;

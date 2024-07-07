@@ -2,7 +2,7 @@ import styled, {css, RuleSet} from "styled-components";
 
 import FlexLayout from "@designsystem/util/FlexLayout";
 import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
-import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts, Font} from "@designsystem/foundation/text/Fonts";
 
 export const GrowLikeButtonStyle = styled.button<{
     $isLiked: boolean,
@@ -20,7 +20,7 @@ export const GrowLikeButtonStyle = styled.button<{
         background-color: ${$isLiked ? theme.likeSecondary : theme.likeSecondaryDisabled};
     `};
     border-radius: 4px;
-    ${GrowTypographies[TypographyType.BodyM]};
+    ${Fonts[Font.BodyM]};
     ${({customStyle}) => customStyle};
     outline: none;
     border: none;

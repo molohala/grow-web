@@ -2,7 +2,7 @@ import styled, {RuleSet} from "styled-components";
 
 import FlexLayout from "@designsystem/util/FlexLayout";
 import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
-import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts, Font} from "@designsystem/foundation/text/Fonts";
 
 export const GrowTextAreaStyle = styled.div<{
     $strokeColor: string,
@@ -33,7 +33,7 @@ export const Input = styled.textarea<{
     border: none;
     background-color: transparent;
     color: ${({$textColor}) => $textColor};
-    ${GrowTypographies[TypographyType.BodyM]};
+    ${Fonts[Font.BodyM]};
     margin: 12px 0;
 
     resize: none;

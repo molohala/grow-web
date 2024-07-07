@@ -2,7 +2,7 @@ import styled, {css, RuleSet} from "styled-components";
 
 import FlexLayout from "@designsystem//util/FlexLayout";
 import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
-import {GrowTypographies} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts} from "@designsystem/foundation/text/Fonts";
 import {ButtonStyle} from "@designsystem/component/button/type/ButtonType";
 
 export const GrowButtonStyle = styled.button<{
@@ -22,7 +22,7 @@ export const GrowButtonStyle = styled.button<{
         background-color: ${disabled ? theme.buttonPrimaryDisabled : theme.buttonPrimary};
         color: ${disabled ? theme.buttonTextDisabled : theme.buttonText};
     `};
-    ${({style}) => GrowTypographies[style.font]};
+    ${({style}) => Fonts[style.font]};
     border-radius: ${({style}) => style.cornerRadius}px;
     ${({customStyle}) => customStyle};
     outline: none;

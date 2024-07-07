@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import FlexLayout from "@designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts, Font} from "@designsystem/foundation/text/Fonts";
 
 export const Container = styled.div`
     // Layout
@@ -27,7 +27,7 @@ export const FormContent = styled.div`
 `;
 
 export const LoginTitle = styled.h1`
-    ${GrowTypographies[TypographyType.Headline1B]};
+    ${Fonts[Font.Headline1B]};
     color: ${({theme}) => theme.textNormal};
     user-select: none;
 `;

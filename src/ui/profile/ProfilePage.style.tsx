@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Guideline} from "@ui/util/Guideline";
 import FlexLayout from "@designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts, Font} from "@designsystem/foundation/text/Fonts";
 
 const style = {
     Container: styled.div`
@@ -31,19 +31,19 @@ const style = {
     `,
     Developer: styled.div`
         color: ${({theme}) => theme.textAlt};
-        ${GrowTypographies[TypographyType.LabelR]};
+        ${Fonts[Font.LabelR]};
     `,
     ProfileName: styled.div`
         color: ${({theme}) => theme.textNormal};
-        ${GrowTypographies[TypographyType.BodyB]};
+        ${Fonts[Font.BodyB]};
     `,
     Subtitle: styled.div`
         color: ${({theme}) => theme.textNormal};
-        ${GrowTypographies[TypographyType.Headline1B]};
+        ${Fonts[Font.Headline1B]};
     `,
     Content: styled.p`
         color: ${({theme}) => theme.textAlt};
-        ${GrowTypographies[TypographyType.BodyM]};
+        ${Fonts[Font.BodyM]};
     `,
     LanguageContainer: styled.div`
         ${FlexLayout({rowGap: '8px', columnGap: '8px'})};

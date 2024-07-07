@@ -2,7 +2,7 @@ import styled, {css, RuleSet} from "styled-components";
 
 import FlexLayout from "@designsystem/util/FlexLayout";
 import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
-import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts, Font} from "@designsystem/foundation/text/Fonts";
 
 export const GrowTabButtonStyle = styled.button<{
     disabled: boolean,
@@ -20,7 +20,7 @@ export const GrowTabButtonStyle = styled.button<{
         color: ${disabled ? theme.buttonTextDisabled : theme.tabButtonPrimary};
     `};
     background-color: transparent;
-    ${GrowTypographies[TypographyType.BodyB]};
+    ${Fonts[Font.BodyB]};
     ${({customStyle}) => customStyle};
     outline: none;
     border: none;

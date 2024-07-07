@@ -1,6 +1,6 @@
 import {css, RuleSet} from "styled-components";
 
-export enum TypographyType {
+export enum Font {
     Title1B,
     Title1M,
     Title1R,
@@ -24,109 +24,109 @@ export enum TypographyType {
     CaptionR
 }
 
-export const GrowTypographies: { [key in TypographyType]: RuleSet } = Object.freeze({
-    [TypographyType.Title1B]: css`
+export const Fonts: { [key in Font]: RuleSet } = Object.freeze({
+    [Font.Title1B]: css`
         font-weight: 700;
         font-size: 28px;
         line-height: 130%;
     `,
-    [TypographyType.Title1M]: css`
+    [Font.Title1M]: css`
         font-weight: 500;
         font-size: 28px;
         line-height: 130%;
     `,
-    [TypographyType.Title1R]: css`
+    [Font.Title1R]: css`
         font-weight: 400;
         font-size: 28px;
         line-height: 130%;
     `,
-    [TypographyType.Title2B]: css`
+    [Font.Title2B]: css`
         font-weight: 700;
         font-size: 24px;
         line-height: 130%;
     `,
-    [TypographyType.Title2M]: css`
+    [Font.Title2M]: css`
         font-weight: 500;
         font-size: 24px;
         line-height: 130%;
     `,
-    [TypographyType.Title2R]: css`
+    [Font.Title2R]: css`
         font-weight: 400;
         font-size: 24px;
         line-height: 130%;
     `,
 
-    [TypographyType.Headline1B]: css`
+    [Font.Headline1B]: css`
         font-weight: 700;
         font-size: 20px;
         line-height: 130%;
     `,
-    [TypographyType.Headline1M]: css`
+    [Font.Headline1M]: css`
         font-weight: 500;
         font-size: 20px;
         line-height: 130%;
     `,
-    [TypographyType.Headline1R]: css`
+    [Font.Headline1R]: css`
         font-weight: 400;
         font-size: 20px;
         line-height: 130%;
     `,
-    [TypographyType.Headline2B]: css`
+    [Font.Headline2B]: css`
         font-weight: 700;
         font-size: 18px;
         line-height: 130%;
     `,
-    [TypographyType.Headline2M]: css`
+    [Font.Headline2M]: css`
         font-weight: 500;
         font-size: 18px;
         line-height: 130%;
     `,
-    [TypographyType.Headline2R]: css`
+    [Font.Headline2R]: css`
         font-weight: 400;
         font-size: 18px;
         line-height: 130%;
     `,
-    [TypographyType.BodyB]: css`
+    [Font.BodyB]: css`
         font-weight: 700;
         font-size: 16px;
         line-height: 130%;
     `,
-    [TypographyType.BodyM]: css`
+    [Font.BodyM]: css`
         font-weight: 500;
         font-size: 16px;
         line-height: 130%;
     `,
-    [TypographyType.BodyR]: css`
+    [Font.BodyR]: css`
         font-weight: 400;
         font-size: 16px;
         line-height: 130%;
     `,
-    [TypographyType.CaptionB]: css`
+    [Font.CaptionB]: css`
         font-weight: 700;
         font-size: 14px;
         line-height: 130%;
     `,
-    [TypographyType.CaptionM]: css`
+    [Font.CaptionM]: css`
         font-weight: 500;
         font-size: 14px;
         line-height: 130%;
     `,
-    [TypographyType.CaptionR]: css`
+    [Font.CaptionR]: css`
         font-weight: 400;
         font-size: 14px;
         line-height: 130%;
     `,
-    [TypographyType.LabelB]: css`
+    [Font.LabelB]: css`
         font-weight: 700;
         font-size: 12px;
         line-height: 130%;
     `,
-    [TypographyType.LabelM]: css`
+    [Font.LabelM]: css`
         font-weight: 500;
         font-size: 12px;
         line-height: 130%;
     `,
-    [TypographyType.LabelR]: css`
+    [Font.LabelR]: css`
         font-weight: 400;
         font-size: 12px;
         line-height: 130%;

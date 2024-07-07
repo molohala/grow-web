@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import FlexLayout from "@designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts, Font} from "@designsystem/foundation/text/Fonts";
 import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
 
 export const Container = styled.div`
@@ -25,7 +25,7 @@ export const WriteContainer = styled.button`
     border-radius: 50px;
     background: ${({theme}) => theme.background};
     color: ${({theme}) => theme.textNormal};
-    ${GrowTypographies[TypographyType.BodyB]};
+    ${Fonts[Font.BodyB]};
     border: none;
     cursor: pointer;
     ${bounceAnimation};

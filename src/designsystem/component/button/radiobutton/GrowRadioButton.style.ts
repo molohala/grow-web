@@ -1,7 +1,7 @@
 import styled, {css, RuleSet} from "styled-components";
 import FlexLayout from "@designsystem/util/FlexLayout";
 import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
-import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {Fonts, Font} from "@designsystem/foundation/text/Fonts";
 
 export const GrowRadioButtonStyle = styled.button<{
     $isSelected: boolean,
@@ -20,7 +20,7 @@ export const GrowRadioButtonStyle = styled.button<{
     `};
     background-color: transparent;
     border-radius: 12px;
-    ${GrowTypographies[TypographyType.BodyM]};
+    ${Fonts[Font.BodyM]};
     ${({customStyle}) => customStyle};
     outline: none;
     
