@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {RuleSet, useTheme} from "styled-components";
-import * as S from "./GrowTextField.style";
+import * as S from "@designsystem/component/textfield/GrowTextField.style";
 import GrowIcon, {IconType} from "@designsystem/foundation/iconography/GrowIcon";
 
 export interface GrowTextFieldProps {

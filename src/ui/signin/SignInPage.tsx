@@ -7,7 +7,7 @@ import GrowTextField from "@designsystem/component/textfield/GrowTextField";
 import GrowButton from "@designsystem/component/button/button/GrowButton";
 import {ButtonType} from "@designsystem/component/button/type/ButtonType";
 
-import * as S from './SignInPage.style';
+import * as S from '@ui/signin/SignInPage.style';
 
 const SignInPage = () => {
 

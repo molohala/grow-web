@@ -1,4 +1,4 @@
-import SolveResponse from "./Solve.response";
+import SolveResponse from "@repository/like/response/Solve.response";
 
 interface SolvedacResponse {
     name: string

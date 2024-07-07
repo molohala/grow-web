@@ -1,8 +1,7 @@
 import React from "react";
 import {RuleSet, useTheme} from "styled-components";
 
-import * as S from "./GrowLikeButton.style";
-
+import * as S from "@designsystem/component/button/likebutton/GrowLikeButton.style";
 import {Row} from "@designsystem/util/StyledFlex";
 import GrowIcon, {IconType} from "@designsystem/foundation/iconography/GrowIcon";
 

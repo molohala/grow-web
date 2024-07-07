@@ -1,5 +1,6 @@
 import styled, {css} from "styled-components";
-import {Direction, DividerType} from "./GrowDivider";
+
+import {Direction, DividerType} from "@designsystem/component/divider/GrowDivider";
 
 export const GrowDividerContainer = styled.div<{
     direction?: Direction,

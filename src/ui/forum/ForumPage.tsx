@@ -11,13 +11,13 @@ import GrowLoader from "@designsystem/component/loader/GrowLoader";
 import MainTemplate from "@ui/template/MainTemplate";
 import CreateForumDialog from "@ui/createforum/CreateForumDialog";
 import ForumDetailDialog from "@ui/forumdetail/ForumDetailDialog";
+import * as S from "@ui/forum/ForumPage.style";
+import ForumCell from "@ui/forum/cell/ForumCell";
 
 import useTokenCheck from "@hook/auth/useTokenCheck";
 import useForum from "@hook/forum/useFetchForum";
 import useLike from "@hook/like/useLike";
 
-import * as S from "./ForumPage.style";
-import ForumCell from "./cell/ForumCell";
 
 const ForumPage = () => {
     useTokenCheck();

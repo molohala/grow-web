@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import {css} from "styled-components";
 
 import DialogTemplate from "@ui/template/DialogTemplate";
+import S from '@ui/patchmybio/PatchMyBioDialog.style';
 
 import Spacer from "@designsystem/component/spacer/Spacer";
 import GrowTextButton from "@designsystem/component/button/textbutton/GrowTextButton";
@@ -11,8 +12,6 @@ import GrowTextArea from "@designsystem/component/textarea/GrowTextArea";
 import infoApi from "@repository/info/api/info.api";
 
 import {AppStateContext} from "@provider/appstate/AppStateContext";
-
-import S from './PatchMyBioDialog.style';
 
 interface CreateForumProps {
     dismiss: () => void;

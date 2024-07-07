@@ -19,8 +19,7 @@ import GrowLanguage from "@designsystem/component/language/GrowLanguage";
 import GrowLikeButton from "@designsystem/component/button/likebutton/GrowLikeButton";
 import GrowRadioButton from "@designsystem/component/button/radiobutton/GrowRadioButton";
 import GrowTextArea from "@designsystem/component/textarea/GrowTextArea";
-
-import {ShadowRectangle} from "./ShadowRectangle";
+import {ShadowRectangle} from "@designsystem/preview/ShadowRectangle";
 
 const Preview = () => {
 

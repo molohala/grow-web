@@ -1,4 +1,4 @@
-import * as S from "./GrowToggleButton.style";
+import * as S from "@designsystem/component/button/togglebutton/GrowToggleButton.style";
 
 interface GrowToggleButtonProps {
     checked: boolean;

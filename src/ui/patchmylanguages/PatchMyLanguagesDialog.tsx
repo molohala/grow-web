@@ -1,7 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
 
-import S from './PatchMyLanguagesDialog.style';
-
 import Spacer from "@designsystem/component/spacer/Spacer";
 import {IconType} from "@designsystem/foundation/iconography/GrowIcon";
 import GrowTextButton from "@designsystem/component/button/textbutton/GrowTextButton";
@@ -9,6 +7,7 @@ import {ButtonType} from "@designsystem/component/button/type/ButtonType";
 import GrowRadioButton from "@designsystem/component/button/radiobutton/GrowRadioButton";
 
 import DialogTemplate from "@ui/template/DialogTemplate";
+import S from '@ui/patchmylanguages/PatchMyLanguagesDialog.style';
 
 import {AppStateContext} from "@provider/appstate/AppStateContext";
 

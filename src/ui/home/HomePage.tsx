@@ -1,5 +1,6 @@
-import * as S from "./HomePage.style";
+import * as S from "@ui/home/HomePage.style";
 import MainTemplate from "@ui/template/MainTemplate";
+
 import useTokenCheck from "@hook/auth/useTokenCheck";
 
 const HomePage = () => {

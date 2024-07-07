@@ -1,9 +1,11 @@
 import React from 'react';
 
-import S from './CommentCell.style';
 import GrowAvatar, {AvatarType} from "@designsystem/component/avatar/GrowAvatar";
 import {CommentResponse} from "@repository/comment/response/Comment.response";
+
 import CustomDate from "@util/CustomDate";
+
+import S from '@ui/component/CommentCell.style';
 
 interface CommentCellProps {
     comment: CommentResponse

@@ -1,5 +1,5 @@
 import {GrowColorScheme} from 'styled-components';
-import {GrowPalette} from "./GrowPalette";
+import {GrowPalette} from "@designsystem/foundation/color/GrowPalette";
 
 export const GrowLightScheme: GrowColorScheme = Object.freeze({
     textNormal: GrowPalette.Neutral90,

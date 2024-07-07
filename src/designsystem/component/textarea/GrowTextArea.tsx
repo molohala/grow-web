@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {RuleSet, useTheme} from "styled-components";
 
-import * as S from "./GrowTextArea.style";
+import * as S from "@designsystem/component/textarea/GrowTextArea.style";
 
 export interface GrowTextFieldProps {
     hint: string,

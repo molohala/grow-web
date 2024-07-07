@@ -1,4 +1,4 @@
-import {GrowLanguageStyle} from "./GrowLanguage.style";
+import {GrowLanguageStyle} from "@designsystem/component/language/GrowLanguage.style";
 
 interface GrowLanguageProps {
     text: string

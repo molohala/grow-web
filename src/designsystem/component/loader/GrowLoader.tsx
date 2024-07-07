@@ -1,5 +1,6 @@
 import {RuleSet} from "styled-components";
-import * as S from "./GrowLoader.style";
+
+import * as S from "@designsystem/component/loader/GrowLoader.style";
 
 export interface GrowLoaderProps {
     color?: string,

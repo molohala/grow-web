@@ -18,8 +18,7 @@ import GrowTextField from "@designsystem/component/textfield/GrowTextField";
 
 import DialogTemplate from "@ui/template/DialogTemplate";
 import CommentCell from "@ui/component/CommentCell";
-
-import S from "./ForumDetailDialog.style";
+import S from "@ui/forumdetail/ForumDetailDialog.style";
 
 interface ForumDetailDialogProps {
     forum: ForumResponse;

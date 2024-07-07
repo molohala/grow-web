@@ -1,6 +1,8 @@
 import {ReactNode, useEffect} from "react";
+
 import useAppState from "@hook/global/useAppState";
-import {AppStateContext} from "./AppStateContext";
+
+import {AppStateContext} from "@provider/appstate/AppStateContext";
 
 interface AppStateProviderProps {
     children: ReactNode;

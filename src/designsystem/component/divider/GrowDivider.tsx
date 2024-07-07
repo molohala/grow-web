@@ -1,4 +1,4 @@
-import * as S from "./GrowDividerContainer";
+import * as S from "@designsystem/component/divider/GrowDividerContainer";
 
 export enum DividerType {
     Thin,

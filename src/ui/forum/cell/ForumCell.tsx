@@ -9,7 +9,7 @@ import {ForumResponse} from "@repository/forum/response/Forum.response";
 
 import CustomDate from "@util/CustomDate";
 
-import * as S from './ForumCell.style';
+import * as S from '@ui/forum/cell/ForumCell.style';
 
 interface ForumCellProps {
     forum: ForumResponse

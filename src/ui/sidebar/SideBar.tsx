@@ -5,10 +5,10 @@ import GrowIcon, {IconType} from "@designsystem/foundation/iconography/GrowIcon"
 import Spacer from "@designsystem/component/spacer/Spacer";
 
 import {Guideline} from "@ui/util/Guideline";
+import * as S from '@ui/sidebar/SideBar.style';
 
 import {DarkThemeContext, DarkThemeContextType} from "@provider/theme/DarkThemeContext";
 
-import * as S from './SideBar.style';
 
 export type SideBarItem = {
     icon: IconType,

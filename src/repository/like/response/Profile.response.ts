@@ -1,4 +1,4 @@
-import SocialResponse from "./Social.response";
+import SocialResponse from "@repository/like/response/Social.response";
 
 interface ProfileResponse {
     id: number
