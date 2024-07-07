@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import {FlexLayout} from "../../designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "../../designsystem/foundation/text/GrowTypographies";
-import {bounceAnimation} from "../../designsystem/animation/bounceAnimation";
-import DialogContentStyle from "../util/DialogContentStyle";
+
+import FlexLayout from "@designsystem/util/FlexLayout";
+import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
+
+import DialogContentStyle from "@ui/util/DialogContentStyle";
 
 const style = {
     Container: styled.div`

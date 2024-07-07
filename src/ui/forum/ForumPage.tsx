@@ -1,17 +1,23 @@
-import * as S from "./ForumPage.style";
-import MainTemplate from "../template/MainTemplate";
-import GrowIcon, {IconType} from "../../designsystem/foundation/iconography/GrowIcon";
-import {useTheme} from "styled-components";
-import ForumCell from "./cell/ForumCell";
-import useTokenCheck from "../../hook/auth/useTokenCheck";
-import useForum from "../../hook/forum/useFetchForum";
 import {useEffect, useState} from "react";
-import {ForumResponse} from "../../repository/forum/response/Forum.response";
-import {pagingInterval} from "../../util/pagingConstant";
-import GrowLoader from "../../designsystem/component/loader/GrowLoader";
-import ForumDetailDialog from "../forumdetail/ForumDetailDialog";
-import useLike from "../../hook/like/useLike";
-import CreateForumDialog from "../createforum/CreateForumDialog";
+import {useTheme} from "styled-components";
+
+import {ForumResponse} from "@repository/forum/response/Forum.response";
+
+import pagingInterval from "@util/pagingConstant";
+
+import GrowIcon, {IconType} from "@designsystem/foundation/iconography/GrowIcon";
+import GrowLoader from "@designsystem/component/loader/GrowLoader";
+
+import MainTemplate from "@ui/template/MainTemplate";
+import CreateForumDialog from "@ui/createforum/CreateForumDialog";
+import ForumDetailDialog from "@ui/forumdetail/ForumDetailDialog";
+
+import useTokenCheck from "@hook/auth/useTokenCheck";
+import useForum from "@hook/forum/useFetchForum";
+import useLike from "@hook/like/useLike";
+
+import * as S from "./ForumPage.style";
+import ForumCell from "./cell/ForumCell";
 
 const ForumPage = () => {
     useTokenCheck();

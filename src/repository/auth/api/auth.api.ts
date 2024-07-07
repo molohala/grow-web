@@ -1,8 +1,8 @@
-import {BaseResponse} from "../../global/Base.response";
-import ReissueRequest from "../request/Reissue.request";
-import ReissueResponse from "../response/Reissue.response";
-import {growAxios} from "../../global/growAxios";
-import {TokenResponse} from "../response/Token.response";
+import {growAxios} from "@repository/global/growAxios";
+import {BaseResponse} from "@repository/global/Base.response";
+import ReissueRequest from "@repository/auth/request/Reissue.request";
+import ReissueResponse from "@repository/auth/response/Reissue.response";
+import {TokenResponse} from "@repository/auth/response/Token.response";
 
 class AuthAPI {
     async signIn(code: string): Promise<BaseResponse<TokenResponse>> {

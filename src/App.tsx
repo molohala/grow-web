@@ -1,10 +1,10 @@
-import GrowColorProvider from "./provider/theme/GrowColorProvider";
-import {GlobalStyle} from "./style/globalStyle";
+import GrowColorProvider from "@provider/theme/GrowColorProvider";
+import {GlobalStyle} from "@style/globalStyle";
+import {BrowserRouter} from "react-router-dom";
 // import Preview from "./designsystem/preview/Preview";
 // import IconPreview from "./designsystem/preview/IconPreview";
 import Router from "./routes";
-import {BrowserRouter} from "react-router-dom";
-import AppStateProvider from "./provider/appstate/AppStateProvider";
+import AppStateProvider from "@provider/appstate/AppStateProvider";
 
 const App = () => {
 

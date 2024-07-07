@@ -1,7 +1,8 @@
-import {DAuthSignInRequest} from "../request/DAuthSignIn.request";
 import axios from "axios";
-import {BaseResponse} from "../../global/Base.response";
-import {DAuthSignInResponse} from "../response/DAuthSignIn.response";
+
+import {BaseResponse} from "@repository/global/Base.response";
+import {DAuthSignInRequest} from "@repository/auth/request/DAuthSignIn.request";
+import {DAuthSignInResponse} from "@repository/auth/response/DAuthSignIn.response";
 
 class DauthAPI {
     async signIn(signIn: DAuthSignInRequest): Promise<BaseResponse<DAuthSignInResponse>> {

@@ -1,8 +1,8 @@
 import {Route, Routes as Switch} from "react-router-dom";
-import HomePage from "./ui/home/HomePage";
-import ForumPage from "./ui/forum/ForumPage";
-import ProfilePage from "./ui/profile/ProfilePage";
-import SignInPage from "./ui/signin/SignInPage";
+import HomePage from "@ui/home/HomePage";
+import ForumPage from "@ui/forum/ForumPage";
+import ProfilePage from "@ui/profile/ProfilePage";
+import SignInPage from "@ui/signin/SignInPage";
 
 const Routes = () => {
     return (

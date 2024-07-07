@@ -1,5 +1,5 @@
 import {css} from "styled-components";
-import {Guideline} from "./Guideline";
+import {Guideline} from "@ui/util/Guideline";
 
 const DialogContentStyle = css`
     background: ${({theme}) => theme.backgroundAlt};

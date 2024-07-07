@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components";
-import {GrowShadow, ShadowType} from "../foundation/shadow/GrowShadow";
+import {GrowShadow, ShadowType} from "@designsystem/foundation/shadow/GrowShadow";
 
 export const ShadowRectangle = styled.div<{
     shadowType: ShadowType

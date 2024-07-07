@@ -1,10 +1,13 @@
-import * as S from './SignInPage.style';
-import GrowTextField from "../../designsystem/component/textfield/GrowTextField";
 import {css} from "styled-components";
-import GrowButton from "../../designsystem/component/button/button/GrowButton";
-import {ButtonType} from "../../designsystem/component/button/type/ButtonType";
-import useSignIn from "../../hook/auth/useSignIn";
-import useTokenCheck from "../../hook/auth/useTokenCheck";
+
+import useSignIn from "@hook/auth/useSignIn";
+import useTokenCheck from "@hook/auth/useTokenCheck";
+
+import GrowTextField from "@designsystem/component/textfield/GrowTextField";
+import GrowButton from "@designsystem/component/button/button/GrowButton";
+import {ButtonType} from "@designsystem/component/button/type/ButtonType";
+
+import * as S from './SignInPage.style';
 
 const SignInPage = () => {
 

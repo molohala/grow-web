@@ -1,5 +1,5 @@
 import {useCallback} from "react";
-import likeApi from "../../repository/like/api/like.api";
+import likeApi from "@repository/like/api/like.api";
 
 const useLike = (): {
     patchLike: (forumId: number) => Promise<boolean>;

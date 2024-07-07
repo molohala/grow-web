@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import token, {ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY} from "../../lib/token/token";
+
+import token, {ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY} from "@lib/token/token";
 
 const useTokenCheck = () => {
     const navigate = useNavigate();

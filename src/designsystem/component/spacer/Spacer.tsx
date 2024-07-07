@@ -1,5 +1,5 @@
-import * as S from './Spacer.style';
 import {RuleSet} from "styled-components";
+import * as S from './Spacer.style';
 
 interface SpacerProps {
     $customStyle?: RuleSet

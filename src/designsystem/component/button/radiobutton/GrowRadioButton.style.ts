@@ -1,7 +1,7 @@
 import styled, {css, RuleSet} from "styled-components";
-import {FlexLayout} from "../../../util/FlexLayout";
-import {bounceAnimation} from "../../../animation/bounceAnimation";
-import {GrowTypographies, TypographyType} from "../../../foundation/text/GrowTypographies";
+import FlexLayout from "@designsystem/util/FlexLayout";
+import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
+import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
 
 export const GrowRadioButtonStyle = styled.button<{
     $isSelected: boolean,

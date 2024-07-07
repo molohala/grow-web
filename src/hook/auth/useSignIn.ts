@@ -1,9 +1,9 @@
 import {useCallback, useState} from "react";
-import {DAuthSignInRequest} from "../../repository/auth/request/DAuthSignIn.request";
-import Config from "../../config/Config";
-import dauthApi from "../../repository/auth/api/dauth.api";
-import authApi from "../../repository/auth/api/auth.api";
-import token, {ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY} from "../../lib/token/token";
+import {DAuthSignInRequest} from "@repository/auth/request/DAuthSignIn.request";
+import Config from "@config/Config";
+import dauthApi from "@repository/auth/api/dauth.api";
+import authApi from "@repository/auth/api/auth.api";
+import token, {ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY} from "@lib/token/token";
 import {useNavigate} from "react-router-dom";
 
 const useSignIn = (): {

@@ -1,10 +1,10 @@
 import {useCallback, useState} from "react";
-import ProfileResponse from "../../repository/like/response/Profile.response";
-import SolvedacResponse from "../../repository/like/response/Solvedac.response";
-import {GithubResponse} from "../../repository/like/response/Github.response";
-import infoApi from "../../repository/info/api/info.api";
-import LanguageResponse from "../../repository/language/response/Language.response";
-import languageApi from "../../repository/language/api/language.api";
+import ProfileResponse from "@repository/like/response/Profile.response";
+import SolvedacResponse from "@repository/like/response/Solvedac.response";
+import {GithubResponse} from "@repository/like/response/Github.response";
+import infoApi from "@repository/info/api/info.api";
+import LanguageResponse from "@repository/language/response/Language.response";
+import languageApi from "@repository/language/api/language.api";
 
 const useAppState = () => {
     const [profile, setProfile] = useState<ProfileResponse | null>(null);

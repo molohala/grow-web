@@ -1,1 +1,3 @@
-export const pagingInterval = 15;
+const pagingInterval = 15;
+
+export default pagingInterval;

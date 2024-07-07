@@ -1,6 +1,6 @@
-import ReportRequest from "../req/Report.request";
-import {BaseVoidResponse} from "../../global/Base.response";
-import {growAxios} from "../../global/growAxios";
+import ReportRequest from "@repository/report/req/Report.request";
+import {BaseVoidResponse} from "@repository/global/Base.response";
+import {growAxios} from "@repository/global/growAxios";
 
 class ReportApi {
     async reportComment(id: number, req: ReportRequest): Promise<BaseVoidResponse> {

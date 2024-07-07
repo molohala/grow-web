@@ -1,8 +1,8 @@
 import styled, {css, RuleSet} from "styled-components";
-import {FlexLayout} from "../../../util/FlexLayout";
-import {bounceAnimation} from "../../../animation/bounceAnimation";
-import {GrowTypographies} from "../../../foundation/text/GrowTypographies";
-import {ButtonStyle} from "../type/ButtonType";
+import FlexLayout from "@designsystem/util/FlexLayout";
+import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
+import {GrowTypographies} from "@designsystem/foundation/text/GrowTypographies";
+import {ButtonStyle} from "@designsystem/component/button/type/ButtonType";
 
 export const GrowTextButtonStyle = styled.button<{
     style: ButtonStyle,

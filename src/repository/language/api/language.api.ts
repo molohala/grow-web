@@ -1,8 +1,7 @@
-import LanguageResponse from "../response/Language.response";
-import {growAxios} from "../../global/growAxios";
-import PatchMyProfileRequest from "../../like/request/PatchMyProfile.request";
-import {BaseResponse, BaseVoidResponse} from "../../global/Base.response";
-import PatchMyLanguageRequest from "../request/PatchMyLanguage.request";
+import {growAxios} from "@repository/global/growAxios";
+import LanguageResponse from "@repository/language/response/Language.response";
+import {BaseResponse, BaseVoidResponse} from "@repository/global/Base.response";
+import PatchMyLanguageRequest from "@repository/language/request/PatchMyLanguage.request";
 
 class LanguageApi {
     private static path = 'language'

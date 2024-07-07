@@ -1,10 +1,10 @@
-import {BaseResponse, BaseVoidResponse} from "../../global/Base.response";
-import SolvedacResponse from "../../like/response/Solvedac.response";
-import {growAxios} from "../../global/growAxios";
-import SocialIdRequest from "../../like/request/SocialId.request";
-import {GithubResponse} from "../../like/response/Github.response";
-import ProfileResponse from "../../like/response/Profile.response";
-import PatchMyProfileRequest from "../../like/request/PatchMyProfile.request";
+import {BaseResponse, BaseVoidResponse} from "@repository/global/Base.response";
+import {growAxios} from "@repository/global/growAxios";
+import SolvedacResponse from "@repository/like/response/Solvedac.response";
+import SocialIdRequest from "@repository/like/request/SocialId.request";
+import {GithubResponse} from "@repository/like/response/Github.response";
+import ProfileResponse from "@repository/like/response/Profile.response";
+import PatchMyProfileRequest from "@repository/like/request/PatchMyProfile.request";
 
 class InfoApi {
     private static path = "info"

@@ -1,7 +1,9 @@
 import axios, {AxiosRequestConfig} from "axios";
-import Config from "../../config/Config";
-import errorResponseHandler from "./errorResponseHandler";
-import requestHandler from "./requestHandler";
+
+import Config from "@config/Config";
+
+import errorResponseHandler from "@repository/global/errorResponseHandler";
+import requestHandler from "@repository/global/requestHandler";
 
 const createAxiosInstance = (config?: AxiosRequestConfig) => {
     const baseConfig: AxiosRequestConfig = {

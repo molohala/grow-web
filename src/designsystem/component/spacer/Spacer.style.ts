@@ -1,5 +1,5 @@
 import styled, {RuleSet} from "styled-components";
-import {FlexLayout} from "../../util/FlexLayout";
+import FlexLayout from "@designsystem/util/FlexLayout";
 
 export const Container = styled.div<{
     $customStyle?: RuleSet

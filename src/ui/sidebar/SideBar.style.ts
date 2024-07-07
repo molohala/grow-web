@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import {FlexLayout} from "../../designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "../../designsystem/foundation/text/GrowTypographies";
-import {bounceAnimation} from "../../designsystem/animation/bounceAnimation";
-import {Guideline} from "../util/Guideline";
-import BlackEffect from "../../designsystem/foundation/effect/BlackEffect";
+
+import {Guideline} from "@ui/util/Guideline";
+
+import FlexLayout from "@designsystem/util/FlexLayout";
+import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
+import {bounceAnimation} from "@designsystem/animation/bounceAnimation";
+import BlackEffect from "@designsystem/foundation/effect/BlackEffect";
 
 export const Container = styled.nav`
     ${FlexLayout({flexDirection: 'column', justifyContent: 'spacer-between'})};

@@ -1,23 +1,26 @@
-import {Column, Row} from "../util/StyledFlex";
-import {css, useTheme} from "styled-components";
-import GrowButton from "../component/button/button/GrowButton";
-import {ButtonType} from "../component/button/type/ButtonType";
-import GrowLoader from "../component/loader/GrowLoader";
-import GrowDivider, {DividerType} from "../component/divider/GrowDivider";
-import GrowTextButton from "../component/button/textbutton/GrowTextButton";
-import GrowTabButton from "../component/button/tabbutton/GrowTabButton";
-import GrowToggleButton from "../component/button/togglebutton/GrowToggleButton";
-import {ShadowRectangle} from "./ShadowRectangle";
-import {ShadowType} from "../foundation/shadow/GrowShadow";
 import {useContext, useState} from "react";
-import {DarkThemeContext, DarkThemeContextType} from "../../provider/theme/DarkThemeContext";
-import GrowTextField from "../component/textfield/GrowTextField";
-import {IconType} from "../foundation/iconography/GrowIcon";
-import GrowAvatar, {AvatarType} from "../component/avatar/GrowAvatar";
-import GrowLanguage from "../component/language/GrowLanguage";
-import GrowLikeButton from "../component/button/likebutton/GrowLikeButton";
-import GrowRadioButton from "../component/button/radiobutton/GrowRadioButton";
-import GrowTextArea from "../component/textarea/GrowTextArea";
+import {css, useTheme} from "styled-components";
+
+import {DarkThemeContext, DarkThemeContextType} from "@provider/theme/DarkThemeContext";
+
+import {Column, Row} from "@designsystem/util/StyledFlex";
+import GrowButton from "@designsystem/component/button/button/GrowButton";
+import {ButtonType} from "@designsystem/component/button/type/ButtonType";
+import GrowLoader from "@designsystem/component/loader/GrowLoader";
+import GrowDivider, {DividerType} from "@designsystem/component/divider/GrowDivider";
+import GrowTextButton from "@designsystem/component/button/textbutton/GrowTextButton";
+import GrowTabButton from "@designsystem/component/button/tabbutton/GrowTabButton";
+import GrowToggleButton from "@designsystem/component/button/togglebutton/GrowToggleButton";
+import {ShadowType} from "@designsystem/foundation/shadow/GrowShadow";
+import GrowTextField from "@designsystem/component/textfield/GrowTextField";
+import {IconType} from "@designsystem/foundation/iconography/GrowIcon";
+import GrowAvatar, {AvatarType} from "@designsystem/component/avatar/GrowAvatar";
+import GrowLanguage from "@designsystem/component/language/GrowLanguage";
+import GrowLikeButton from "@designsystem/component/button/likebutton/GrowLikeButton";
+import GrowRadioButton from "@designsystem/component/button/radiobutton/GrowRadioButton";
+import GrowTextArea from "@designsystem/component/textarea/GrowTextArea";
+
+import {ShadowRectangle} from "./ShadowRectangle";
 
 const Preview = () => {
 

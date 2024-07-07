@@ -1,12 +1,15 @@
-import * as S from './ForumCell.style';
-import Spacer from "../../../designsystem/component/spacer/Spacer";
-import GrowAvatar, {AvatarType} from "../../../designsystem/component/avatar/GrowAvatar";
-import GrowLikeButton from "../../../designsystem/component/button/likebutton/GrowLikeButton";
-import GrowDivider, {DividerType} from "../../../designsystem/component/divider/GrowDivider";
-import {ForumResponse} from "../../../repository/forum/response/Forum.response";
-import '../../../util/CustomDate';
 import {InView} from "react-intersection-observer";
-import CustomDate from "../../../util/CustomDate";
+
+import Spacer from "@designsystem/component/spacer/Spacer";
+import GrowAvatar, {AvatarType} from "@designsystem/component/avatar/GrowAvatar";
+import GrowLikeButton from "@designsystem/component/button/likebutton/GrowLikeButton";
+import GrowDivider, {DividerType} from "@designsystem/component/divider/GrowDivider";
+
+import {ForumResponse} from "@repository/forum/response/Forum.response";
+
+import CustomDate from "@util/CustomDate";
+
+import * as S from './ForumCell.style';
 
 interface ForumCellProps {
     forum: ForumResponse

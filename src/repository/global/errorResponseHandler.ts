@@ -1,9 +1,12 @@
 import {AxiosError} from "axios";
-import token, {ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY, REQUEST_TOKEN_KEY} from "../../lib/token/token";
-import authApi from "../auth/api/auth.api";
-import {growAxios} from "./growAxios";
-import Config from "../../config/Config";
-import ReissueResponse from "../auth/response/Reissue.response";
+
+import token, {ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY, REQUEST_TOKEN_KEY} from "@lib/token/token";
+
+import authApi from "@repository//auth/api/auth.api";
+import {growAxios} from "@repository/global/growAxios";
+import ReissueResponse from "@repository/auth/response/Reissue.response";
+
+import Config from "@config/Config";
 
 let refreshSubscribers: ((accessToken: string) => void)[] = [];
 

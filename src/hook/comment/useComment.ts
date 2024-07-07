@@ -1,7 +1,8 @@
 import {useCallback, useState} from "react";
-import commentApi from "../../repository/comment/api/comment.api";
-import {CommentResponse} from "../../repository/comment/response/Comment.response";
-import CreateCommentRequest from "../../repository/comment/request/CreateComment.request";
+
+import commentApi from "@repository/comment/api/comment.api";
+import {CommentResponse} from "@repository/comment/response/Comment.response";
+import CreateCommentRequest from "@repository/comment/request/CreateComment.request";
 
 const useComment = (): {
     comments: CommentResponse[];

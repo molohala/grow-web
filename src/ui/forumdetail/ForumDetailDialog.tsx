@@ -1,20 +1,25 @@
 import React, {useEffect, useState} from 'react';
-import {ForumResponse} from "../../repository/forum/response/Forum.response";
-import S from "./ForumDetailDialog.style";
-import GrowDivider from "../../designsystem/component/divider/GrowDivider";
-import Spacer from "../../designsystem/component/spacer/Spacer";
-import GrowIcon, {IconType} from "../../designsystem/foundation/iconography/GrowIcon";
 import {css, useTheme} from "styled-components";
-import GrowAvatar, {AvatarType} from "../../designsystem/component/avatar/GrowAvatar";
-import '../../util/CustomDate';
-import CustomDate from "../../util/CustomDate";
-import useComment from "../../hook/comment/useComment";
-import GrowLikeButton from "../../designsystem/component/button/likebutton/GrowLikeButton";
-import GrowLoader from "../../designsystem/component/loader/GrowLoader";
-import CommentCell from "../component/CommentCell";
-import useLike from "../../hook/like/useLike";
-import GrowTextField from "../../designsystem/component/textfield/GrowTextField";
-import DialogTemplate from "../template/DialogTemplate";
+
+import {ForumResponse} from "@repository/forum/response/Forum.response";
+
+import CustomDate from "@util/CustomDate";
+
+import useLike from "@hook/like/useLike";
+import useComment from "@hook/comment/useComment";
+
+import GrowDivider from "@designsystem/component/divider/GrowDivider";
+import Spacer from "@designsystem/component/spacer/Spacer";
+import GrowIcon, {IconType} from "@designsystem/foundation/iconography/GrowIcon";
+import GrowAvatar, {AvatarType} from "@designsystem/component/avatar/GrowAvatar";
+import GrowLikeButton from "@designsystem/component/button/likebutton/GrowLikeButton";
+import GrowLoader from "@designsystem/component/loader/GrowLoader";
+import GrowTextField from "@designsystem/component/textfield/GrowTextField";
+
+import DialogTemplate from "@ui/template/DialogTemplate";
+import CommentCell from "@ui/component/CommentCell";
+
+import S from "./ForumDetailDialog.style";
 
 interface ForumDetailDialogProps {
     forum: ForumResponse;

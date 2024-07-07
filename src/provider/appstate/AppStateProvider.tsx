@@ -1,5 +1,5 @@
 import {ReactNode, useEffect} from "react";
-import useAppState from "../../hook/global/useAppState";
+import useAppState from "@hook/global/useAppState";
 import {AppStateContext} from "./AppStateContext";
 
 interface AppStateProviderProps {
@@ -15,6 +15,8 @@ const AppStateProvider = (
 
     useEffect(() => {
         appState.fetchProfile().catch();
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return <AppStateContext.Provider value={appState}>{children}</AppStateContext.Provider>;

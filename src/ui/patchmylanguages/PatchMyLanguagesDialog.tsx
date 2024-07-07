@@ -1,14 +1,20 @@
 import React, {useContext, useEffect, useState} from 'react';
-import DialogTemplate from "../template/DialogTemplate";
+
 import S from './PatchMyLanguagesDialog.style';
-import Spacer from "../../designsystem/component/spacer/Spacer";
-import GrowTextButton from "../../designsystem/component/button/textbutton/GrowTextButton";
-import {ButtonType} from "../../designsystem/component/button/type/ButtonType";
-import {AppStateContext} from "../../provider/appstate/AppStateContext";
-import GrowRadioButton from "../../designsystem/component/button/radiobutton/GrowRadioButton";
-import languageApi from "../../repository/language/api/language.api";
-import LanguageResponse from "../../repository/language/response/Language.response";
-import {IconType} from "../../designsystem/foundation/iconography/GrowIcon";
+
+import Spacer from "@designsystem/component/spacer/Spacer";
+import {IconType} from "@designsystem/foundation/iconography/GrowIcon";
+import GrowTextButton from "@designsystem/component/button/textbutton/GrowTextButton";
+import {ButtonType} from "@designsystem/component/button/type/ButtonType";
+import GrowRadioButton from "@designsystem/component/button/radiobutton/GrowRadioButton";
+
+import DialogTemplate from "@ui/template/DialogTemplate";
+
+import {AppStateContext} from "@provider/appstate/AppStateContext";
+
+import languageApi from "@repository/language/api/language.api";
+import LanguageResponse from "@repository/language/response/Language.response";
+
 
 interface PatchMyLanguagesDialogProps {
     dismiss: () => void;

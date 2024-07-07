@@ -1,8 +1,8 @@
-import {ForumResponse} from "../response/Forum.response";
-import {growAxios} from "../../global/growAxios";
-import {BaseResponse, BaseVoidResponse} from "../../global/Base.response";
-import {CreateForumRequest} from "../request/CreateForum.request";
-import {PatchForumRequest} from "../request/PatchForum.request";
+import {growAxios} from "@repository/global/growAxios";
+import {BaseResponse, BaseVoidResponse} from "@repository/global/Base.response";
+import {ForumResponse} from "@repository/forum/response/Forum.response";
+import {CreateForumRequest} from "@repository/forum/request/CreateForum.request";
+import {PatchForumRequest} from "@repository/forum/request/PatchForum.request";
 
 class ForumAPI {
 

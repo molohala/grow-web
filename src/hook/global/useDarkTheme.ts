@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Cookie from "../../lib/cookie/cookie";
+import Cookie from "@lib/cookie/cookie";
 
 const useDarkTheme = (): [
     isDarkTheme: boolean,

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import {Guideline} from "../util/Guideline";
-import {FlexLayout} from "../../designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "../../designsystem/foundation/text/GrowTypographies";
+import {Guideline} from "@ui/util/Guideline";
+import FlexLayout from "@designsystem/util/FlexLayout";
+import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
 
 const style = {
     Container: styled.div`

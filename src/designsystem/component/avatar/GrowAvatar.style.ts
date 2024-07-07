@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {FlexLayout} from "../../util/FlexLayout";
+
+import FlexLayout from "@designsystem/util/FlexLayout";
 
 export const GrowAvatarStyle = styled.div<{
     size: number;

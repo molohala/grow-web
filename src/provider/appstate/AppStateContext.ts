@@ -1,8 +1,9 @@
 import { createContext } from "react";
-import ProfileResponse from "../../repository/like/response/Profile.response";
-import SolvedacResponse from "../../repository/like/response/Solvedac.response";
-import {GithubResponse} from "../../repository/like/response/Github.response";
-import LanguageResponse from "../../repository/language/response/Language.response";
+
+import ProfileResponse from "@repository/like/response/Profile.response";
+import SolvedacResponse from "@repository/like/response/Solvedac.response";
+import {GithubResponse} from "@repository/like/response/Github.response";
+import LanguageResponse from "@repository/language/response/Language.response";
 
 export type AppStateContextProps = {
     profile: ProfileResponse | null;

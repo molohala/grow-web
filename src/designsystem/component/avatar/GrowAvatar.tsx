@@ -1,6 +1,8 @@
-import {AvatarImage, GrowAvatarStyle} from "./GrowAvatar.style";
-import GrowIcon, {IconType} from "../../foundation/iconography/GrowIcon";
 import {useTheme} from "styled-components";
+
+import GrowIcon, {IconType} from "@designsystem/foundation/iconography/GrowIcon";
+
+import {AvatarImage, GrowAvatarStyle} from "./GrowAvatar.style";
 
 export enum AvatarType {
     ExtraSmall,

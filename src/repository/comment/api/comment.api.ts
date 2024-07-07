@@ -1,8 +1,8 @@
-import {growAxios} from "../../global/growAxios";
-import {CommentResponse} from "../response/Comment.response";
-import CreateCommentRequest from "../request/CreateComment.request";
-import {BaseResponse, BaseVoidResponse} from "../../global/Base.response";
-import EditCommentRequest from "../request/EditComment.request";
+import {growAxios} from "@repository/global/growAxios";
+import {CommentResponse} from "@repository/comment/response/Comment.response";
+import CreateCommentRequest from "@repository/comment/request/CreateComment.request";
+import {BaseResponse, BaseVoidResponse} from "@repository/global/Base.response";
+import EditCommentRequest from "@repository/comment/request/EditComment.request";
 
 class CommentApi {
 

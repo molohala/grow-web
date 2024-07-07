@@ -1,4 +1,4 @@
-import {CommentResponse} from "../../comment/response/Comment.response";
+import {CommentResponse} from "@repository/comment/response/Comment.response";
 
 export interface ForumResponse {
     community: ForumContentResponse;

@@ -1,10 +1,11 @@
 import React from "react";
-import * as S from "./GrowTextButton.style";
 import {css, RuleSet, useTheme} from "styled-components";
-import {ButtonStyles, ButtonType} from "../type/ButtonType";
-import {Row} from "../../../util/StyledFlex";
-import GrowLoader from "../../loader/GrowLoader";
-import GrowIcon, {IconType} from "../../../foundation/iconography/GrowIcon";
+
+import {ButtonStyles, ButtonType} from "@designsystem/component/button/type/ButtonType";
+import {Row} from "@designsystem/util/StyledFlex";
+import GrowLoader from "@designsystem/component/loader/GrowLoader";
+import GrowIcon, {IconType} from "@designsystem/foundation/iconography/GrowIcon";
+import * as S from "@designsystem/component/button/textbutton/GrowTextButton.style";
 
 interface GrowTextButtonProps {
     text: string;

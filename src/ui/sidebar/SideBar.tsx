@@ -1,10 +1,14 @@
-import * as S from './SideBar.style';
-import GrowIcon, {IconType} from "../../designsystem/foundation/iconography/GrowIcon";
-import {css, useTheme} from "styled-components";
-import Spacer from "../../designsystem/component/spacer/Spacer";
-import {Guideline} from "../util/Guideline";
 import {useContext} from "react";
-import {DarkThemeContext, DarkThemeContextType} from "../../provider/theme/DarkThemeContext";
+import {css, useTheme} from "styled-components";
+
+import GrowIcon, {IconType} from "@designsystem/foundation/iconography/GrowIcon";
+import Spacer from "@designsystem/component/spacer/Spacer";
+
+import {Guideline} from "@ui/util/Guideline";
+
+import {DarkThemeContext, DarkThemeContextType} from "@provider/theme/DarkThemeContext";
+
+import * as S from './SideBar.style';
 
 export type SideBarItem = {
     icon: IconType,

@@ -1,6 +1,6 @@
 import {CSSProperties, css} from "styled-components";
 
-export interface FlexLayoutProps {
+interface FlexLayoutProps {
     flexDirection?: CSSProperties["flexDirection"];
     justifyContent?: CSSProperties["justifyContent"];
     alignItems?: CSSProperties["alignItems"];
@@ -9,16 +9,17 @@ export interface FlexLayoutProps {
     gap?: CSSProperties["gap"];
 }
 
-export const FlexLayout = ({...props}: FlexLayoutProps) => {
-    return css`
-        display: flex;
+const FlexLayout = ({...props}: FlexLayoutProps) => css`
+    display: flex;
 
-        flex-direction: ${props.flexDirection};
-        justify-content: ${props.justifyContent};
-        align-items: ${props.alignItems};
+    flex-direction: ${props.flexDirection};
+    justify-content: ${props.justifyContent};
+    align-items: ${props.alignItems};
 
-        column-gap: ${props.columnGap};
-        row-gap: ${props.rowGap};
-        gap: ${props.gap};
-    `;
-};
+    column-gap: ${props.columnGap};
+    row-gap: ${props.rowGap};
+    gap: ${props.gap};
+`;
+
+
+export default FlexLayout;

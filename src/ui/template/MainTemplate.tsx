@@ -1,8 +1,11 @@
 import React from "react";
-import * as S from "./MainTemplate.style";
-import SideBar from "../sidebar/SideBar";
-import {IconType} from "../../designsystem/foundation/iconography/GrowIcon";
-import Config from "../../config/Config";
+
+import * as S from "@ui/template/MainTemplate.style";
+import SideBar from "@ui/sidebar/SideBar";
+
+import {IconType} from "@designsystem/foundation/iconography/GrowIcon";
+
+import Config from "@config/Config";
 
 interface MainTemplateProps {
     children: React.ReactNode;

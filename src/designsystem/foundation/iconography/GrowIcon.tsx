@@ -1,6 +1,6 @@
+import React from "react";
 import AddFill from "./icons/AddFill";
 import AddLine from "./icons/AddLine";
-import React from "react";
 import AddRing from "./icons/AddRing";
 import ArrowDown from "./icons/ArrowDown";
 import ArrowLeft from "./icons/ArrowLeft";

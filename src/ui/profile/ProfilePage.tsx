@@ -1,15 +1,19 @@
-import S from "./ProfilePage.style";
-import MainTemplate from "../template/MainTemplate";
-import useTokenCheck from "../../hook/auth/useTokenCheck";
-import {Column, FlexWrapper, Row} from "../../designsystem/util/StyledFlex";
-import GrowAvatar, {AvatarType} from "../../designsystem/component/avatar/GrowAvatar";
-import GrowIcon, {IconType} from "../../designsystem/foundation/iconography/GrowIcon";
 import {useTheme} from "styled-components";
-import GrowLanguage from "../../designsystem/component/language/GrowLanguage";
-import {AppStateContext} from "../../provider/appstate/AppStateContext";
 import {useContext, useEffect, useState} from "react";
-import PatchMyBioDialog from "../patchmybio/PatchMyBioDialog";
-import PatchMyLanguagesDialog from "../patchmylanguages/PatchMyLanguagesDialog";
+
+import useTokenCheck from "@hook/auth/useTokenCheck";
+
+import {Column, FlexWrapper, Row} from "@designsystem/util/StyledFlex";
+import GrowAvatar, {AvatarType} from "@designsystem/component/avatar/GrowAvatar";
+import GrowIcon, {IconType} from "@designsystem/foundation/iconography/GrowIcon";
+import GrowLanguage from "@designsystem/component/language/GrowLanguage";
+
+import {AppStateContext} from "@provider/appstate/AppStateContext";
+
+import MainTemplate from "@ui/template/MainTemplate";
+import PatchMyBioDialog from "@ui/patchmybio/PatchMyBioDialog";
+import PatchMyLanguagesDialog from "@ui/patchmylanguages/PatchMyLanguagesDialog";
+import S from "@ui/profile/ProfilePage.style";
 
 const ProfilePage = () => {
     useTokenCheck();
@@ -21,6 +25,8 @@ const ProfilePage = () => {
 
     useEffect(() => {
         fetchLanguages().catch();
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handlePatchBioIconClicked = () => {

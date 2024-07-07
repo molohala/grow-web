@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
-import DialogTemplate from "../template/DialogTemplate";
-import S from './CreateForumDialog.style';
-import Spacer from "../../designsystem/component/spacer/Spacer";
-import GrowTextButton from "../../designsystem/component/button/textbutton/GrowTextButton";
-import {ButtonType} from "../../designsystem/component/button/type/ButtonType";
-import GrowTextArea from "../../designsystem/component/textarea/GrowTextArea";
 import {css} from "styled-components";
-import forumApi from "../../repository/forum/api/forum.api";
+
+import DialogTemplate from "@ui/template/DialogTemplate";
+
+import Spacer from "@designsystem/component/spacer/Spacer";
+import GrowTextButton from "@designsystem/component/button/textbutton/GrowTextButton";
+import {ButtonType} from "@designsystem/component/button/type/ButtonType";
+import GrowTextArea from "@designsystem/component/textarea/GrowTextArea";
+
+import forumApi from "@repository/forum/api/forum.api";
+
+import S from './CreateForumDialog.style';
 
 interface CreateForumProps {
     dismiss: () => void;

@@ -1,5 +1,5 @@
-import {growAxios} from "../../global/growAxios";
-import {BaseVoidResponse} from "../../global/Base.response";
+import {growAxios} from "@repository/global/growAxios";
+import {BaseVoidResponse} from "@repository/global/Base.response";
 
 class LikeApi {
     private static path = 'like'

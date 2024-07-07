@@ -1,7 +1,7 @@
-import {Column} from "../util/StyledFlex";
-import {GrowPalette} from "../foundation/color/GrowPalette";
-import GrowIcon, {IconType} from "../foundation/iconography/GrowIcon";
-import {GrowLightScheme} from "../foundation/color/GrowColorSementic";
+import {Column} from "@designsystem/util/StyledFlex";
+import {GrowPalette} from "@designsystem/foundation/color/GrowPalette";
+import GrowIcon, {IconType} from "@designsystem/foundation/iconography/GrowIcon";
+import {GrowLightScheme} from "@designsystem/foundation/color/GrowColorSementic";
 
 const IconPreview = () => {
     return (

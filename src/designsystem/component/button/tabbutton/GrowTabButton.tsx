@@ -1,10 +1,10 @@
-import React from "react";
-import * as S from "./GrowTabButton.style";
 import {css, RuleSet, useTheme} from "styled-components";
-import {Column, Row} from "../../../util/StyledFlex";
-import GrowIcon, {IconType} from "../../../foundation/iconography/GrowIcon";
-import GrowLoader from "../../loader/GrowLoader";
-import GrowDivider, {DividerType} from "../../divider/GrowDivider";
+import React from "react";
+import {Column, Row} from "@designsystem/util/StyledFlex";
+import GrowIcon, {IconType} from "@designsystem/foundation/iconography/GrowIcon";
+import GrowLoader from "@designsystem/component/loader/GrowLoader";
+import GrowDivider, {DividerType} from "@designsystem/component/divider/GrowDivider";
+import * as S from "@designsystem/component/button/tabbutton/GrowTabButton.style";
 
 interface GrowTabButtonProps {
     text: string;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import {FlexLayout} from "../../designsystem/util/FlexLayout";
-import {GrowTypographies, TypographyType} from "../../designsystem/foundation/text/GrowTypographies";
+
+import FlexLayout from "@designsystem/util/FlexLayout";
+import {GrowTypographies, TypographyType} from "@designsystem/foundation/text/GrowTypographies";
 
 const style = {
     Container: styled.div`

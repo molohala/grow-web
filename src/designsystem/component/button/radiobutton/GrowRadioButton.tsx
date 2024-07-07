@@ -1,8 +1,9 @@
 import React from "react";
-import * as S from "./GrowRadioButton.style";
 import {RuleSet, useTheme} from "styled-components";
-import {Row} from "../../../util/StyledFlex";
-import GrowIcon, {IconType} from "../../../foundation/iconography/GrowIcon";
+
+import {Row} from "@designsystem/util/StyledFlex";
+import GrowIcon, {IconType} from "@designsystem/foundation/iconography/GrowIcon";
+import * as S from "@designsystem/component/button/radiobutton/GrowRadioButton.style";
 
 interface GrowLikeButtonProps {
     text: string;

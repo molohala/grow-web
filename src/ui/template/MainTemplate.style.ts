@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import {FlexLayout} from "../../designsystem/util/FlexLayout";
-import {Guideline} from "../util/Guideline";
+
+import FlexLayout from "@designsystem/util/FlexLayout";
+import {Guideline} from "@ui/util/Guideline";
 
 export const Container = styled.div`
     ${FlexLayout({})};

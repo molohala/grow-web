@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import styled from "styled-components";
-import {FlexLayout} from "../../designsystem/util/FlexLayout";
+
+import FlexLayout from "@designsystem/util/FlexLayout";
 
 interface DialogTemplateProps {
     children: React.ReactNode;
